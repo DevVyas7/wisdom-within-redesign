@@ -1,0 +1,14 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { FaqPage } from "@/components/Pages";
+
+export const Route = createFileRoute("/faq")({
+  head: () => ({ meta: [
+    { title: "FAQ | The Wisdom Bharat" },
+    { name: "description", content: "Answers to common questions about consultations and the four offerings." },
+    { property: "og:title", content: "FAQ | The Wisdom Bharat" },
+    { property: "og:description", content: "Answers to common questions about consultations and the four offerings." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary_large_image" },
+  ] }),
+  component: FaqPage,
+});
