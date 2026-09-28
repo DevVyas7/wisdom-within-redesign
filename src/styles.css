@@ -146,35 +146,35 @@
 /* The Wisdom Bharat design system */
 :root {
   --radius: 0.25rem;
-  --background: oklch(0.974 0.012 83);
-  --foreground: oklch(0.23 0.021 54);
-  --card: oklch(0.995 0.005 80);
+  --background: oklch(0.96007 0.01476 80.708);
+  --foreground: oklch(0.30068 0.02955 53.285);
+  --card: oklch(0.96007 0.01476 80.708);
   --card-foreground: var(--foreground);
   --popover: var(--card);
   --popover-foreground: var(--foreground);
-  --primary: oklch(0.42 0.145 24);
-  --primary-foreground: oklch(0.99 0.005 85);
-  --secondary: oklch(0.91 0.029 85);
+  --primary: oklch(0.58692 0.15218 33.056);
+  --primary-foreground: oklch(0.96007 0.01476 80.708);
+  --secondary: oklch(0.92 0.02 80.708);
   --secondary-foreground: var(--foreground);
-  --muted: oklch(0.936 0.018 82);
-  --muted-foreground: oklch(0.48 0.025 62);
-  --accent: oklch(0.82 0.038 138);
+  --muted: oklch(0.927 0.02 80.708);
+  --muted-foreground: oklch(0.47 0.027 53.285);
+  --accent: oklch(0.59526 0.04824 137.917);
   --accent-foreground: var(--foreground);
-  --border: oklch(0.83 0.025 77);
+  --border: oklch(0.76 0.025 77);
   --input: var(--border);
   --ring: var(--primary);
-  --gold: oklch(0.62 0.088 79);
-  --sage: oklch(0.59 0.047 143);
-  --dark-surface: oklch(0.25 0.025 54);
-  --dark-text: oklch(0.97 0.009 82);
+  --gold: oklch(0.65816 0.09534 77.6);
+  --sage: oklch(0.59526 0.04824 137.917);
+  --dark-surface: oklch(0.30068 0.02955 53.285);
+  --dark-text: oklch(0.96007 0.01476 80.708);
 }
 @theme inline {
   --color-gold: var(--gold);
   --color-sage: var(--sage);
   --color-dark-surface: var(--dark-surface);
   --color-dark-text: var(--dark-text);
-  --font-display: "Cormorant Garamond", Georgia, serif;
-  --font-body: "DM Sans", sans-serif;
+  --font-display: "Abril Fatface", Georgia, serif;
+  --font-body: "Cabin", sans-serif;
 }
 html { scroll-behavior: smooth; }
 body { font-family: var(--font-body); }
