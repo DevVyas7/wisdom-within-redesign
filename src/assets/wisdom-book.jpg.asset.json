@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "asset_id": "c0b8e756-086b-45a5-901b-3a92ed7611d0",
+  "asset_id": "be84245e-5a4f-4fd4-9a45-b3c026582ff0",
   "project_id": "922ab868-a792-441e-a79c-eb1105b2d63a",
-  "url": "/__l5e/assets-v1/c0b8e756-086b-45a5-901b-3a92ed7611d0/wisdom-book.jpg",
-  "r2_key": "a/v1/922ab868-a792-441e-a79c-eb1105b2d63a/c0b8e756-086b-45a5-901b-3a92ed7611d0/wisdom-book.jpg",
-  "original_filename": "wisdom-book.jpg",
-  "size": 272432,
+  "url": "/__l5e/assets-v1/be84245e-5a4f-4fd4-9a45-b3c026582ff0/wisdom-book-front.jpg",
+  "r2_key": "a/v1/922ab868-a792-441e-a79c-eb1105b2d63a/be84245e-5a4f-4fd4-9a45-b3c026582ff0/wisdom-book-front.jpg",
+  "original_filename": "wisdom-book-front.jpg",
+  "size": 185799,
   "content_type": "image/jpeg",
-  "created_at": "2026-09-28T20:18:51Z"
+  "created_at": "2026-09-28T20:22:52Z"
 }
