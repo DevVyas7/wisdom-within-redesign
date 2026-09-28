@@ -12,3 +12,4 @@
 - Keep verified brand copy, service definitions, and authentic asset references centralized in `src/lib/site.ts` so all pages stay consistent with the original website.
 - Use route files for every requested public page and a shared `SiteShell` in the root layout so navigation and footer remain consistent.
 - The contact form composes a message in the visitor’s email app and the booking page links to the original appointment service, because no site backend is connected.
+- Keep the editorial redesign's scroll depth in CSS with reduced-motion fallbacks, because it adds visual movement without changing content or navigation behavior.
