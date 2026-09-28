@@ -480,3 +480,26 @@ h1,h2,h3,blockquote { font-family: var(--font-display); font-weight: 500; letter
 .page-header { position: relative; overflow: hidden; }
 .page-header::after { content: ''; position: absolute; width: min(23vw,250px); aspect-ratio: 1; border: 1px solid color-mix(in oklab,var(--dark-text) 38%,transparent); border-radius: 50%; right: 5%; top: -45%; box-shadow: 0 0 0 28px color-mix(in oklab,var(--dark-text) 6%,transparent),0 0 0 56px color-mix(in oklab,var(--dark-text) 5%,transparent); pointer-events: none; }
 .page-header .container-wide { position: relative; z-index: 1; }
+@media (max-width: 700px) {
+  .hero-spread { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,.82fr); gap: 16px; padding-block: 22px 42px; }
+  .hero-editorial { grid-column: 1; }
+  .hero-editorial .eyebrow { font-size: 8px; }
+  .hero h1 { font-size: clamp(38px,9vw,58px); margin: 18px 0 13px; }
+  .hero-rule { margin-bottom: 12px; }
+  .hero p { font-size: 12px; line-height: 1.45; }
+  .hero-actions { margin-top: 17px; }
+  .hero-actions .action-link { width: auto; padding-inline: 11px; height: 39px; font-size: 10px; }
+  .hero-portrait { grid-column: 2; padding-right: 5px; }
+  .hero-portrait-frame { height: 100%; min-height: 275px; }
+  .hero-portrait-caption { font-size: 8px; padding: 8px; }
+  .hero-offerings { grid-column: 1 / -1; border-top: 1px solid var(--border); padding-top: 14px; }
+  .hero-offerings nav { gap: 6px 15px; margin-block: 8px; }
+  .hero-offering { padding-block: 8px; }
+  .hero-offering-text small { display: none; }
+  .hero-offering-text strong { font-size: 17px; }
+  .hero-scroll { bottom: 9px; }
+}
+@media (max-width: 420px) {
+  .hero-portrait-frame { height: 100%; min-height: 275px; }
+  .hero-offering-text strong { font-size: 16px; }
+}
