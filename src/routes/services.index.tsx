@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicesPage } from "@/components/Pages";
 
-export const Route = createFileRoute("/services")({
+export const Route = createFileRoute("/services/")({
   head: () => ({ meta: [
     { title: "Services | The Wisdom Bharat" },
     { name: "description", content: "Explore NLP, Reiki, Garbhsanskar and life and high-performance coaching." },

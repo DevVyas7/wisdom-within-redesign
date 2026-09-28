@@ -10,33 +10,219 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as BookConsultationRouteImport } from './routes/book-consultation'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as ProgramsRouteImport } from './routes/programs'
+import { Route as TermsAndConditionsRouteImport } from './routes/terms-and-conditions'
+import { Route as TestimonialsRouteImport } from './routes/testimonials'
+import { Route as TheBookRouteImport } from './routes/the-book'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as ServicesGarbhsanskarRouteImport } from './routes/services.garbhsanskar'
+import { Route as ServicesLifeCoachingRouteImport } from './routes/services.life-coaching'
+import { Route as ServicesNlpRouteImport } from './routes/services.nlp'
+import { Route as ServicesReikiRouteImport } from './routes/services.reiki'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookConsultationRoute = BookConsultationRouteImport.update({
+  id: '/book-consultation',
+  path: '/book-consultation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgramsRoute = ProgramsRouteImport.update({
+  id: '/programs',
+  path: '/programs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsAndConditionsRoute = TermsAndConditionsRouteImport.update({
+  id: '/terms-and-conditions',
+  path: '/terms-and-conditions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TestimonialsRoute = TestimonialsRouteImport.update({
+  id: '/testimonials',
+  path: '/testimonials',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TheBookRoute = TheBookRouteImport.update({
+  id: '/the-book',
+  path: '/the-book',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesGarbhsanskarRoute = ServicesGarbhsanskarRouteImport.update({
+  id: '/services/garbhsanskar',
+  path: '/services/garbhsanskar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesLifeCoachingRoute = ServicesLifeCoachingRouteImport.update({
+  id: '/services/life-coaching',
+  path: '/services/life-coaching',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesNlpRoute = ServicesNlpRouteImport.update({
+  id: '/services/nlp',
+  path: '/services/nlp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesReikiRoute = ServicesReikiRouteImport.update({
+  id: '/services/reiki',
+  path: '/services/reiki',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/book-consultation': typeof BookConsultationRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/programs': typeof ProgramsRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
+  '/testimonials': typeof TestimonialsRoute
+  '/the-book': typeof TheBookRoute
+  '/services/garbhsanskar': typeof ServicesGarbhsanskarRoute
+  '/services/life-coaching': typeof ServicesLifeCoachingRoute
+  '/services/nlp': typeof ServicesNlpRoute
+  '/services/reiki': typeof ServicesReikiRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/book-consultation': typeof BookConsultationRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/programs': typeof ProgramsRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
+  '/testimonials': typeof TestimonialsRoute
+  '/the-book': typeof TheBookRoute
+  '/services/garbhsanskar': typeof ServicesGarbhsanskarRoute
+  '/services/life-coaching': typeof ServicesLifeCoachingRoute
+  '/services/nlp': typeof ServicesNlpRoute
+  '/services/reiki': typeof ServicesReikiRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/book-consultation': typeof BookConsultationRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/programs': typeof ProgramsRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
+  '/testimonials': typeof TestimonialsRoute
+  '/the-book': typeof TheBookRoute
+  '/services/garbhsanskar': typeof ServicesGarbhsanskarRoute
+  '/services/life-coaching': typeof ServicesLifeCoachingRoute
+  '/services/nlp': typeof ServicesNlpRoute
+  '/services/reiki': typeof ServicesReikiRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/book-consultation'
+    | '/contact'
+    | '/faq'
+    | '/privacy-policy'
+    | '/programs'
+    | '/terms-and-conditions'
+    | '/testimonials'
+    | '/the-book'
+    | '/services/garbhsanskar'
+    | '/services/life-coaching'
+    | '/services/nlp'
+    | '/services/reiki'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/book-consultation'
+    | '/contact'
+    | '/faq'
+    | '/privacy-policy'
+    | '/programs'
+    | '/terms-and-conditions'
+    | '/testimonials'
+    | '/the-book'
+    | '/services/garbhsanskar'
+    | '/services/life-coaching'
+    | '/services/nlp'
+    | '/services/reiki'
+    | '/services'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/book-consultation'
+    | '/contact'
+    | '/faq'
+    | '/privacy-policy'
+    | '/programs'
+    | '/terms-and-conditions'
+    | '/testimonials'
+    | '/the-book'
+    | '/services/garbhsanskar'
+    | '/services/life-coaching'
+    | '/services/nlp'
+    | '/services/reiki'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  BookConsultationRoute: typeof BookConsultationRoute
+  ContactRoute: typeof ContactRoute
+  FaqRoute: typeof FaqRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  ProgramsRoute: typeof ProgramsRoute
+  TermsAndConditionsRoute: typeof TermsAndConditionsRoute
+  TestimonialsRoute: typeof TestimonialsRoute
+  TheBookRoute: typeof TheBookRoute
+  ServicesGarbhsanskarRoute: typeof ServicesGarbhsanskarRoute
+  ServicesLifeCoachingRoute: typeof ServicesLifeCoachingRoute
+  ServicesNlpRoute: typeof ServicesNlpRoute
+  ServicesReikiRoute: typeof ServicesReikiRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +234,123 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book-consultation': {
+      id: '/book-consultation'
+      path: '/book-consultation'
+      fullPath: '/book-consultation'
+      preLoaderRoute: typeof BookConsultationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programs': {
+      id: '/programs'
+      path: '/programs'
+      fullPath: '/programs'
+      preLoaderRoute: typeof ProgramsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms-and-conditions': {
+      id: '/terms-and-conditions'
+      path: '/terms-and-conditions'
+      fullPath: '/terms-and-conditions'
+      preLoaderRoute: typeof TermsAndConditionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/testimonials': {
+      id: '/testimonials'
+      path: '/testimonials'
+      fullPath: '/testimonials'
+      preLoaderRoute: typeof TestimonialsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/the-book': {
+      id: '/the-book'
+      path: '/the-book'
+      fullPath: '/the-book'
+      preLoaderRoute: typeof TheBookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/garbhsanskar': {
+      id: '/services/garbhsanskar'
+      path: '/services/garbhsanskar'
+      fullPath: '/services/garbhsanskar'
+      preLoaderRoute: typeof ServicesGarbhsanskarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/life-coaching': {
+      id: '/services/life-coaching'
+      path: '/services/life-coaching'
+      fullPath: '/services/life-coaching'
+      preLoaderRoute: typeof ServicesLifeCoachingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/nlp': {
+      id: '/services/nlp'
+      path: '/services/nlp'
+      fullPath: '/services/nlp'
+      preLoaderRoute: typeof ServicesNlpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/reiki': {
+      id: '/services/reiki'
+      path: '/services/reiki'
+      fullPath: '/services/reiki'
+      preLoaderRoute: typeof ServicesReikiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  BookConsultationRoute: BookConsultationRoute,
+  ContactRoute: ContactRoute,
+  FaqRoute: FaqRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  ProgramsRoute: ProgramsRoute,
+  TermsAndConditionsRoute: TermsAndConditionsRoute,
+  TestimonialsRoute: TestimonialsRoute,
+  TheBookRoute: TheBookRoute,
+  ServicesGarbhsanskarRoute: ServicesGarbhsanskarRoute,
+  ServicesLifeCoachingRoute: ServicesLifeCoachingRoute,
+  ServicesNlpRoute: ServicesNlpRoute,
+  ServicesReikiRoute: ServicesReikiRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
