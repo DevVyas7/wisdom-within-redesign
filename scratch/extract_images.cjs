@@ -1,0 +1,1 @@
+const fs = require("fs"); const html = fs.readFileSync("scratch/home.html", "utf8"); const regex = /\/\/img1\.wsimg\.com[^\s"'<>]+(?:jpg|jpeg|png)/ig; const matches = html.match(regex); if (matches) { const unique = [...new Set(matches)]; console.log(unique.join("\n")); } else { console.log("No matches"); }

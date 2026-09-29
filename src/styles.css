@@ -367,7 +367,7 @@ h1,h2,h3,blockquote { font-family: var(--font-display); font-weight: 500; letter
 .site-header { border-bottom-color: color-mix(in oklab,var(--foreground) 20%,transparent); }
 .brand,.footer-brand { font-family: var(--font-body); font-size: 13px; font-weight: 500; line-height: 1.05; letter-spacing: 0; }
 .brand b,.footer-brand b { font-size: 19px; font-weight: 700; letter-spacing: 0; }
-.brand img { border-radius: 0; }
+.brand img { border-radius: 50%; }
 .header-cta { background: var(--foreground); color: var(--background); }
 .hero { display: block; min-height: 0; background: var(--background); color: var(--foreground); overflow: visible; }
 .hero-spread { display: grid; grid-template-columns: minmax(0,4fr) minmax(0,5fr) minmax(0,3fr); align-items: stretch; gap: clamp(20px,2.5vw,38px); padding-block: clamp(38px,4vw,60px) 55px; min-height: min(690px,calc(100svh - 117px)); }

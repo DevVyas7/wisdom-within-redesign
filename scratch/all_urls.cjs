@@ -1,0 +1,1 @@
+const fs = require("fs"); const html = fs.readFileSync("scratch/home.html", "utf8"); const regex = /url\([^)]+\)/ig; let match; const urls = new Set(); while ((match = regex.exec(html)) !== null) { urls.add(match[0]); } console.log([...urls].join("\n"));

@@ -1,0 +1,1 @@
+const fs = require("fs"); const html = fs.readFileSync("scratch/home.html", "utf8"); const regex = /<iframe[^>]*src=["'](.*?)["']/ig; let match; while ((match = regex.exec(html)) !== null) { console.log(match[1]); }

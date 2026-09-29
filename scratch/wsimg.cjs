@@ -1,0 +1,1 @@
+const fs = require("fs"); const html = fs.readFileSync("scratch/home.html", "utf8"); const regex = /wsimg\.com\/isteam\/ip\/[^"'\s\)]+/g; const matches = html.match(regex); console.log([...new Set(matches)].join("\n"));

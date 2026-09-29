@@ -1,0 +1,1 @@
+fetch("https://thewisdombharat.com/").then(r=>r.text()).then(html=>{const regex=/<a[^>]+href=["']([^"']+)["']/g; let match; const links=new Set(); while((match=regex.exec(html))!==null){links.add(match[1]);} console.log(Array.from(links).filter(l => l.toLowerCase().includes("gallery")).join("\n"));});

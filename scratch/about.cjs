@@ -1,0 +1,1 @@
+const fs = require("fs"); const html = fs.readFileSync("scratch/home.html", "utf8"); const regex = /data-aid=["']ABOUT_DESCRIPTION_RENDERED[0-9]*["'][^>]*>([\s\S]*?)<\/(?:div|p|h)>/ig; let match; while ((match = regex.exec(html)) !== null) { console.log("---"); console.log(match[1].replace(/<[^>]*>?/gm, "").trim()); }

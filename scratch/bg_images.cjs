@@ -1,0 +1,1 @@
+const fs = require("fs"); const html = fs.readFileSync("scratch/home.html", "utf8"); const regex = /url\([^)]+\)/ig; const matches = html.match(regex); if (matches) { console.log([...new Set(matches)].join("\n")); } else { console.log("No background images"); }

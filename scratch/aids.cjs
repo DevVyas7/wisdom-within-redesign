@@ -1,0 +1,1 @@
+const fs = require("fs"); const html = fs.readFileSync("scratch/home.html", "utf8"); const regex = /data-aid=["']([^"']+)["']/ig; let match; const aids = new Set(); while ((match = regex.exec(html)) !== null) { aids.add(match[1]); } console.log([...aids].join("\n"));
