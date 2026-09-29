@@ -78,7 +78,7 @@ export const testimonials = [
 
 export const services = [
   { 
-    title: "Neuro-Linguistic Programming (NLP)", 
+    title: "NLP", 
     slug: "/services/nlp", 
     image: nlp, 
     eyebrow: "01 / MIND", 
