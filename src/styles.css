@@ -173,8 +173,8 @@
   --color-sage: var(--sage);
   --color-dark-surface: var(--dark-surface);
   --color-dark-text: var(--dark-text);
-  --font-display: "Abril Fatface", Georgia, serif;
-  --font-body: "Cabin", sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Source Sans 3", sans-serif;
 }
 html { scroll-behavior: smooth; }
 body { font-family: var(--font-body); }
@@ -361,7 +361,7 @@ h1,h2,h3,blockquote { font-family: var(--font-display); font-weight: 500; letter
 @media (max-width: 420px) { .service-grid { grid-template-columns: 1fr 1fr; } .service-card-title h3 { font-size: 23px; } .service-card-title svg { width: 16px; } .service-card-body p { font-size: 11px; } .hero h1 { font-size: 57px; } .hero-actions .action-link { width: 100%; } .steps-grid { grid-template-columns: 1fr; } .steps-grid > div { display: grid; grid-template-columns: 50px 1fr; column-gap: 10px; } .steps-grid p { grid-column: 2; } }
 @media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
 
-/* Editorial edition: dimensional paper, a founder-led cover, and a numbered index. */
+/* Editorial edition: dimensional paper, a reflective cover, and a numbered index. */
 .topline { background: var(--sage); color: var(--dark-text); }
 .topline .text-gold { color: var(--dark-text); }
 .site-header { border-bottom-color: color-mix(in oklab,var(--foreground) 20%,transparent); }
@@ -373,7 +373,7 @@ h1,h2,h3,blockquote { font-family: var(--font-display); font-weight: 500; letter
 .hero-spread { display: grid; grid-template-columns: minmax(0,4fr) minmax(0,5fr) minmax(0,3fr); align-items: stretch; gap: clamp(20px,2.5vw,38px); padding-block: clamp(38px,4vw,60px) 55px; min-height: min(690px,calc(100svh - 117px)); }
 .hero-editorial { display: flex; flex-direction: column; align-items: flex-start; padding-block: 15px; min-width: 0; }
 .hero .eyebrow { color: var(--primary); }
-.hero h1 { max-width: none; margin: clamp(35px,5vw,76px) 0 20px; font-size: clamp(52px,5.1vw,86px); line-height: .96; overflow-wrap: normal; }
+.hero h1 { max-width: none; margin: clamp(35px,5vw,76px) 0 20px; font-size: clamp(52px,5.1vw,86px); line-height: 1.02; overflow-wrap: normal; font-weight: 500; }
 .hero-period { color: var(--primary); }
 .hero-rule { width: 72px; height: 4px; background: var(--primary); margin-bottom: 23px; }
 .hero p { max-width: 330px; color: var(--muted-foreground); font-size: 17px; line-height: 1.55; }
@@ -383,7 +383,7 @@ h1,h2,h3,blockquote { font-family: var(--font-display); font-weight: 500; letter
 .hero-portrait::before { content: ''; position: absolute; inset: 14px 0 0 14px; border: 1px solid var(--sage); opacity: .6; }
 .hero-portrait-frame { position: relative; height: 100%; min-height: 570px; overflow: hidden; border-bottom: 8px solid var(--primary); transform: rotateY(-3deg); transform-origin: left center; transition: transform .7s ease; background: var(--dark-surface); }
 .hero-portrait:hover .hero-portrait-frame { transform: rotateY(0deg); }
-.hero-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 23%; }
+.hero-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 45%; }
 .hero-portrait-caption { position: absolute; left: 0; bottom: 0; padding: 13px 18px; background: var(--background); color: var(--foreground); font-size: 10px; font-weight: 700; letter-spacing: .1em; }
 .hero-portrait-caption span { color: var(--primary); }
 .hero-offerings { border-left: 1px solid var(--border); padding: 14px 0 14px clamp(18px,2vw,32px); display: flex; flex-direction: column; justify-content: center; min-width: 0; }
