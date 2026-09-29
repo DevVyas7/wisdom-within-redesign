@@ -11,6 +11,6 @@
 - [x] Verify desktop/mobile appearance, imagery, links, and interactions.
 
 # Homepage context refinement
-- [ ] Replace the opening founder portrait with a contextual image while retaining the founder section below.
-- [ ] Remove the location from the homepage opening and switch to a more fitting site-wide font pairing.
-- [ ] Verify desktop and mobile presentation and key interactions.
+- [x] Replace the opening founder portrait with a contextual image while retaining the founder section below.
+- [x] Remove the location from the homepage opening and switch to a more fitting site-wide font pairing.
+- [x] Verify desktop and mobile presentation and key interactions.
