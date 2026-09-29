@@ -15,7 +15,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   return <>
-    <div className="topline"><span>THE WISDOM BHARAT <span className="text-gold mx-3">✦</span> AWAKEN THE WISDOM WITHIN</span><span className="hidden sm:inline">BHUBANESWAR, INDIA</span></div>
+    <div className="topline"><span>THE WISDOM BHARAT <span className="text-gold mx-3">✦</span> AWAKEN THE WISDOM WITHIN</span></div>
     <header className="site-header">
       <div className="container-wide header-inner">
         <Link to="/" aria-label="The Wisdom Bharat home" onClick={() => setOpen(false)} className="brand"><img src={assets.logo} alt="The Wisdom Bharat logo" /><span>THE WISDOM<br/><b>BHARAT</b></span></Link>
