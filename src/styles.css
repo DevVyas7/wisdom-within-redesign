@@ -503,3 +503,44 @@ h1,h2,h3,blockquote { font-family: var(--font-display); font-weight: 500; letter
   .hero-portrait-frame { height: 100%; min-height: 275px; }
   .hero-offering-text strong { font-size: 16px; }
 }
+
+/* Give Fraunces' deep descenders room in every display setting. */
+h1,h2,h3,blockquote { padding-bottom: .12em; }
+.hero h1,.section-heading h2,.founder-copy h2,.book-copy h2,.highlight-layout h2,.page-header h1,.service-hero h1,.bottom-cta h2 { line-height: 1.13; }
+.service-card-title h3,.hero-offering-text strong,.related-links a,.program-row h2 { line-height: 1.18; }
+.brand,.footer-brand { line-height: 1.18; }
+
+/* A quiet editorial index instead of four boxed tiles. */
+.programs-section { background: var(--background); color: var(--foreground); }
+.programs-layout { display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); gap: clamp(45px,8vw,140px); align-items: start; }
+.programs-intro { padding-top: 14px; }
+.programs-intro .section-heading h2 { max-width: 440px; }
+.programs-intro .section-heading p { max-width: 360px; color: var(--muted-foreground); }
+.programs-intro .text-link { margin-top: 30px; color: var(--primary); }
+.program-index { border-top: 2px solid var(--foreground); }
+.program-index-link { display: grid; grid-template-columns: 48px minmax(0,1fr) 40px; align-items: center; column-gap: clamp(14px,2vw,30px); min-height: 112px; padding: 20px 0; border-bottom: 1px solid var(--border); transition: padding .25s ease, background-color .25s ease; }
+.program-index-link:hover,.program-index-link:focus-visible { padding-left: 16px; background: var(--muted); }
+.program-index-number { align-self: start; padding-top: 6px; font: 700 12px/1.5 var(--font-body); color: var(--primary); }
+.program-index-link h3 { max-width: 520px; font-size: clamp(27px,2.5vw,38px); line-height: 1.17; }
+.program-index-arrow { width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid var(--border); border-radius: 50%; color: var(--primary); transition: background-color .25s ease,color .25s ease; }
+.program-index-link:hover .program-index-arrow { background: var(--primary); color: var(--primary-foreground); }
+.achievements-section { background: var(--background); }
+.achievements-layout { display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); gap: clamp(45px,8vw,140px); }
+.achievements-layout h2 { margin: 16px 0; font-size: clamp(42px,4.5vw,68px); line-height: 1.13; }
+.achievements-layout > div:first-child > p { color: var(--muted-foreground); }
+.achievements-list { border-top: 2px solid var(--foreground); }
+.achievement { display: grid; grid-template-columns: 48px 1fr; gap: 24px; padding: 22px 0; border-bottom: 1px solid var(--border); }
+.achievement-number { color: var(--primary); font-size: 12px; font-weight: 700; }
+.achievement h3 { font-size: clamp(24px,2.3vw,34px); line-height: 1.17; }
+.achievement p { margin-top: 4px; color: var(--muted-foreground); line-height: 1.55; }
+@supports (animation-timeline: view()) {
+  @keyframes editorial-reveal { from { transform: translateY(16px); opacity: .78; } to { transform: translateY(0); opacity: 1; } }
+}
+@media (max-width: 700px) {
+  .programs-layout,.achievements-layout { grid-template-columns: minmax(0,1fr); gap: 35px; }
+  .program-index-link { grid-template-columns: 30px minmax(0,1fr) 36px; gap: 10px; min-height: 90px; padding-block: 16px; }
+  .program-index-link h3 { font-size: clamp(24px,7vw,32px); }
+  .program-index-arrow { width: 36px; height: 36px; }
+  .achievement { grid-template-columns: 30px 1fr; gap: 12px; }
+  .hero h1,.section-heading h2,.page-header h1,.service-hero h1 { overflow-wrap: anywhere; }
+}

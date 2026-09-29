@@ -12,6 +12,14 @@ export const bookingUrl = "https://brand.thewisdombharat.com/widget/booking/ZVdu
 export const whatsappUrl = "https://wa.me/919178112471";
 export const email = "thewisdombharat@gmail.com";
 export const bookUrl = "https://www.amazon.in/Awaken-Your-Ultimate-High-Performance-System/dp/B0CCMG3717";
+// Wording follows the founder profile published at thewisdombharat.com.
+export const founderAchievements = [
+  { label: "Author", detail: "Awaken Your Ultimate High-Performance System" },
+  { label: "Reiki Master", detail: "Reiki healing and training" },
+  { label: "Certified NLP Practitioner", detail: "Neuro-Linguistic Programming" },
+  { label: "10+ years", detail: "In human transformation, as stated on the original site" },
+  { label: "PhD in Reiki (continuing)", detail: "Listed as in progress on the original website" },
+] as const;
 export const services = [
   { title: "NLP", slug: "/services/nlp", image: nlp, eyebrow: "01 / MIND", summary: "Explore patterns of thought and build new perspectives through Neuro-Linguistic Programming.", detail: "NLP sessions focus on identifying and reframing beliefs, fears and emotional patterns. The original practice describes techniques including anchoring, timeline therapy and subconscious reframing.", points: ["Explore limiting beliefs", "Develop new thought patterns", "Work toward clarity and self-awareness"] },
   { title: "Reiki", slug: "/services/reiki", image: reiki, eyebrow: "02 / ENERGY", summary: "A gentle energy practice inviting space for rest, balance and reconnection.", detail: "Reiki is a Japanese energy healing practice offered by The Wisdom Bharat. Sessions create a quiet space for relaxation and reflection; Reiki training is also offered across Levels 1–3.", points: ["One-to-one Reiki sessions", "A calm and restorative setting", "Reiki training, Levels 1–3"] },
