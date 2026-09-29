@@ -18,7 +18,7 @@ export const founderAchievements = [
   { label: "Reiki Master", detail: "Reiki healing and training" },
   { label: "Certified NLP Practitioner", detail: "Neuro-Linguistic Programming" },
   { label: "10+ years", detail: "In human transformation, as stated on the original site" },
-  { label: "PhD in Reiki", detail: "Continuing — not a completed degree" },
+  { label: "PhD in Reiki (continuing)", detail: "Listed as in progress on the original website" },
 ] as const;
 export const services = [
   { title: "NLP", slug: "/services/nlp", image: nlp, eyebrow: "01 / MIND", summary: "Explore patterns of thought and build new perspectives through Neuro-Linguistic Programming.", detail: "NLP sessions focus on identifying and reframing beliefs, fears and emotional patterns. The original practice describes techniques including anchoring, timeline therapy and subconscious reframing.", points: ["Explore limiting beliefs", "Develop new thought patterns", "Work toward clarity and self-awareness"] },

@@ -16,6 +16,6 @@
 - [x] Verify desktop and mobile presentation and key interactions.
 
 # About and presentation polish
-- [ ] Add the founder's source-verified achievements to About.
-- [ ] Redesign the homepage programs presentation.
-- [ ] Resolve clipped letterforms and verify both pages at desktop and mobile sizes.
+- [x] Add the founder's source-verified achievements to About.
+- [x] Redesign the homepage programs presentation.
+- [x] Resolve clipped letterforms and verify both pages at desktop and mobile sizes.
