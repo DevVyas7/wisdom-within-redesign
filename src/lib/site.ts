@@ -5,9 +5,9 @@ import coaching from "@/assets/coaching.jpg";
 import logo from "@/assets/wisdom-logo.jpg.asset.json";
 import founder from "@/assets/founder-pr.jpg.asset.json";
 import book from "@/assets/wisdom-book.jpg.asset.json";
-import reflection from "@/assets/home-reflection.jpg";
+import yoga from "@/assets/home-yoga-nature.jpg";
 
-export const assets = { logo: logo.url, founder: founder.url, book: book.url, reflection, nlp, reiki, garbhsanskar, coaching };
+export const assets = { logo: logo.url, founder: founder.url, book: book.url, yoga, nlp, reiki, garbhsanskar, coaching };
 export const bookingUrl = "https://brand.thewisdombharat.com/widget/booking/ZVduiLYZzsRTOzyxDjC0";
 export const whatsappUrl = "https://wa.me/919178112471";
 export const email = "thewisdombharat@gmail.com";
