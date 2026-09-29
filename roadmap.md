@@ -14,3 +14,8 @@
 - [x] Replace the opening founder portrait with a contextual image while retaining the founder section below.
 - [x] Remove the location from the homepage opening and switch to a more fitting site-wide font pairing.
 - [x] Verify desktop and mobile presentation and key interactions.
+
+# About and presentation polish
+- [ ] Add the founder's source-verified achievements to About.
+- [ ] Redesign the homepage programs presentation.
+- [ ] Resolve clipped letterforms and verify both pages at desktop and mobile sizes.
