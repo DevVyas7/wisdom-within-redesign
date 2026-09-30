@@ -8,7 +8,7 @@ import reikiCert from "@/assets/reiki-cert.png";
 import reikiMasterCert from "@/assets/reiki-master-cert.png";
 import logoClean from "@/assets/logo-clean.png";
 const heroVideo = "/hero-video.mp4";
-import heroGif from "@/assets/hero-video.gif";
+const heroGif = "/hero-video.gif";
 
 const founder = { url: "https://img1.wsimg.com/isteam/ip/f781fbeb-6590-4b29-9a04-a94f51cadf95/blob-07898e5.png" };
 const book = { url: "https://img1.wsimg.com/isteam/ip/f781fbeb-6590-4b29-9a04-a94f51cadf95/BookCover.jpg" };

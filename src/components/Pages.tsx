@@ -8,65 +8,14 @@ import { assets, bookingUrl, bookUrl, email, faqs, founderAchievements, programs
 export function ServiceCards() { return <div className="service-grid">{services.map((s) => <Link className="service-card" to={s.slug} key={s.slug}><div className="service-image"><img src={s.image} alt={`${s.title} session`} loading="lazy" width={1024} height={768}/></div><div className="service-card-body"><span className="eyebrow">{s.eyebrow}</span><div className="service-card-title"><h3>{s.title}</h3><ArrowRight size={19}/></div><p>{s.summary}</p></div></Link>)}</div>; }
 export function FaqList({ limit }: { limit?: number }) { return <div className="faq-list">{faqs.slice(0, limit).map((f,i) => <details key={f.q}><summary><span className="faq-num">0{i+1}</span>{f.q}<span className="faq-plus">+</span></summary><p>{f.a}</p></details>)}</div>; }
 export function HomePage() { 
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [reducedMotion, setReducedMotion] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReducedMotion(mq.matches);
-
-    const handleChange = (e: MediaQueryListEvent) => {
-      setReducedMotion(e.matches);
-    };
-
-    if (mq.addEventListener) {
-      mq.addEventListener("change", handleChange);
-    }
-
-    if (videoRef.current && !mq.matches) {
-      videoRef.current.defaultMuted = true;
-      videoRef.current.muted = true;
-      const playPromise = videoRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {});
-      }
-    }
-
-    return () => {
-      if (mq.removeEventListener) {
-        mq.removeEventListener("change", handleChange);
-      }
-    };
-  }, []);
-
   return <>
     <section className="hero-video-section">
-      {!reducedMotion ? (
-        <video
-          ref={videoRef}
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster={assets.yoga}
-          className="hero-video-media"
-          aria-hidden="true"
-        >
-          <source src="/hero-video.mp4" type="video/mp4" />
-          <img
-            src={assets.heroGif || assets.yoga}
-            alt="The Wisdom Bharat peaceful dawn practice"
-            className="hero-video-fallback"
-          />
-        </video>
-      ) : (
-        <img
-          src={assets.yoga}
-          alt="The Wisdom Bharat peaceful dawn practice"
-          className="hero-video-fallback"
-          aria-hidden="true"
-        />
-      )}
+      <img
+        src="/hero-video.gif"
+        alt="The Wisdom Bharat peaceful dawn practice"
+        className="hero-video-media"
+        aria-hidden="true"
+      />
 
       <div className="hero-video-overlay" aria-hidden="true" />
 
