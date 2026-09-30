@@ -52,7 +52,6 @@ export function HomePage() {
           className="hero-video-media"
           aria-hidden="true"
         >
-          <source src={assets.heroVideo} type="video/mp4" />
           <source src="/hero-video.mp4" type="video/mp4" />
           <img
             src={assets.heroGif || assets.yoga}

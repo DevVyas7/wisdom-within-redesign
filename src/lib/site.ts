@@ -7,7 +7,7 @@ import nlpCert from "@/assets/nlp-cert.png";
 import reikiCert from "@/assets/reiki-cert.png";
 import reikiMasterCert from "@/assets/reiki-master-cert.png";
 import logoClean from "@/assets/logo-clean.png";
-import heroVideo from "@/assets/hero-video.mp4";
+const heroVideo = "/hero-video.mp4";
 import heroGif from "@/assets/hero-video.gif";
 
 const founder = { url: "https://img1.wsimg.com/isteam/ip/f781fbeb-6590-4b29-9a04-a94f51cadf95/blob-07898e5.png" };
