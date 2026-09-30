@@ -1,0 +1,892 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/SiteShell.tsx");const useState = __vite__cjsImport0_react["useState"];const _jsxDEV = __vite__cjsImport5_react_jsxDevRuntime["jsxDEV"]; const _Fragment = __vite__cjsImport5_react_jsxDevRuntime["Fragment"];import __vite__cjsImport0_react from "/node_modules/.vite/deps/react.js?v=4e886239";
+import { Link } from "/node_modules/@tanstack/react-router/dist/esm/index.dev.js?v=4e886239";
+import { ArrowRight, ChevronDown, Instagram, Mail, Menu, Phone, X } from "/node_modules/.vite/deps/lucide-react.js?v=4e886239";
+import { Button } from "/src/components/ui/button.tsx";
+import { assets, bookingUrl, email, services, whatsappUrl } from "/src/lib/site.ts";
+var _jsxFileName = "E:/the wisdom bharat/wisdom-within-redesign/src/components/SiteShell.tsx";
+import __vite__cjsImport5_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=4e886239";
+var _s = $RefreshSig$();
+const links = [
+	{
+		label: "Home",
+		to: "/"
+	},
+	{
+		label: "About",
+		to: "/about"
+	},
+	{
+		label: "Programs",
+		to: "/programs"
+	},
+	{
+		label: "The Book",
+		to: "/the-book"
+	},
+	{
+		label: "FAQ",
+		to: "/faq"
+	},
+	{
+		label: "Contact",
+		to: "/contact"
+	}
+];
+export function SiteShell({ children }) {
+	_s();
+	const [open, setOpen] = useState(false);
+	const [servicesOpen, setServicesOpen] = useState(false);
+	return /* @__PURE__ */ _jsxDEV(_Fragment, { children: [
+		/* @__PURE__ */ _jsxDEV("div", {
+			className: "topline",
+			"data-tsd-source": "/src/components/SiteShell.tsx:20:5",
+			children: /* @__PURE__ */ _jsxDEV("span", {
+				"data-tsd-source": "/src/components/SiteShell.tsx:20:30",
+				children: [
+					"THE WISDOM BHARAT ",
+					/* @__PURE__ */ _jsxDEV("span", {
+						className: "text-gold mx-3",
+						"data-tsd-source": "/src/components/SiteShell.tsx:20:54",
+						children: "✦"
+					}, void 0, false, {
+						fileName: _jsxFileName,
+						lineNumber: 20,
+						columnNumber: 161
+					}, this),
+					" AWAKEN THE WISDOM WITHIN"
+				]
+			}, void 0, true, {
+				fileName: _jsxFileName,
+				lineNumber: 20,
+				columnNumber: 83
+			}, this)
+		}, void 0, false, {
+			fileName: _jsxFileName,
+			lineNumber: 20,
+			columnNumber: 5
+		}, this),
+		/* @__PURE__ */ _jsxDEV("header", {
+			className: "site-header",
+			"data-tsd-source": "/src/components/SiteShell.tsx:21:5",
+			children: [/* @__PURE__ */ _jsxDEV("div", {
+				className: "container-wide header-inner",
+				"data-tsd-source": "/src/components/SiteShell.tsx:22:7",
+				children: [
+					/* @__PURE__ */ _jsxDEV(Link, {
+						to: "/",
+						"aria-label": "The Wisdom Bharat home",
+						onClick: () => setOpen(false),
+						className: "brand",
+						"data-tsd-source": "/src/components/SiteShell.tsx:23:9",
+						children: [/* @__PURE__ */ _jsxDEV("img", {
+							src: assets.logo,
+							alt: "The Wisdom Bharat logo",
+							"data-tsd-source": "/src/components/SiteShell.tsx:23:107"
+						}, void 0, false, {
+							fileName: _jsxFileName,
+							lineNumber: 23,
+							columnNumber: 160
+						}, this), /* @__PURE__ */ _jsxDEV("span", {
+							"data-tsd-source": "/src/components/SiteShell.tsx:23:161",
+							children: [
+								"THE WISDOM",
+								/* @__PURE__ */ _jsxDEV("br", { "data-tsd-source": "/src/components/SiteShell.tsx:23:177" }, void 0, false, {
+									fileName: _jsxFileName,
+									lineNumber: 23,
+									columnNumber: 340
+								}, this),
+								/* @__PURE__ */ _jsxDEV("b", {
+									"data-tsd-source": "/src/components/SiteShell.tsx:23:182",
+									children: "BHARAT"
+								}, void 0, false, {
+									fileName: _jsxFileName,
+									lineNumber: 23,
+									columnNumber: 400
+								}, this)
+							]
+						}, void 0, true, {
+							fileName: _jsxFileName,
+							lineNumber: 23,
+							columnNumber: 269
+						}, this)]
+					}, void 0, true, {
+						fileName: _jsxFileName,
+						lineNumber: 23,
+						columnNumber: 9
+					}, this),
+					/* @__PURE__ */ _jsxDEV("nav", {
+						className: "desktop-nav",
+						"aria-label": "Main navigation",
+						"data-tsd-source": "/src/components/SiteShell.tsx:24:9",
+						children: [
+							links.slice(0, 2).map((l) => /* @__PURE__ */ _jsxDEV(Link, {
+								to: l.to,
+								activeProps: { className: "active" },
+								"data-tsd-source": "/src/components/SiteShell.tsx:25:38",
+								children: l.label
+							}, l.to, false, {
+								fileName: _jsxFileName,
+								lineNumber: 25,
+								columnNumber: 38
+							}, this)),
+							/* @__PURE__ */ _jsxDEV("div", {
+								className: "nav-dropdown",
+								"data-tsd-source": "/src/components/SiteShell.tsx:26:11",
+								children: [/* @__PURE__ */ _jsxDEV(Link, {
+									to: "/services",
+									activeProps: { className: "active" },
+									"data-tsd-source": "/src/components/SiteShell.tsx:26:41",
+									children: ["Services ", /* @__PURE__ */ _jsxDEV(ChevronDown, {
+										size: 13,
+										"data-tsd-source": "/src/components/SiteShell.tsx:26:109"
+									}, void 0, false, {
+										fileName: _jsxFileName,
+										lineNumber: 26,
+										columnNumber: 217
+									}, this)]
+								}, void 0, true, {
+									fileName: _jsxFileName,
+									lineNumber: 26,
+									columnNumber: 95
+								}, this), /* @__PURE__ */ _jsxDEV("div", {
+									className: "dropdown-panel",
+									"data-tsd-source": "/src/components/SiteShell.tsx:26:140",
+									children: services.map((s) => /* @__PURE__ */ _jsxDEV(Link, {
+										to: s.slug,
+										"data-tsd-source": "/src/components/SiteShell.tsx:26:191",
+										children: s.title
+									}, s.slug, false, {
+										fileName: _jsxFileName,
+										lineNumber: 26,
+										columnNumber: 409
+									}, this))
+								}, void 0, false, {
+									fileName: _jsxFileName,
+									lineNumber: 26,
+									columnNumber: 303
+								}, this)]
+							}, void 0, true, {
+								fileName: _jsxFileName,
+								lineNumber: 26,
+								columnNumber: 11
+							}, this),
+							links.slice(2).map((l) => /* @__PURE__ */ _jsxDEV(Link, {
+								to: l.to,
+								activeProps: { className: "active" },
+								"data-tsd-source": "/src/components/SiteShell.tsx:27:36",
+								children: l.label
+							}, l.to, false, {
+								fileName: _jsxFileName,
+								lineNumber: 27,
+								columnNumber: 36
+							}, this))
+						]
+					}, void 0, true, {
+						fileName: _jsxFileName,
+						lineNumber: 24,
+						columnNumber: 9
+					}, this),
+					/* @__PURE__ */ _jsxDEV(Button, {
+						asChild: true,
+						className: "header-cta hidden xl:inline-flex",
+						"data-tsd-source": "/src/components/SiteShell.tsx:29:9",
+						children: /* @__PURE__ */ _jsxDEV(Link, {
+							to: "/book-consultation",
+							"data-tsd-source": "/src/components/SiteShell.tsx:29:70",
+							children: ["Book a Consultation ", /* @__PURE__ */ _jsxDEV(ArrowRight, {
+								size: 15,
+								"data-tsd-source": "/src/components/SiteShell.tsx:29:120"
+							}, void 0, false, {
+								fileName: _jsxFileName,
+								lineNumber: 29,
+								columnNumber: 227
+							}, this)]
+						}, void 0, true, {
+							fileName: _jsxFileName,
+							lineNumber: 29,
+							columnNumber: 123
+						}, this)
+					}, void 0, false, {
+						fileName: _jsxFileName,
+						lineNumber: 29,
+						columnNumber: 9
+					}, this),
+					/* @__PURE__ */ _jsxDEV(Button, {
+						variant: "ghost",
+						size: "icon",
+						className: "mobile-menu-button",
+						"aria-label": open ? "Close menu" : "Open menu",
+						"aria-expanded": open,
+						onClick: () => setOpen(!open),
+						"data-tsd-source": "/src/components/SiteShell.tsx:30:9",
+						children: open ? /* @__PURE__ */ _jsxDEV(X, { "data-tsd-source": "/src/components/SiteShell.tsx:30:183" }, void 0, false, {
+							fileName: _jsxFileName,
+							lineNumber: 30,
+							columnNumber: 236
+						}, this) : /* @__PURE__ */ _jsxDEV(Menu, { "data-tsd-source": "/src/components/SiteShell.tsx:30:190" }, void 0, false, {
+							fileName: _jsxFileName,
+							lineNumber: 30,
+							columnNumber: 298
+						}, this)
+					}, void 0, false, {
+						fileName: _jsxFileName,
+						lineNumber: 30,
+						columnNumber: 9
+					}, this)
+				]
+			}, void 0, true, {
+				fileName: _jsxFileName,
+				lineNumber: 22,
+				columnNumber: 7
+			}, this), open && /* @__PURE__ */ _jsxDEV("nav", {
+				className: "mobile-nav",
+				"aria-label": "Mobile navigation",
+				"data-tsd-source": "/src/components/SiteShell.tsx:32:16",
+				children: [
+					links.slice(0, 2).map((l) => /* @__PURE__ */ _jsxDEV(Link, {
+						to: l.to,
+						onClick: () => setOpen(false),
+						"data-tsd-source": "/src/components/SiteShell.tsx:33:36",
+						children: l.label
+					}, l.to, false, {
+						fileName: _jsxFileName,
+						lineNumber: 33,
+						columnNumber: 36
+					}, this)),
+					/* @__PURE__ */ _jsxDEV("div", {
+						className: "mobile-service-row",
+						"data-tsd-source": "/src/components/SiteShell.tsx:34:9",
+						children: [/* @__PURE__ */ _jsxDEV(Link, {
+							to: "/services",
+							onClick: () => setOpen(false),
+							"data-tsd-source": "/src/components/SiteShell.tsx:34:45",
+							children: "Services"
+						}, void 0, false, {
+							fileName: _jsxFileName,
+							lineNumber: 34,
+							columnNumber: 98
+						}, this), /* @__PURE__ */ _jsxDEV(Button, {
+							variant: "ghost",
+							size: "icon",
+							"aria-label": "Toggle services",
+							"aria-expanded": servicesOpen,
+							onClick: () => setServicesOpen(!servicesOpen),
+							"data-tsd-source": "/src/components/SiteShell.tsx:34:112",
+							children: /* @__PURE__ */ _jsxDEV(ChevronDown, {
+								size: 18,
+								"data-tsd-source": "/src/components/SiteShell.tsx:34:253"
+							}, void 0, false, {
+								fileName: _jsxFileName,
+								lineNumber: 34,
+								columnNumber: 415
+							}, this)
+						}, void 0, false, {
+							fileName: _jsxFileName,
+							lineNumber: 34,
+							columnNumber: 219
+						}, this)]
+					}, void 0, true, {
+						fileName: _jsxFileName,
+						lineNumber: 34,
+						columnNumber: 9
+					}, this),
+					servicesOpen && /* @__PURE__ */ _jsxDEV("div", {
+						className: "mobile-subnav",
+						"data-tsd-source": "/src/components/SiteShell.tsx:35:26",
+						children: services.map((s) => /* @__PURE__ */ _jsxDEV(Link, {
+							to: s.slug,
+							onClick: () => setOpen(false),
+							"data-tsd-source": "/src/components/SiteShell.tsx:35:76",
+							children: s.title
+						}, s.slug, false, {
+							fileName: _jsxFileName,
+							lineNumber: 35,
+							columnNumber: 130
+						}, this))
+					}, void 0, false, {
+						fileName: _jsxFileName,
+						lineNumber: 35,
+						columnNumber: 26
+					}, this),
+					links.slice(2).map((l) => /* @__PURE__ */ _jsxDEV(Link, {
+						to: l.to,
+						onClick: () => setOpen(false),
+						"data-tsd-source": "/src/components/SiteShell.tsx:36:34",
+						children: l.label
+					}, l.to, false, {
+						fileName: _jsxFileName,
+						lineNumber: 36,
+						columnNumber: 34
+					}, this)),
+					/* @__PURE__ */ _jsxDEV(Link, {
+						className: "mobile-book",
+						to: "/book-consultation",
+						onClick: () => setOpen(false),
+						"data-tsd-source": "/src/components/SiteShell.tsx:37:9",
+						children: ["Book a Consultation ", /* @__PURE__ */ _jsxDEV(ArrowRight, {
+							size: 17,
+							"data-tsd-source": "/src/components/SiteShell.tsx:37:114"
+						}, void 0, false, {
+							fileName: _jsxFileName,
+							lineNumber: 37,
+							columnNumber: 167
+						}, this)]
+					}, void 0, true, {
+						fileName: _jsxFileName,
+						lineNumber: 37,
+						columnNumber: 9
+					}, this)
+				]
+			}, void 0, true, {
+				fileName: _jsxFileName,
+				lineNumber: 32,
+				columnNumber: 16
+			}, this)]
+		}, void 0, true, {
+			fileName: _jsxFileName,
+			lineNumber: 21,
+			columnNumber: 5
+		}, this),
+		/* @__PURE__ */ _jsxDEV("main", {
+			"data-tsd-source": "/src/components/SiteShell.tsx:40:5",
+			children
+		}, void 0, false, {
+			fileName: _jsxFileName,
+			lineNumber: 40,
+			columnNumber: 5
+		}, this),
+		/* @__PURE__ */ _jsxDEV("footer", {
+			className: "footer",
+			"data-tsd-source": "/src/components/SiteShell.tsx:41:5",
+			children: [/* @__PURE__ */ _jsxDEV("div", {
+				className: "container-wide footer-grid",
+				"data-tsd-source": "/src/components/SiteShell.tsx:41:32",
+				children: [
+					/* @__PURE__ */ _jsxDEV("div", {
+						"data-tsd-source": "/src/components/SiteShell.tsx:42:7",
+						children: [
+							/* @__PURE__ */ _jsxDEV(Link, {
+								to: "/",
+								className: "footer-brand",
+								"data-tsd-source": "/src/components/SiteShell.tsx:42:12",
+								children: [/* @__PURE__ */ _jsxDEV("img", {
+									src: assets.logo,
+									alt: "",
+									"data-tsd-source": "/src/components/SiteShell.tsx:42:50"
+								}, void 0, false, {
+									fileName: _jsxFileName,
+									lineNumber: 42,
+									columnNumber: 157
+								}, this), /* @__PURE__ */ _jsxDEV("span", {
+									"data-tsd-source": "/src/components/SiteShell.tsx:42:81",
+									children: [
+										"THE WISDOM",
+										/* @__PURE__ */ _jsxDEV("br", { "data-tsd-source": "/src/components/SiteShell.tsx:42:97" }, void 0, false, {
+											fileName: _jsxFileName,
+											lineNumber: 42,
+											columnNumber: 312
+										}, this),
+										/* @__PURE__ */ _jsxDEV("b", {
+											"data-tsd-source": "/src/components/SiteShell.tsx:42:102",
+											children: "BHARAT"
+										}, void 0, false, {
+											fileName: _jsxFileName,
+											lineNumber: 42,
+											columnNumber: 371
+										}, this)
+									]
+								}, void 0, true, {
+									fileName: _jsxFileName,
+									lineNumber: 42,
+									columnNumber: 242
+								}, this)]
+							}, void 0, true, {
+								fileName: _jsxFileName,
+								lineNumber: 42,
+								columnNumber: 65
+							}, this),
+							/* @__PURE__ */ _jsxDEV("p", {
+								"data-tsd-source": "/src/components/SiteShell.tsx:42:129",
+								children: "Awaken the wisdom within."
+							}, void 0, false, {
+								fileName: _jsxFileName,
+								lineNumber: 42,
+								columnNumber: 453
+							}, this),
+							/* @__PURE__ */ _jsxDEV("p", {
+								"data-tsd-source": "/src/components/SiteShell.tsx:42:161",
+								children: "Mind. Energy. Conscious living."
+							}, void 0, false, {
+								fileName: _jsxFileName,
+								lineNumber: 42,
+								columnNumber: 540
+							}, this)
+						]
+					}, void 0, true, {
+						fileName: _jsxFileName,
+						lineNumber: 42,
+						columnNumber: 7
+					}, this),
+					/* @__PURE__ */ _jsxDEV("div", {
+						"data-tsd-source": "/src/components/SiteShell.tsx:43:7",
+						children: [
+							/* @__PURE__ */ _jsxDEV("h3", {
+								"data-tsd-source": "/src/components/SiteShell.tsx:43:12",
+								children: "Explore"
+							}, void 0, false, {
+								fileName: _jsxFileName,
+								lineNumber: 43,
+								columnNumber: 65
+							}, this),
+							/* @__PURE__ */ _jsxDEV(Link, {
+								to: "/about",
+								"data-tsd-source": "/src/components/SiteShell.tsx:43:28",
+								children: "About"
+							}, void 0, false, {
+								fileName: _jsxFileName,
+								lineNumber: 43,
+								columnNumber: 135
+							}, this),
+							/* @__PURE__ */ _jsxDEV(Link, {
+								to: "/services",
+								"data-tsd-source": "/src/components/SiteShell.tsx:43:58",
+								children: "Services"
+							}, void 0, false, {
+								fileName: _jsxFileName,
+								lineNumber: 43,
+								columnNumber: 219
+							}, this),
+							/* @__PURE__ */ _jsxDEV(Link, {
+								to: "/programs",
+								"data-tsd-source": "/src/components/SiteShell.tsx:43:94",
+								children: "Programs"
+							}, void 0, false, {
+								fileName: _jsxFileName,
+								lineNumber: 43,
+								columnNumber: 309
+							}, this),
+							/* @__PURE__ */ _jsxDEV(Link, {
+								to: "/the-book",
+								"data-tsd-source": "/src/components/SiteShell.tsx:43:130",
+								children: "The Book"
+							}, void 0, false, {
+								fileName: _jsxFileName,
+								lineNumber: 43,
+								columnNumber: 399
+							}, this),
+							/* @__PURE__ */ _jsxDEV(Link, {
+								to: "/",
+								hash: "experiences",
+								"data-tsd-source": "/src/components/SiteShell.tsx:43:166",
+								children: "Testimonials"
+							}, void 0, false, {
+								fileName: _jsxFileName,
+								lineNumber: 43,
+								columnNumber: 490
+							}, this)
+						]
+					}, void 0, true, {
+						fileName: _jsxFileName,
+						lineNumber: 43,
+						columnNumber: 7
+					}, this),
+					/* @__PURE__ */ _jsxDEV("div", {
+						"data-tsd-source": "/src/components/SiteShell.tsx:44:7",
+						children: [
+							/* @__PURE__ */ _jsxDEV("h3", {
+								"data-tsd-source": "/src/components/SiteShell.tsx:44:12",
+								children: "Support"
+							}, void 0, false, {
+								fileName: _jsxFileName,
+								lineNumber: 44,
+								columnNumber: 65
+							}, this),
+							/* @__PURE__ */ _jsxDEV(Link, {
+								to: "/faq",
+								"data-tsd-source": "/src/components/SiteShell.tsx:44:28",
+								children: "FAQ"
+							}, void 0, false, {
+								fileName: _jsxFileName,
+								lineNumber: 44,
+								columnNumber: 135
+							}, this),
+							/* @__PURE__ */ _jsxDEV(Link, {
+								to: "/contact",
+								"data-tsd-source": "/src/components/SiteShell.tsx:44:54",
+								children: "Contact"
+							}, void 0, false, {
+								fileName: _jsxFileName,
+								lineNumber: 44,
+								columnNumber: 215
+							}, this),
+							/* @__PURE__ */ _jsxDEV(Link, {
+								to: "/book-consultation",
+								"data-tsd-source": "/src/components/SiteShell.tsx:44:88",
+								children: "Book a Consultation"
+							}, void 0, false, {
+								fileName: _jsxFileName,
+								lineNumber: 44,
+								columnNumber: 303
+							}, this),
+							/* @__PURE__ */ _jsxDEV(Link, {
+								to: "/privacy-policy",
+								"data-tsd-source": "/src/components/SiteShell.tsx:44:144",
+								children: "Privacy Policy"
+							}, void 0, false, {
+								fileName: _jsxFileName,
+								lineNumber: 44,
+								columnNumber: 413
+							}, this),
+							/* @__PURE__ */ _jsxDEV(Link, {
+								to: "/terms-and-conditions",
+								"data-tsd-source": "/src/components/SiteShell.tsx:44:192",
+								children: "Terms & Conditions"
+							}, void 0, false, {
+								fileName: _jsxFileName,
+								lineNumber: 44,
+								columnNumber: 516
+							}, this)
+						]
+					}, void 0, true, {
+						fileName: _jsxFileName,
+						lineNumber: 44,
+						columnNumber: 7
+					}, this),
+					/* @__PURE__ */ _jsxDEV("div", {
+						"data-tsd-source": "/src/components/SiteShell.tsx:45:7",
+						children: [
+							/* @__PURE__ */ _jsxDEV("h3", {
+								"data-tsd-source": "/src/components/SiteShell.tsx:45:12",
+								children: "Get in touch"
+							}, void 0, false, {
+								fileName: _jsxFileName,
+								lineNumber: 45,
+								columnNumber: 65
+							}, this),
+							/* @__PURE__ */ _jsxDEV("p", {
+								"data-tsd-source": "/src/components/SiteShell.tsx:45:33",
+								children: [
+									"Jayadev Vihar, Bhubaneswar",
+									/* @__PURE__ */ _jsxDEV("br", { "data-tsd-source": "/src/components/SiteShell.tsx:45:62" }, void 0, false, {
+										fileName: _jsxFileName,
+										lineNumber: 45,
+										columnNumber: 223
+									}, this),
+									"Odisha, India"
+								]
+							}, void 0, true, {
+								fileName: _jsxFileName,
+								lineNumber: 45,
+								columnNumber: 140
+							}, this),
+							/* @__PURE__ */ _jsxDEV("a", {
+								href: "tel:+919437085701",
+								"data-tsd-source": "/src/components/SiteShell.tsx:45:84",
+								children: [/* @__PURE__ */ _jsxDEV(Phone, {
+									size: 15,
+									"data-tsd-source": "/src/components/SiteShell.tsx:45:112"
+								}, void 0, false, {
+									fileName: _jsxFileName,
+									lineNumber: 45,
+									columnNumber: 381
+								}, this), " +91 94370 85701"]
+							}, void 0, true, {
+								fileName: _jsxFileName,
+								lineNumber: 45,
+								columnNumber: 299
+							}, this),
+							/* @__PURE__ */ _jsxDEV("a", {
+								href: `mailto:${email}`,
+								"data-tsd-source": "/src/components/SiteShell.tsx:45:150",
+								children: [
+									/* @__PURE__ */ _jsxDEV(Mail, {
+										size: 15,
+										"data-tsd-source": "/src/components/SiteShell.tsx:45:178"
+									}, void 0, false, {
+										fileName: _jsxFileName,
+										lineNumber: 45,
+										columnNumber: 557
+									}, this),
+									" ",
+									email
+								]
+							}, void 0, true, {
+								fileName: _jsxFileName,
+								lineNumber: 45,
+								columnNumber: 474
+							}, this),
+							/* @__PURE__ */ _jsxDEV("a", {
+								href: whatsappUrl,
+								target: "_blank",
+								rel: "noopener noreferrer",
+								"data-tsd-source": "/src/components/SiteShell.tsx:45:207",
+								children: ["WhatsApp ", /* @__PURE__ */ _jsxDEV(ArrowRight, {
+									size: 14,
+									"data-tsd-source": "/src/components/SiteShell.tsx:45:280"
+								}, void 0, false, {
+									fileName: _jsxFileName,
+									lineNumber: 45,
+									columnNumber: 769
+								}, this)]
+							}, void 0, true, {
+								fileName: _jsxFileName,
+								lineNumber: 45,
+								columnNumber: 641
+							}, this),
+							/* @__PURE__ */ _jsxDEV("a", {
+								href: "https://www.instagram.com/thewisdombharat/",
+								target: "_blank",
+								rel: "noopener noreferrer",
+								"data-tsd-source": "/src/components/SiteShell.tsx:45:307",
+								children: [/* @__PURE__ */ _jsxDEV(Instagram, {
+									size: 15,
+									"data-tsd-source": "/src/components/SiteShell.tsx:45:402"
+								}, void 0, false, {
+									fileName: _jsxFileName,
+									lineNumber: 45,
+									columnNumber: 1001
+								}, this), " Instagram"]
+							}, void 0, true, {
+								fileName: _jsxFileName,
+								lineNumber: 45,
+								columnNumber: 851
+							}, this)
+						]
+					}, void 0, true, {
+						fileName: _jsxFileName,
+						lineNumber: 45,
+						columnNumber: 7
+					}, this)
+				]
+			}, void 0, true, {
+				fileName: _jsxFileName,
+				lineNumber: 41,
+				columnNumber: 85
+			}, this), /* @__PURE__ */ _jsxDEV("div", {
+				className: "container-wide footer-bottom",
+				"data-tsd-source": "/src/components/SiteShell.tsx:46:11",
+				children: [/* @__PURE__ */ _jsxDEV("span", {
+					"data-tsd-source": "/src/components/SiteShell.tsx:46:57",
+					children: [
+						"© ",
+						new Date().getFullYear(),
+						" The Wisdom Bharat. All rights reserved."
+					]
+				}, void 0, true, {
+					fileName: _jsxFileName,
+					lineNumber: 46,
+					columnNumber: 111
+				}, this), /* @__PURE__ */ _jsxDEV("span", {
+					"data-tsd-source": "/src/components/SiteShell.tsx:46:138",
+					children: "Awaken The Wisdom Within"
+				}, void 0, false, {
+					fileName: _jsxFileName,
+					lineNumber: 46,
+					columnNumber: 246
+				}, this)]
+			}, void 0, true, {
+				fileName: _jsxFileName,
+				lineNumber: 46,
+				columnNumber: 11
+			}, this)]
+		}, void 0, true, {
+			fileName: _jsxFileName,
+			lineNumber: 41,
+			columnNumber: 5
+		}, this)
+	] }, void 0, true, {
+		fileName: _jsxFileName,
+		lineNumber: 19,
+		columnNumber: 10
+	}, this);
+}
+_s(SiteShell, "oj9IB3vd8X9tYKpgRGef1YJEsHA=");
+_c = SiteShell;
+export function ActionLink({ to = "/book-consultation", children, light = false }) {
+	return /* @__PURE__ */ _jsxDEV(Button, {
+		asChild: true,
+		className: light ? "action-link light" : "action-link",
+		"data-tsd-source": "/src/components/SiteShell.tsx:50:10",
+		children: /* @__PURE__ */ _jsxDEV(Link, {
+			to,
+			"data-tsd-source": "/src/components/SiteShell.tsx:50:82",
+			children: [children, /* @__PURE__ */ _jsxDEV(ArrowRight, {
+				size: 17,
+				"data-tsd-source": "/src/components/SiteShell.tsx:50:106"
+			}, void 0, false, {
+				fileName: _jsxFileName,
+				lineNumber: 50,
+				columnNumber: 214
+			}, this)]
+		}, void 0, true, {
+			fileName: _jsxFileName,
+			lineNumber: 50,
+			columnNumber: 136
+		}, this)
+	}, void 0, false, {
+		fileName: _jsxFileName,
+		lineNumber: 50,
+		columnNumber: 10
+	}, this);
+}
+_c2 = ActionLink;
+export function SectionHeading({ eyebrow, title, description, centered = false }) {
+	return /* @__PURE__ */ _jsxDEV("div", {
+		className: `section-heading ${centered ? "centered" : ""}`,
+		"data-tsd-source": "/src/components/SiteShell.tsx:52:170",
+		children: [
+			/* @__PURE__ */ _jsxDEV("span", {
+				className: "eyebrow",
+				"data-tsd-source": "/src/components/SiteShell.tsx:52:235",
+				children: eyebrow
+			}, void 0, false, {
+				fileName: _jsxFileName,
+				lineNumber: 52,
+				columnNumber: 290
+			}, this),
+			/* @__PURE__ */ _jsxDEV("h2", {
+				"data-tsd-source": "/src/components/SiteShell.tsx:52:277",
+				children: title
+			}, void 0, false, {
+				fileName: _jsxFileName,
+				lineNumber: 52,
+				columnNumber: 387
+			}, this),
+			description && /* @__PURE__ */ _jsxDEV("p", {
+				"data-tsd-source": "/src/components/SiteShell.tsx:52:309",
+				children: description
+			}, void 0, false, {
+				fileName: _jsxFileName,
+				lineNumber: 52,
+				columnNumber: 474
+			}, this)
+		]
+	}, void 0, true, {
+		fileName: _jsxFileName,
+		lineNumber: 52,
+		columnNumber: 170
+	}, this);
+}
+_c3 = SectionHeading;
+export function BottomCTA() {
+	return /* @__PURE__ */ _jsxDEV("section", {
+		className: "bottom-cta",
+		"data-tsd-source": "/src/components/SiteShell.tsx:53:38",
+		children: /* @__PURE__ */ _jsxDEV("div", {
+			className: "container-wide bottom-cta-inner",
+			"data-tsd-source": "/src/components/SiteShell.tsx:53:70",
+			children: [/* @__PURE__ */ _jsxDEV("div", {
+				"data-tsd-source": "/src/components/SiteShell.tsx:53:119",
+				children: [
+					/* @__PURE__ */ _jsxDEV("span", {
+						className: "eyebrow",
+						"data-tsd-source": "/src/components/SiteShell.tsx:53:124",
+						children: "A CONVERSATION IS A BEGINNING"
+					}, void 0, false, {
+						fileName: _jsxFileName,
+						lineNumber: 53,
+						columnNumber: 287
+					}, this),
+					/* @__PURE__ */ _jsxDEV("h2", {
+						"data-tsd-source": "/src/components/SiteShell.tsx:53:186",
+						children: "Ready to begin your journey?"
+					}, void 0, false, {
+						fileName: _jsxFileName,
+						lineNumber: 53,
+						columnNumber: 404
+					}, this),
+					/* @__PURE__ */ _jsxDEV("p", {
+						"data-tsd-source": "/src/components/SiteShell.tsx:53:223",
+						children: "Let’s find the right place to start, together."
+					}, void 0, false, {
+						fileName: _jsxFileName,
+						lineNumber: 53,
+						columnNumber: 496
+					}, this)
+				]
+			}, void 0, true, {
+				fileName: _jsxFileName,
+				lineNumber: 53,
+				columnNumber: 227
+			}, this), /* @__PURE__ */ _jsxDEV(ActionLink, {
+				light: true,
+				"data-tsd-source": "/src/components/SiteShell.tsx:53:282",
+				children: "Book a Consultation"
+			}, void 0, false, {
+				fileName: _jsxFileName,
+				lineNumber: 53,
+				columnNumber: 610
+			}, this)]
+		}, void 0, true, {
+			fileName: _jsxFileName,
+			lineNumber: 53,
+			columnNumber: 124
+		}, this)
+	}, void 0, false, {
+		fileName: _jsxFileName,
+		lineNumber: 53,
+		columnNumber: 38
+	}, this);
+}
+_c4 = BottomCTA;
+export function ExternalButton({ href, children }) {
+	return /* @__PURE__ */ _jsxDEV(Button, {
+		asChild: true,
+		className: "action-link",
+		"data-tsd-source": "/src/components/SiteShell.tsx:54:106",
+		children: /* @__PURE__ */ _jsxDEV("a", {
+			href,
+			target: "_blank",
+			rel: "noopener noreferrer",
+			"data-tsd-source": "/src/components/SiteShell.tsx:54:146",
+			children: [children, /* @__PURE__ */ _jsxDEV(ArrowRight, {
+				size: 17,
+				"data-tsd-source": "/src/components/SiteShell.tsx:54:213"
+			}, void 0, false, {
+				fileName: _jsxFileName,
+				lineNumber: 54,
+				columnNumber: 323
+			}, this)]
+		}, void 0, true, {
+			fileName: _jsxFileName,
+			lineNumber: 54,
+			columnNumber: 201
+		}, this)
+	}, void 0, false, {
+		fileName: _jsxFileName,
+		lineNumber: 54,
+		columnNumber: 106
+	}, this);
+}
+_c5 = ExternalButton;
+export { bookingUrl };
+var _c, _c2, _c3, _c4, _c5;
+$RefreshReg$(_c, "SiteShell");
+$RefreshReg$(_c2, "ActionLink");
+$RefreshReg$(_c3, "SectionHeading");
+$RefreshReg$(_c4, "BottomCTA");
+$RefreshReg$(_c5, "ExternalButton");
+import * as RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope;
+import * as __vite_react_currentExports from "/src/components/SiteShell.tsx";
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+
+  const currentExports = __vite_react_currentExports;
+  queueMicrotask(() => {
+    RefreshRuntime.registerExportsForReactRefresh("E:/the wisdom bharat/wisdom-within-redesign/src/components/SiteShell.tsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("E:/the wisdom bharat/wisdom-within-redesign/src/components/SiteShell.tsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+function $RefreshReg$(type, id) { return RefreshRuntime.register(type, "E:/the wisdom bharat/wisdom-within-redesign/src/components/SiteShell.tsx" + ' ' + id); }
+function $RefreshSig$() { return RefreshRuntime.createSignatureFunctionForTransform(); }
+
+//# sourceMappingURL=data:application/json;base64,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SUFBQTtJQUFBO2NBQTBCO0dBQUE7Ozs7O0dBQUE7SUFBQTtjQUFvQjtHQUFBOzs7OztHQUFBO0lBQUE7Y0FBK0I7R0FBQTs7Ozs7RUFBQTs7Ozs7O0FBQUE7O0FBQ3RUO0NBQUE7RUFBQTtFQUFBO1lBQW9FO0dBQUE7R0FBQTthQUFBLENBQWlEO0lBQUE7Y0FBQTtLQUFLO01BQUE7TUFBQTtnQkFBMEI7S0FBQTs7Ozs7S0FBQTtNQUFBO2dCQUF3QztLQUFBOzs7OztLQUFBO01BQUE7Z0JBQW9DO0tBQUE7Ozs7O0lBQUE7Ozs7O2FBQUE7SUFBQTtJQUFBO2NBQTBFO0dBQUE7Ozs7V0FBQTs7Ozs7O0NBQUE7Ozs7O0FBQUE7O0FBQzFTO0NBQUE7RUFBQTtFQUFBO0VBQUE7WUFBZ0o7R0FBQTtHQUFBO0dBQUE7R0FBQTthQUFBLENBQXlEO0lBQUE7SUFBQTtHQUFnQzs7OztXQUFBOzs7Ozs7Q0FBQTs7Ozs7QUFBQTs7QUFDek8iLCJuYW1lcyI6W10sImlnbm9yZUxpc3QiOltdLCJzb3VyY2VzIjpbIlNpdGVTaGVsbC50c3giXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgdXNlU3RhdGUgfSBmcm9tIFwicmVhY3RcIjtcclxuaW1wb3J0IHsgTGluayB9IGZyb20gXCJAdGFuc3RhY2svcmVhY3Qtcm91dGVyXCI7XHJcbmltcG9ydCB7IEFycm93UmlnaHQsIENoZXZyb25Eb3duLCBJbnN0YWdyYW0sIE1haWwsIE1lbnUsIFBob25lLCBYIH0gZnJvbSBcImx1Y2lkZS1yZWFjdFwiO1xyXG5pbXBvcnQgeyBCdXR0b24gfSBmcm9tIFwiQC9jb21wb25lbnRzL3VpL2J1dHRvblwiO1xyXG5pbXBvcnQgeyBhc3NldHMsIGJvb2tpbmdVcmwsIGVtYWlsLCBzZXJ2aWNlcywgd2hhdHNhcHBVcmwgfSBmcm9tIFwiQC9saWIvc2l0ZVwiO1xyXG5cclxuY29uc3QgbGlua3MgPSBbXHJcbiAgeyBsYWJlbDogXCJIb21lXCIsIHRvOiBcIi9cIiB9LFxyXG4gIHsgbGFiZWw6IFwiQWJvdXRcIiwgdG86IFwiL2Fib3V0XCIgfSxcclxuICB7IGxhYmVsOiBcIlByb2dyYW1zXCIsIHRvOiBcIi9wcm9ncmFtc1wiIH0sXHJcbiAgeyBsYWJlbDogXCJUaGUgQm9va1wiLCB0bzogXCIvdGhlLWJvb2tcIiB9LFxyXG4gIHsgbGFiZWw6IFwiRkFRXCIsIHRvOiBcIi9mYXFcIiB9LFxyXG4gIHsgbGFiZWw6IFwiQ29udGFjdFwiLCB0bzogXCIvY29udGFjdFwiIH0sXHJcbl0gYXMgY29uc3Q7XHJcblxyXG5leHBvcnQgZnVuY3Rpb24gU2l0ZVNoZWxsKHsgY2hpbGRyZW4gfTogeyBjaGlsZHJlbjogUmVhY3QuUmVhY3ROb2RlIH0pIHtcclxuICBjb25zdCBbb3Blbiwgc2V0T3Blbl0gPSB1c2VTdGF0ZShmYWxzZSk7XHJcbiAgY29uc3QgW3NlcnZpY2VzT3Blbiwgc2V0U2VydmljZXNPcGVuXSA9IHVzZVN0YXRlKGZhbHNlKTtcclxuICByZXR1cm4gPD5cclxuICAgIDxkaXYgY2xhc3NOYW1lPVwidG9wbGluZVwiPjxzcGFuPlRIRSBXSVNET00gQkhBUkFUIDxzcGFuIGNsYXNzTmFtZT1cInRleHQtZ29sZCBteC0zXCI+4pymPC9zcGFuPiBBV0FLRU4gVEhFIFdJU0RPTSBXSVRISU48L3NwYW4+PC9kaXY+XHJcbiAgICA8aGVhZGVyIGNsYXNzTmFtZT1cInNpdGUtaGVhZGVyXCI+XHJcbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwiY29udGFpbmVyLXdpZGUgaGVhZGVyLWlubmVyXCI+XHJcbiAgICAgICAgPExpbmsgdG89XCIvXCIgYXJpYS1sYWJlbD1cIlRoZSBXaXNkb20gQmhhcmF0IGhvbWVcIiBvbkNsaWNrPXsoKSA9PiBzZXRPcGVuKGZhbHNlKX0gY2xhc3NOYW1lPVwiYnJhbmRcIj48aW1nIHNyYz17YXNzZXRzLmxvZ299IGFsdD1cIlRoZSBXaXNkb20gQmhhcmF0IGxvZ29cIiAvPjxzcGFuPlRIRSBXSVNET008YnIvPjxiPkJIQVJBVDwvYj48L3NwYW4+PC9MaW5rPlxyXG4gICAgICAgIDxuYXYgY2xhc3NOYW1lPVwiZGVza3RvcC1uYXZcIiBhcmlhLWxhYmVsPVwiTWFpbiBuYXZpZ2F0aW9uXCI+XHJcbiAgICAgICAgICB7bGlua3Muc2xpY2UoMCwyKS5tYXAobCA9PiA8TGluayBrZXk9e2wudG99IHRvPXtsLnRvfSBhY3RpdmVQcm9wcz17eyBjbGFzc05hbWU6IFwiYWN0aXZlXCIgfX0+e2wubGFiZWx9PC9MaW5rPil9XHJcbiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cIm5hdi1kcm9wZG93blwiPjxMaW5rIHRvPVwiL3NlcnZpY2VzXCIgYWN0aXZlUHJvcHM9e3sgY2xhc3NOYW1lOiBcImFjdGl2ZVwiIH19PlNlcnZpY2VzIDxDaGV2cm9uRG93biBzaXplPXsxM30vPjwvTGluaz48ZGl2IGNsYXNzTmFtZT1cImRyb3Bkb3duLXBhbmVsXCI+e3NlcnZpY2VzLm1hcChzID0+IDxMaW5rIGtleT17cy5zbHVnfSB0bz17cy5zbHVnfT57cy50aXRsZX08L0xpbms+KX08L2Rpdj48L2Rpdj5cclxuICAgICAgICAgIHtsaW5rcy5zbGljZSgyKS5tYXAobCA9PiA8TGluayBrZXk9e2wudG99IHRvPXtsLnRvfSBhY3RpdmVQcm9wcz17eyBjbGFzc05hbWU6IFwiYWN0aXZlXCIgfX0+e2wubGFiZWx9PC9MaW5rPil9XHJcbiAgICAgICAgPC9uYXY+XHJcbiAgICAgICAgPEJ1dHRvbiBhc0NoaWxkIGNsYXNzTmFtZT1cImhlYWRlci1jdGEgaGlkZGVuIHhsOmlubGluZS1mbGV4XCI+PExpbmsgdG89XCIvYm9vay1jb25zdWx0YXRpb25cIj5Cb29rIGEgQ29uc3VsdGF0aW9uIDxBcnJvd1JpZ2h0IHNpemU9ezE1fS8+PC9MaW5rPjwvQnV0dG9uPlxyXG4gICAgICAgIDxCdXR0b24gdmFyaWFudD1cImdob3N0XCIgc2l6ZT1cImljb25cIiBjbGFzc05hbWU9XCJtb2JpbGUtbWVudS1idXR0b25cIiBhcmlhLWxhYmVsPXtvcGVuID8gXCJDbG9zZSBtZW51XCIgOiBcIk9wZW4gbWVudVwifSBhcmlhLWV4cGFuZGVkPXtvcGVufSBvbkNsaWNrPXsoKSA9PiBzZXRPcGVuKCFvcGVuKX0+e29wZW4gPyA8WC8+IDogPE1lbnUvPn08L0J1dHRvbj5cclxuICAgICAgPC9kaXY+XHJcbiAgICAgIHtvcGVuICYmIDxuYXYgY2xhc3NOYW1lPVwibW9iaWxlLW5hdlwiIGFyaWEtbGFiZWw9XCJNb2JpbGUgbmF2aWdhdGlvblwiPlxyXG4gICAgICAgIHtsaW5rcy5zbGljZSgwLDIpLm1hcChsID0+IDxMaW5rIGtleT17bC50b30gdG89e2wudG99IG9uQ2xpY2s9eygpID0+IHNldE9wZW4oZmFsc2UpfT57bC5sYWJlbH08L0xpbms+KX1cclxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cIm1vYmlsZS1zZXJ2aWNlLXJvd1wiPjxMaW5rIHRvPVwiL3NlcnZpY2VzXCIgb25DbGljaz17KCkgPT4gc2V0T3BlbihmYWxzZSl9PlNlcnZpY2VzPC9MaW5rPjxCdXR0b24gdmFyaWFudD1cImdob3N0XCIgc2l6ZT1cImljb25cIiBhcmlhLWxhYmVsPVwiVG9nZ2xlIHNlcnZpY2VzXCIgYXJpYS1leHBhbmRlZD17c2VydmljZXNPcGVufSBvbkNsaWNrPXsoKSA9PiBzZXRTZXJ2aWNlc09wZW4oIXNlcnZpY2VzT3Blbil9PjxDaGV2cm9uRG93biBzaXplPXsxOH0vPjwvQnV0dG9uPjwvZGl2PlxyXG4gICAgICAgIHtzZXJ2aWNlc09wZW4gJiYgPGRpdiBjbGFzc05hbWU9XCJtb2JpbGUtc3VibmF2XCI+e3NlcnZpY2VzLm1hcChzID0+IDxMaW5rIGtleT17cy5zbHVnfSB0bz17cy5zbHVnfSBvbkNsaWNrPXsoKSA9PiBzZXRPcGVuKGZhbHNlKX0+e3MudGl0bGV9PC9MaW5rPil9PC9kaXY+fVxyXG4gICAgICAgIHtsaW5rcy5zbGljZSgyKS5tYXAobCA9PiA8TGluayBrZXk9e2wudG99IHRvPXtsLnRvfSBvbkNsaWNrPXsoKSA9PiBzZXRPcGVuKGZhbHNlKX0+e2wubGFiZWx9PC9MaW5rPil9XHJcbiAgICAgICAgPExpbmsgY2xhc3NOYW1lPVwibW9iaWxlLWJvb2tcIiB0bz1cIi9ib29rLWNvbnN1bHRhdGlvblwiIG9uQ2xpY2s9eygpID0+IHNldE9wZW4oZmFsc2UpfT5Cb29rIGEgQ29uc3VsdGF0aW9uIDxBcnJvd1JpZ2h0IHNpemU9ezE3fS8+PC9MaW5rPlxyXG4gICAgICA8L25hdj59XHJcbiAgICA8L2hlYWRlcj5cclxuICAgIDxtYWluPntjaGlsZHJlbn08L21haW4+XHJcbiAgICA8Zm9vdGVyIGNsYXNzTmFtZT1cImZvb3RlclwiPjxkaXYgY2xhc3NOYW1lPVwiY29udGFpbmVyLXdpZGUgZm9vdGVyLWdyaWRcIj5cclxuICAgICAgPGRpdj48TGluayB0bz1cIi9cIiBjbGFzc05hbWU9XCJmb290ZXItYnJhbmRcIj48aW1nIHNyYz17YXNzZXRzLmxvZ299IGFsdD1cIlwiLz48c3Bhbj5USEUgV0lTRE9NPGJyLz48Yj5CSEFSQVQ8L2I+PC9zcGFuPjwvTGluaz48cD5Bd2FrZW4gdGhlIHdpc2RvbSB3aXRoaW4uPC9wPjxwPk1pbmQuIEVuZXJneS4gQ29uc2Npb3VzIGxpdmluZy48L3A+PC9kaXY+XHJcbiAgICAgIDxkaXY+PGgzPkV4cGxvcmU8L2gzPjxMaW5rIHRvPVwiL2Fib3V0XCI+QWJvdXQ8L0xpbms+PExpbmsgdG89XCIvc2VydmljZXNcIj5TZXJ2aWNlczwvTGluaz48TGluayB0bz1cIi9wcm9ncmFtc1wiPlByb2dyYW1zPC9MaW5rPjxMaW5rIHRvPVwiL3RoZS1ib29rXCI+VGhlIEJvb2s8L0xpbms+PExpbmsgdG89XCIvXCIgaGFzaD1cImV4cGVyaWVuY2VzXCI+VGVzdGltb25pYWxzPC9MaW5rPjwvZGl2PlxyXG4gICAgICA8ZGl2PjxoMz5TdXBwb3J0PC9oMz48TGluayB0bz1cIi9mYXFcIj5GQVE8L0xpbms+PExpbmsgdG89XCIvY29udGFjdFwiPkNvbnRhY3Q8L0xpbms+PExpbmsgdG89XCIvYm9vay1jb25zdWx0YXRpb25cIj5Cb29rIGEgQ29uc3VsdGF0aW9uPC9MaW5rPjxMaW5rIHRvPVwiL3ByaXZhY3ktcG9saWN5XCI+UHJpdmFjeSBQb2xpY3k8L0xpbms+PExpbmsgdG89XCIvdGVybXMtYW5kLWNvbmRpdGlvbnNcIj5UZXJtcyAmIENvbmRpdGlvbnM8L0xpbms+PC9kaXY+XHJcbiAgICAgIDxkaXY+PGgzPkdldCBpbiB0b3VjaDwvaDM+PHA+SmF5YWRldiBWaWhhciwgQmh1YmFuZXN3YXI8YnIvPk9kaXNoYSwgSW5kaWE8L3A+PGEgaHJlZj1cInRlbDorOTE5NDM3MDg1NzAxXCI+PFBob25lIHNpemU9ezE1fS8+ICs5MSA5NDM3MCA4NTcwMTwvYT48YSBocmVmPXtgbWFpbHRvOiR7ZW1haWx9YH0+PE1haWwgc2l6ZT17MTV9Lz4ge2VtYWlsfTwvYT48YSBocmVmPXt3aGF0c2FwcFVybH0gdGFyZ2V0PVwiX2JsYW5rXCIgcmVsPVwibm9vcGVuZXIgbm9yZWZlcnJlclwiPldoYXRzQXBwIDxBcnJvd1JpZ2h0IHNpemU9ezE0fS8+PC9hPjxhIGhyZWY9XCJodHRwczovL3d3dy5pbnN0YWdyYW0uY29tL3RoZXdpc2RvbWJoYXJhdC9cIiB0YXJnZXQ9XCJfYmxhbmtcIiByZWw9XCJub29wZW5lciBub3JlZmVycmVyXCI+PEluc3RhZ3JhbSBzaXplPXsxNX0vPiBJbnN0YWdyYW08L2E+PC9kaXY+XHJcbiAgICA8L2Rpdj48ZGl2IGNsYXNzTmFtZT1cImNvbnRhaW5lci13aWRlIGZvb3Rlci1ib3R0b21cIj48c3Bhbj7CqSB7bmV3IERhdGUoKS5nZXRGdWxsWWVhcigpfSBUaGUgV2lzZG9tIEJoYXJhdC4gQWxsIHJpZ2h0cyByZXNlcnZlZC48L3NwYW4+PHNwYW4+QXdha2VuIFRoZSBXaXNkb20gV2l0aGluPC9zcGFuPjwvZGl2PjwvZm9vdGVyPlxyXG4gIDwvPjtcclxufVxyXG5leHBvcnQgZnVuY3Rpb24gQWN0aW9uTGluayh7IHRvID0gXCIvYm9vay1jb25zdWx0YXRpb25cIiwgY2hpbGRyZW4sIGxpZ2h0ID0gZmFsc2UgfTogeyB0bz86IFwiL2Jvb2stY29uc3VsdGF0aW9uXCIgfCBcIi9zZXJ2aWNlc1wiIHwgXCIvYWJvdXRcIiB8IFwiL3Byb2dyYW1zXCIgfCBcIi90aGUtYm9va1wiIHwgXCIvY29udGFjdFwiOyBjaGlsZHJlbjogUmVhY3QuUmVhY3ROb2RlOyBsaWdodD86IGJvb2xlYW4gfSkge1xyXG4gIHJldHVybiA8QnV0dG9uIGFzQ2hpbGQgY2xhc3NOYW1lPXtsaWdodCA/IFwiYWN0aW9uLWxpbmsgbGlnaHRcIiA6IFwiYWN0aW9uLWxpbmtcIn0+PExpbmsgdG89e3RvfT57Y2hpbGRyZW59PEFycm93UmlnaHQgc2l6ZT17MTd9Lz48L0xpbms+PC9CdXR0b24+O1xyXG59XHJcbmV4cG9ydCBmdW5jdGlvbiBTZWN0aW9uSGVhZGluZyh7IGV5ZWJyb3csIHRpdGxlLCBkZXNjcmlwdGlvbiwgY2VudGVyZWQgPSBmYWxzZSB9OiB7IGV5ZWJyb3c6IHN0cmluZzsgdGl0bGU6IHN0cmluZzsgZGVzY3JpcHRpb24/OiBzdHJpbmc7IGNlbnRlcmVkPzogYm9vbGVhbiB9KSB7IHJldHVybiA8ZGl2IGNsYXNzTmFtZT17YHNlY3Rpb24taGVhZGluZyAke2NlbnRlcmVkID8gXCJjZW50ZXJlZFwiIDogXCJcIn1gfT48c3BhbiBjbGFzc05hbWU9XCJleWVicm93XCI+e2V5ZWJyb3d9PC9zcGFuPjxoMj57dGl0bGV9PC9oMj57ZGVzY3JpcHRpb24gJiYgPHA+e2Rlc2NyaXB0aW9ufTwvcD59PC9kaXY+OyB9XHJcbmV4cG9ydCBmdW5jdGlvbiBCb3R0b21DVEEoKSB7IHJldHVybiA8c2VjdGlvbiBjbGFzc05hbWU9XCJib3R0b20tY3RhXCI+PGRpdiBjbGFzc05hbWU9XCJjb250YWluZXItd2lkZSBib3R0b20tY3RhLWlubmVyXCI+PGRpdj48c3BhbiBjbGFzc05hbWU9XCJleWVicm93XCI+QSBDT05WRVJTQVRJT04gSVMgQSBCRUdJTk5JTkc8L3NwYW4+PGgyPlJlYWR5IHRvIGJlZ2luIHlvdXIgam91cm5leT88L2gyPjxwPkxldOKAmXMgZmluZCB0aGUgcmlnaHQgcGxhY2UgdG8gc3RhcnQsIHRvZ2V0aGVyLjwvcD48L2Rpdj48QWN0aW9uTGluayBsaWdodD5Cb29rIGEgQ29uc3VsdGF0aW9uPC9BY3Rpb25MaW5rPjwvZGl2Pjwvc2VjdGlvbj47IH1cclxuZXhwb3J0IGZ1bmN0aW9uIEV4dGVybmFsQnV0dG9uKHsgaHJlZiwgY2hpbGRyZW4gfTogeyBocmVmOiBzdHJpbmc7IGNoaWxkcmVuOiBSZWFjdC5SZWFjdE5vZGUgfSkgeyByZXR1cm4gPEJ1dHRvbiBhc0NoaWxkIGNsYXNzTmFtZT1cImFjdGlvbi1saW5rXCI+PGEgaHJlZj17aHJlZn0gdGFyZ2V0PVwiX2JsYW5rXCIgcmVsPVwibm9vcGVuZXIgbm9yZWZlcnJlclwiPntjaGlsZHJlbn08QXJyb3dSaWdodCBzaXplPXsxN30vPjwvYT48L0J1dHRvbj47IH1cclxuZXhwb3J0IHsgYm9va2luZ1VybCB9O1xyXG4iXSwiZmlsZSI6IkU6L3RoZSB3aXNkb20gYmhhcmF0L3dpc2RvbS13aXRoaW4tcmVkZXNpZ24vc3JjL2NvbXBvbmVudHMvU2l0ZVNoZWxsLnRzeCJ9

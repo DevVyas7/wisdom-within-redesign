@@ -1,0 +1,328 @@
+import nlp from "/src/assets/nlp-session.jpg?import";
+import reiki from "/src/assets/reiki.jpg?import";
+import garbhsanskar from "/src/assets/garbhsanskar.jpg?import";
+import coaching from "/src/assets/coaching.jpg?import";
+import yoga from "/src/assets/home-yoga-nature.jpg?import";
+import nlpCert from "/src/assets/nlp-cert.png?import";
+import reikiCert from "/src/assets/reiki-cert.png?import";
+import reikiMasterCert from "/src/assets/reiki-master-cert.png?import";
+import logoClean from "/src/assets/logo-clean.png?import";
+import heroVideo from "/src/assets/hero-video.mp4?import";
+import heroGif from "/src/assets/hero-video.gif?import";
+const founder = { url: "https://img1.wsimg.com/isteam/ip/f781fbeb-6590-4b29-9a04-a94f51cadf95/blob-07898e5.png" };
+const book = { url: "https://img1.wsimg.com/isteam/ip/f781fbeb-6590-4b29-9a04-a94f51cadf95/BookCover.jpg" };
+export const assets = {
+	logo: logoClean,
+	founder: founder.url,
+	book: book.url,
+	yoga,
+	nlp,
+	reiki,
+	garbhsanskar,
+	coaching,
+	nlpCert,
+	reikiCert,
+	reikiMasterCert,
+	heroVideo,
+	heroGif
+};
+export const bookingUrl = "https://brand.thewisdombharat.com/widget/booking/ZVduiLYZzsRTOzyxDjC0";
+export const whatsappUrl = "https://wa.me/919178112471";
+export const email = "thewisdombharat@gmail.com";
+export const bookUrl = "https://www.amazon.in/Awaken-Your-Ultimate-High-Performance-System/dp/B0CCMG3717";
+// Wording follows the founder profile published at thewisdombharat.com.
+export const founderAchievements = [
+	{
+		label: "Author",
+		detail: "Awaken Your Ultimate High Performance System"
+	},
+	{
+		label: "Reiki Master",
+		detail: "Reiki healing and training"
+	},
+	{
+		label: "Certified NLP Practitioner",
+		detail: "Neuro Linguistic Programming"
+	},
+	{
+		label: "10+ years",
+		detail: "Experience in human transformation"
+	},
+	{
+		label: "PhD in Reiki (continuing)",
+		detail: "Advanced studies in progress"
+	}
+];
+export const testimonials = [
+	{
+		name: "Sasmita Pattnaik",
+		profile: "Google Review",
+		service: "9/4/2026",
+		review: "A complete transformation which I can see in myself today.",
+		rating: 5,
+		initials: "SP",
+		authorAttribution: {
+			displayName: "Sasmita Pattnaik",
+			uri: "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA",
+			photoURI: undefined
+		}
+	},
+	{
+		name: "Subhashree Sahu",
+		profile: "Google Review",
+		service: "1/9/2019",
+		review: "I highly recommend Wisdom bharat to anyone looking for mental clarity and peace.",
+		rating: 5,
+		initials: "SS",
+		authorAttribution: {
+			displayName: "Subhashree Sahu",
+			uri: "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA",
+			photoURI: undefined
+		}
+	},
+	{
+		name: "Shraddhashree Sahu",
+		profile: "Google Review",
+		service: "7/8/2026",
+		review: "It is a supportive platform for personal growth and emotional healing.",
+		rating: 5,
+		initials: "SS",
+		authorAttribution: {
+			displayName: "Shraddhashree Sahu",
+			uri: "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA",
+			photoURI: undefined
+		}
+	},
+	{
+		name: "Saswat Nayak",
+		profile: "Google Review",
+		service: "5/8/2026",
+		review: "Dr. Priya Ranjan Sahu has an incredible ability to inspire and bring clarity.",
+		rating: 5,
+		initials: "SN",
+		authorAttribution: {
+			displayName: "Saswat Nayak",
+			uri: "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA",
+			photoURI: undefined
+		}
+	},
+	{
+		name: "Kanchan Witore",
+		profile: "Google Review",
+		service: "5/8/2026",
+		review: "Great experience. Sir helped me to heal in my life at a very crucial time.",
+		rating: 4,
+		initials: "KW",
+		authorAttribution: {
+			displayName: "Kanchan Witore",
+			uri: "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA",
+			photoURI: undefined
+		}
+	},
+	{
+		name: "Pankaj Modi",
+		profile: "Google Review",
+		service: "18/9/2026",
+		review: "I did a meditation session and from then on it was a great experience.",
+		rating: 5,
+		initials: "PM",
+		authorAttribution: {
+			displayName: "Pankaj Modi",
+			uri: "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA",
+			photoURI: undefined
+		}
+	}
+];
+export const videoTestimonials = [
+	{
+		id: "greesha-mandewal",
+		name: "Greesha Mandewal",
+		location: "Canada",
+		countryFlag: "🇨🇦",
+		service: "Aura Scanning Testimony",
+		videoUrl: "/greesha-mandewal-testimony.mp4",
+		posterUrl: "/greesha-mandewal-poster.jpg",
+		quote: "Aura scanning gave me deep clarity and inner peace.",
+		detail: "Recorded firsthand client testimony sharing her authentic healing journey and aura scanning experience with Dr. Priya Ranjan Sahu."
+	},
+	{
+		id: "reiki-maharashtra",
+		name: "Client Experience",
+		location: "Maharashtra, India",
+		countryFlag: "🇮🇳",
+		service: "Reiki Healing Session",
+		videoUrl: "/testimony-1.mp4",
+		posterUrl: "/testimony-1-poster.jpg",
+		quote: "Felt a profound sense of lightness and emotional release.",
+		detail: "Authentic client testimony from Maharashtra sharing her remote Reiki healing session and inner shift with Dr. Priya Ranjan Sahu."
+	},
+	{
+		id: "punam-west-bengal",
+		name: "Punam",
+		location: "West Bengal, India",
+		countryFlag: "🇮🇳",
+		service: "Reiki Session Feedback",
+		videoUrl: "/testimony-2.mp4",
+		posterUrl: "/testimony-2-poster.jpg",
+		quote: "The positive energy and healing made a noticeable difference.",
+		detail: "Punam from West Bengal sharing her personal feedback following a transformative Reiki healing session."
+	},
+	{
+		id: "sub-inspector-rn-odisha",
+		name: "Sub Inspector R. N.",
+		location: "Odisha, India",
+		countryFlag: "🇮🇳",
+		service: "Reiki Session Feedback",
+		videoUrl: "/testimony-3.mp4",
+		posterUrl: "/testimony-3-poster.jpg",
+		quote: "Brought clarity, relief from stress, and restored inner balance.",
+		detail: "Law enforcement officer Sub Inspector R. N. from Odisha reflecting on his Reiki healing feedback and peace of mind."
+	},
+	{
+		id: "dr-surbhi-uttar-pradesh",
+		name: "Dr. Surbhi",
+		location: "Uttar Pradesh, India",
+		countryFlag: "🇮🇳",
+		service: "Reiki Session Feedback",
+		videoUrl: "/testimony-4.mp4",
+		posterUrl: "/testimony-4-poster.jpg",
+		quote: "A deeply grounding experience that helped release mental tension.",
+		detail: "Dr. Surbhi from Uttar Pradesh sharing her professional and holistic experience following her personalized Reiki session."
+	}
+];
+export const services = [
+	{
+		title: "NLP",
+		slug: "/services/nlp",
+		image: nlp,
+		eyebrow: "01 / MIND",
+		summary: "Reprogram deep rooted beliefs and emotional blocks to create lasting transformation and true healing.",
+		detail: "NLP sessions focus on identifying and reframing beliefs, fears and emotional patterns. The practice utilizes techniques including anchoring, timeline therapy and subconscious reframing.",
+		introQuote: "Your mind holds the power to heal your body.",
+		fullDescription: [
+			"Through Neuro Linguistic Programming (NLP), we identify and reprogram deep rooted beliefs, fears, and emotional blocks that prevent true healing.",
+			"Using techniques like anchoring, timeline therapy and subconscious reframing, we align your thoughts, emotions and energy to create lasting transformation.",
+			"When blended with Reiki healing, this process restores balance, peace and harmony, helping you become the best version of yourself."
+		],
+		closingQuote: "Heal the mind and the body follows.",
+		points: [
+			"Subconscious reframing",
+			"Timeline therapy & anchoring",
+			"Aligning thoughts, emotions, and energy"
+		]
+	},
+	{
+		title: "Reiki Healing",
+		slug: "/services/reiki",
+		image: reiki,
+		eyebrow: "02 / ENERGY",
+		summary: "The Science of Universal Life Energy. Overcome anxiety, stress, and fatigue by aligning your inner energy.",
+		detail: "Reiki is a Japanese energy healing practice offered by The Wisdom Bharat. Sessions create a quiet space for relaxation and reflection; Reiki training is also offered across Levels 1 to 3.",
+		introQuote: "In a world full of noise, pressure and imbalance, healing is not a luxury, it's a necessity.",
+		fullDescription: [
+			"As a Reiki Master, I use intuitive and guided healing techniques to help individuals overcome anxiety, stress, fatigue, relationship challenges and physical discomfort.",
+			"We do this not by fighting your challenges, but by aligning the inner energy that creates them. It is a deeply restorative practice that invites profound space for rest, balance, and reconnection.",
+			"We also offer comprehensive Reiki training across Levels 1, 2, and 3 for those wishing to master the practice themselves."
+		],
+		closingQuote: "Because when your energy flows freely, your life begins to glow.",
+		points: [
+			"Guided intuitive healing",
+			"Overcome stress and fatigue",
+			"Reiki training, Levels 1 to 3"
+		]
+	},
+	{
+		title: "Garbhsanskar",
+		slug: "/services/garbhsanskar",
+		image: garbhsanskar,
+		eyebrow: "03 / BEGINNINGS",
+		summary: "Ancient Wisdom for Modern Mothers. Consciously nurture your baby and begin parenting before birth.",
+		detail: "Garbhsanskar guidance is designed for couples from pre conception through pregnancy, bringing together meditation, affirmations, sound, and conscious parenting practices.",
+		introQuote: "Consciously Nurture Your Baby. Emotionally Prepare Yourself. Begin Parenting Before Birth.",
+		fullDescription: [
+			"Garbhsanskar is not just a practice; it is a sacred journey, a conscious connection between the mother, father, and the unborn child.",
+			"Through simple yet powerful techniques, parents can nurture a happy, healthy, and high vibration baby. Our holistic prenatal journey integrates Garbhsambad, guided meditation, positive affirmations, sound & mantra, NLP, Reiki, and conscious parenting.",
+			"It is the science of soulful parenting, blending ancient rituals with modern psychology, helping families welcome their baby with awareness, joy and divine grace."
+		],
+		closingQuote: "Welcome your child not just biologically, but spiritually, emotionally, and consciously.",
+		points: [
+			"Pre conception and pregnancy guidance",
+			"Guided meditation & affirmations",
+			"Soulful parenting practices"
+		]
+	},
+	{
+		title: "Life & High Performance Coaching",
+		slug: "/services/life-coaching",
+		image: coaching,
+		eyebrow: "04 / GROWTH",
+		summary: "Awaken Your Ultimate High Performance Life with guided Mind, Body & Energy transformation.",
+		detail: "Life and high performance coaching brings together mindset, habits and energy alignment. Sessions are designed to help you reflect on what matters and take purposeful steps forward.",
+		introQuote: "Unlock your true potential by mastering mindset, habits and energy alignment.",
+		fullDescription: [
+			"Our coaching framework blends proven strategies from NLP and ancient wisdom, blending science and spirituality to help you perform at your peak while staying grounded and fulfilled.",
+			"Whether you're an entrepreneur, student or seeker of self mastery, this personalized one to one coaching will help you build a high performance lifestyle.",
+			"Together, we build a foundation that supports continuous growth with balance, purpose and absolute joy."
+		],
+		closingQuote: "Believe in yourself and all that you are.",
+		points: [
+			"Personalized one to one coaching",
+			"Science meets spirituality",
+			"High performance lifestyle building"
+		]
+	}
+];
+export const programs = [
+	{
+		title: "Become Your Own Doctor",
+		detail: "A 10 week (70 day) program listed on the original website."
+	},
+	{
+		title: "1 on 1 NLP Counselling & Coaching",
+		detail: "Individual guidance exploring mindset and personal patterns."
+	},
+	{
+		title: "Reiki Healing & Training",
+		detail: "Healing sessions and Reiki training across Levels 1 to 3."
+	},
+	{
+		title: "Garbhsanskar Guidance",
+		detail: "Conscious pregnancy support for parents and parents to be."
+	}
+];
+export const faqs = [
+	{
+		q: "What can I expect from a consultation?",
+		a: "A chance to discuss what you are looking for and explore which of the four offerings may be suitable. Use the booking link to see availability."
+	},
+	{
+		q: "Do I need previous experience with NLP or Reiki?",
+		a: "Not at all. Whether you are completely new to energy healing or have prior experience, we tailor every session to your comfort level and needs."
+	},
+	{
+		q: "Is Garbhsanskar only for mothers?",
+		a: "No. The Wisdom Bharat describes its Garbhsanskar guidance as a journey for both mothers and fathers, from pre conception through pregnancy."
+	},
+	{
+		q: "How does NLP (Neuro Linguistic Programming) work?",
+		a: "NLP identifies and reprograms deep rooted beliefs, fears, and emotional blocks. Using techniques like anchoring and timeline therapy, we help align your thoughts to create lasting transformation."
+	},
+	{
+		q: "What does a Reiki healing session involve?",
+		a: "Reiki uses intuitive, guided healing techniques to help overcome anxiety, stress, fatigue, and physical discomfort by aligning your inner energy. It is a gentle, deeply restorative process."
+	},
+	{
+		q: "Who can benefit from the High Performance coaching?",
+		a: "Our coaching is designed for entrepreneurs, students, professionals, and seekers of self mastery who want to unlock their true potential while maintaining balance, purpose, and joy."
+	},
+	{
+		q: "Are sessions conducted online or in person?",
+		a: "We offer both! You can visit our center at Jayadev Vihar, Bhubaneswar, or we can arrange virtual sessions depending on the program and your location."
+	},
+	{
+		q: "Are these services a substitute for medical care?",
+		a: "No. Coaching, Reiki and Garbhsanskar guidance are not substitutes for medical treatment. Please consult a qualified healthcare professional for medical concerns."
+	}
+];
+
+//# sourceMappingURL=data:application/json;base64,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O0VBQXlCLFFBQVE7Q0FBNkQ7QUFDekc7QUFDQSxPQUFPLE1BQU0sT0FBTztDQUNsQjtFQUFFLEdBQUc7RUFBMEMsR0FBRztDQUFrSjtDQUNwTTtFQUFFLEdBQUc7RUFBb0QsR0FBRztDQUFrSjtDQUM5TTtFQUFFLEdBQUc7RUFBcUMsR0FBRztDQUE4STtDQUMzTDtFQUFFLEdBQUc7RUFBcUQsR0FBRztDQUFzTTtDQUNuUTtFQUFFLEdBQUc7RUFBOEMsR0FBRztDQUFnTTtDQUN0UDtFQUFFLEdBQUc7RUFBdUQsR0FBRztDQUF3TDtDQUN2UDtFQUFFLEdBQUc7RUFBK0MsR0FBRztDQUF3SjtDQUMvTTtFQUFFLEdBQUc7RUFBcUQsR0FBRztDQUFvSztBQUNuTyIsIm5hbWVzIjpbXSwic291cmNlcyI6WyJzaXRlLnRzIl0sInZlcnNpb24iOjMsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBubHAgZnJvbSBcIkAvYXNzZXRzL25scC1zZXNzaW9uLmpwZ1wiO1xyXG5pbXBvcnQgcmVpa2kgZnJvbSBcIkAvYXNzZXRzL3JlaWtpLmpwZ1wiO1xyXG5pbXBvcnQgZ2FyYmhzYW5za2FyIGZyb20gXCJAL2Fzc2V0cy9nYXJiaHNhbnNrYXIuanBnXCI7XHJcbmltcG9ydCBjb2FjaGluZyBmcm9tIFwiQC9hc3NldHMvY29hY2hpbmcuanBnXCI7XHJcbmltcG9ydCB5b2dhIGZyb20gXCJAL2Fzc2V0cy9ob21lLXlvZ2EtbmF0dXJlLmpwZ1wiO1xyXG5pbXBvcnQgbmxwQ2VydCBmcm9tIFwiQC9hc3NldHMvbmxwLWNlcnQucG5nXCI7XHJcbmltcG9ydCByZWlraUNlcnQgZnJvbSBcIkAvYXNzZXRzL3JlaWtpLWNlcnQucG5nXCI7XHJcbmltcG9ydCByZWlraU1hc3RlckNlcnQgZnJvbSBcIkAvYXNzZXRzL3JlaWtpLW1hc3Rlci1jZXJ0LnBuZ1wiO1xyXG5pbXBvcnQgbG9nb0NsZWFuIGZyb20gXCJAL2Fzc2V0cy9sb2dvLWNsZWFuLnBuZ1wiO1xyXG5pbXBvcnQgaGVyb1ZpZGVvIGZyb20gXCJAL2Fzc2V0cy9oZXJvLXZpZGVvLm1wNFwiO1xyXG5pbXBvcnQgaGVyb0dpZiBmcm9tIFwiQC9hc3NldHMvaGVyby12aWRlby5naWZcIjtcclxuXHJcbmNvbnN0IGZvdW5kZXIgPSB7IHVybDogXCJodHRwczovL2ltZzEud3NpbWcuY29tL2lzdGVhbS9pcC9mNzgxZmJlYi02NTkwLTRiMjktOWEwNC1hOTRmNTFjYWRmOTUvYmxvYi0wNzg5OGU1LnBuZ1wiIH07XHJcbmNvbnN0IGJvb2sgPSB7IHVybDogXCJodHRwczovL2ltZzEud3NpbWcuY29tL2lzdGVhbS9pcC9mNzgxZmJlYi02NTkwLTRiMjktOWEwNC1hOTRmNTFjYWRmOTUvQm9va0NvdmVyLmpwZ1wiIH07XHJcblxyXG5leHBvcnQgY29uc3QgYXNzZXRzID0geyBsb2dvOiBsb2dvQ2xlYW4sIGZvdW5kZXI6IGZvdW5kZXIudXJsLCBib29rOiBib29rLnVybCwgeW9nYSwgbmxwLCByZWlraSwgZ2FyYmhzYW5za2FyLCBjb2FjaGluZywgbmxwQ2VydCwgcmVpa2lDZXJ0LCByZWlraU1hc3RlckNlcnQsIGhlcm9WaWRlbywgaGVyb0dpZiB9O1xyXG5leHBvcnQgY29uc3QgYm9va2luZ1VybCA9IFwiaHR0cHM6Ly9icmFuZC50aGV3aXNkb21iaGFyYXQuY29tL3dpZGdldC9ib29raW5nL1pWZHVpTFlaenNSVE96eXhEakMwXCI7XHJcbmV4cG9ydCBjb25zdCB3aGF0c2FwcFVybCA9IFwiaHR0cHM6Ly93YS5tZS85MTkxNzgxMTI0NzFcIjtcclxuZXhwb3J0IGNvbnN0IGVtYWlsID0gXCJ0aGV3aXNkb21iaGFyYXRAZ21haWwuY29tXCI7XHJcbmV4cG9ydCBjb25zdCBib29rVXJsID0gXCJodHRwczovL3d3dy5hbWF6b24uaW4vQXdha2VuLVlvdXItVWx0aW1hdGUtSGlnaC1QZXJmb3JtYW5jZS1TeXN0ZW0vZHAvQjBDQ01HMzcxN1wiO1xyXG4vLyBXb3JkaW5nIGZvbGxvd3MgdGhlIGZvdW5kZXIgcHJvZmlsZSBwdWJsaXNoZWQgYXQgdGhld2lzZG9tYmhhcmF0LmNvbS5cclxuZXhwb3J0IGNvbnN0IGZvdW5kZXJBY2hpZXZlbWVudHMgPSBbXHJcbiAgeyBsYWJlbDogXCJBdXRob3JcIiwgZGV0YWlsOiBcIkF3YWtlbiBZb3VyIFVsdGltYXRlIEhpZ2ggUGVyZm9ybWFuY2UgU3lzdGVtXCIgfSxcclxuICB7IGxhYmVsOiBcIlJlaWtpIE1hc3RlclwiLCBkZXRhaWw6IFwiUmVpa2kgaGVhbGluZyBhbmQgdHJhaW5pbmdcIiB9LFxyXG4gIHsgbGFiZWw6IFwiQ2VydGlmaWVkIE5MUCBQcmFjdGl0aW9uZXJcIiwgZGV0YWlsOiBcIk5ldXJvIExpbmd1aXN0aWMgUHJvZ3JhbW1pbmdcIiB9LFxyXG4gIHsgbGFiZWw6IFwiMTArIHllYXJzXCIsIGRldGFpbDogXCJFeHBlcmllbmNlIGluIGh1bWFuIHRyYW5zZm9ybWF0aW9uXCIgfSxcclxuICB7IGxhYmVsOiBcIlBoRCBpbiBSZWlraSAoY29udGludWluZylcIiwgZGV0YWlsOiBcIkFkdmFuY2VkIHN0dWRpZXMgaW4gcHJvZ3Jlc3NcIiB9LFxyXG5dIGFzIGNvbnN0O1xyXG5cclxuZXhwb3J0IGludGVyZmFjZSBHb29nbGVBdXRob3JBdHRyaWJ1dGlvbiB7XHJcbiAgZGlzcGxheU5hbWU6IHN0cmluZztcclxuICB1cmk/OiBzdHJpbmc7XHJcbiAgcGhvdG9VUkk/OiBzdHJpbmc7XHJcbn1cclxuXHJcbmV4cG9ydCBpbnRlcmZhY2UgR29vZ2xlUmV2aWV3IHtcclxuICBuYW1lOiBzdHJpbmc7XHJcbiAgcHJvZmlsZTogc3RyaW5nO1xyXG4gIHNlcnZpY2U6IHN0cmluZztcclxuICByZXZpZXc6IHN0cmluZztcclxuICByYXRpbmc6IG51bWJlcjtcclxuICBpbml0aWFscz86IHN0cmluZztcclxuICBhdmF0YXJVcmw/OiBzdHJpbmc7XHJcbiAgYXV0aG9yQXR0cmlidXRpb24/OiBHb29nbGVBdXRob3JBdHRyaWJ1dGlvbjtcclxufVxyXG5cclxuZXhwb3J0IGludGVyZmFjZSBWaWRlb1Rlc3RpbW9uaWFsIHtcclxuICBpZDogc3RyaW5nO1xyXG4gIG5hbWU6IHN0cmluZztcclxuICBsb2NhdGlvbj86IHN0cmluZztcclxuICBjb3VudHJ5RmxhZz86IHN0cmluZztcclxuICBzZXJ2aWNlPzogc3RyaW5nO1xyXG4gIHZpZGVvVXJsOiBzdHJpbmc7XHJcbiAgcG9zdGVyVXJsOiBzdHJpbmc7XHJcbiAgcXVvdGU/OiBzdHJpbmc7XHJcbiAgZGV0YWlsPzogc3RyaW5nO1xyXG59XHJcblxyXG5leHBvcnQgY29uc3QgdGVzdGltb25pYWxzOiBHb29nbGVSZXZpZXdbXSA9IFtcclxuICB7XHJcbiAgICBuYW1lOiBcIlNhc21pdGEgUGF0dG5haWtcIixcclxuICAgIHByb2ZpbGU6IFwiR29vZ2xlIFJldmlld1wiLFxyXG4gICAgc2VydmljZTogXCI5LzQvMjAyNlwiLFxyXG4gICAgcmV2aWV3OiBcIkEgY29tcGxldGUgdHJhbnNmb3JtYXRpb24gd2hpY2ggSSBjYW4gc2VlIGluIG15c2VsZiB0b2RheS5cIixcclxuICAgIHJhdGluZzogNSxcclxuICAgIGluaXRpYWxzOiBcIlNQXCIsXHJcbiAgICBhdXRob3JBdHRyaWJ1dGlvbjoge1xyXG4gICAgICBkaXNwbGF5TmFtZTogXCJTYXNtaXRhIFBhdHRuYWlrXCIsXHJcbiAgICAgIHVyaTogXCJodHRwczovL21hcHMuYXBwLmdvby5nbC9FV3puVTFVWEptZEhISnRQQVwiLFxyXG4gICAgICBwaG90b1VSSTogdW5kZWZpbmVkLFxyXG4gICAgfVxyXG4gIH0sXHJcbiAge1xyXG4gICAgbmFtZTogXCJTdWJoYXNocmVlIFNhaHVcIixcclxuICAgIHByb2ZpbGU6IFwiR29vZ2xlIFJldmlld1wiLFxyXG4gICAgc2VydmljZTogXCIxLzkvMjAxOVwiLFxyXG4gICAgcmV2aWV3OiBcIkkgaGlnaGx5IHJlY29tbWVuZCBXaXNkb20gYmhhcmF0IHRvIGFueW9uZSBsb29raW5nIGZvciBtZW50YWwgY2xhcml0eSBhbmQgcGVhY2UuXCIsXHJcbiAgICByYXRpbmc6IDUsXHJcbiAgICBpbml0aWFsczogXCJTU1wiLFxyXG4gICAgYXV0aG9yQXR0cmlidXRpb246IHtcclxuICAgICAgZGlzcGxheU5hbWU6IFwiU3ViaGFzaHJlZSBTYWh1XCIsXHJcbiAgICAgIHVyaTogXCJodHRwczovL21hcHMuYXBwLmdvby5nbC9FV3puVTFVWEptZEhISnRQQVwiLFxyXG4gICAgICBwaG90b1VSSTogdW5kZWZpbmVkLFxyXG4gICAgfVxyXG4gIH0sXHJcbiAge1xyXG4gICAgbmFtZTogXCJTaHJhZGRoYXNocmVlIFNhaHVcIixcclxuICAgIHByb2ZpbGU6IFwiR29vZ2xlIFJldmlld1wiLFxyXG4gICAgc2VydmljZTogXCI3LzgvMjAyNlwiLFxyXG4gICAgcmV2aWV3OiBcIkl0IGlzIGEgc3VwcG9ydGl2ZSBwbGF0Zm9ybSBmb3IgcGVyc29uYWwgZ3Jvd3RoIGFuZCBlbW90aW9uYWwgaGVhbGluZy5cIixcclxuICAgIHJhdGluZzogNSxcclxuICAgIGluaXRpYWxzOiBcIlNTXCIsXHJcbiAgICBhdXRob3JBdHRyaWJ1dGlvbjoge1xyXG4gICAgICBkaXNwbGF5TmFtZTogXCJTaHJhZGRoYXNocmVlIFNhaHVcIixcclxuICAgICAgdXJpOiBcImh0dHBzOi8vbWFwcy5hcHAuZ29vLmdsL0VXem5VMVVYSm1kSEhKdFBBXCIsXHJcbiAgICAgIHBob3RvVVJJOiB1bmRlZmluZWQsXHJcbiAgICB9XHJcbiAgfSxcclxuICB7XHJcbiAgICBuYW1lOiBcIlNhc3dhdCBOYXlha1wiLFxyXG4gICAgcHJvZmlsZTogXCJHb29nbGUgUmV2aWV3XCIsXHJcbiAgICBzZXJ2aWNlOiBcIjUvOC8yMDI2XCIsXHJcbiAgICByZXZpZXc6IFwiRHIuIFByaXlhIFJhbmphbiBTYWh1IGhhcyBhbiBpbmNyZWRpYmxlIGFiaWxpdHkgdG8gaW5zcGlyZSBhbmQgYnJpbmcgY2xhcml0eS5cIixcclxuICAgIHJhdGluZzogNSxcclxuICAgIGluaXRpYWxzOiBcIlNOXCIsXHJcbiAgICBhdXRob3JBdHRyaWJ1dGlvbjoge1xyXG4gICAgICBkaXNwbGF5TmFtZTogXCJTYXN3YXQgTmF5YWtcIixcclxuICAgICAgdXJpOiBcImh0dHBzOi8vbWFwcy5hcHAuZ29vLmdsL0VXem5VMVVYSm1kSEhKdFBBXCIsXHJcbiAgICAgIHBob3RvVVJJOiB1bmRlZmluZWQsXHJcbiAgICB9XHJcbiAgfSxcclxuICB7XHJcbiAgICBuYW1lOiBcIkthbmNoYW4gV2l0b3JlXCIsXHJcbiAgICBwcm9maWxlOiBcIkdvb2dsZSBSZXZpZXdcIixcclxuICAgIHNlcnZpY2U6IFwiNS84LzIwMjZcIixcclxuICAgIHJldmlldzogXCJHcmVhdCBleHBlcmllbmNlLiBTaXIgaGVscGVkIG1lIHRvIGhlYWwgaW4gbXkgbGlmZSBhdCBhIHZlcnkgY3J1Y2lhbCB0aW1lLlwiLFxyXG4gICAgcmF0aW5nOiA0LFxyXG4gICAgaW5pdGlhbHM6IFwiS1dcIixcclxuICAgIGF1dGhvckF0dHJpYnV0aW9uOiB7XHJcbiAgICAgIGRpc3BsYXlOYW1lOiBcIkthbmNoYW4gV2l0b3JlXCIsXHJcbiAgICAgIHVyaTogXCJodHRwczovL21hcHMuYXBwLmdvby5nbC9FV3puVTFVWEptZEhISnRQQVwiLFxyXG4gICAgICBwaG90b1VSSTogdW5kZWZpbmVkLFxyXG4gICAgfVxyXG4gIH0sXHJcbiAge1xyXG4gICAgbmFtZTogXCJQYW5rYWogTW9kaVwiLFxyXG4gICAgcHJvZmlsZTogXCJHb29nbGUgUmV2aWV3XCIsXHJcbiAgICBzZXJ2aWNlOiBcIjE4LzkvMjAyNlwiLFxyXG4gICAgcmV2aWV3OiBcIkkgZGlkIGEgbWVkaXRhdGlvbiBzZXNzaW9uIGFuZCBmcm9tIHRoZW4gb24gaXQgd2FzIGEgZ3JlYXQgZXhwZXJpZW5jZS5cIixcclxuICAgIHJhdGluZzogNSxcclxuICAgIGluaXRpYWxzOiBcIlBNXCIsXHJcbiAgICBhdXRob3JBdHRyaWJ1dGlvbjoge1xyXG4gICAgICBkaXNwbGF5TmFtZTogXCJQYW5rYWogTW9kaVwiLFxyXG4gICAgICB1cmk6IFwiaHR0cHM6Ly9tYXBzLmFwcC5nb28uZ2wvRVd6blUxVVhKbWRISEp0UEFcIixcclxuICAgICAgcGhvdG9VUkk6IHVuZGVmaW5lZCxcclxuICAgIH1cclxuICB9XHJcbl07XHJcblxyXG5leHBvcnQgY29uc3QgdmlkZW9UZXN0aW1vbmlhbHM6IFZpZGVvVGVzdGltb25pYWxbXSA9IFtcclxuICB7XHJcbiAgICBpZDogXCJncmVlc2hhLW1hbmRld2FsXCIsXHJcbiAgICBuYW1lOiBcIkdyZWVzaGEgTWFuZGV3YWxcIixcclxuICAgIGxvY2F0aW9uOiBcIkNhbmFkYVwiLFxyXG4gICAgY291bnRyeUZsYWc6IFwi8J+HqPCfh6ZcIixcclxuICAgIHNlcnZpY2U6IFwiQXVyYSBTY2FubmluZyBUZXN0aW1vbnlcIixcclxuICAgIHZpZGVvVXJsOiBcIi9ncmVlc2hhLW1hbmRld2FsLXRlc3RpbW9ueS5tcDRcIixcclxuICAgIHBvc3RlclVybDogXCIvZ3JlZXNoYS1tYW5kZXdhbC1wb3N0ZXIuanBnXCIsXHJcbiAgICBxdW90ZTogXCJBdXJhIHNjYW5uaW5nIGdhdmUgbWUgZGVlcCBjbGFyaXR5IGFuZCBpbm5lciBwZWFjZS5cIixcclxuICAgIGRldGFpbDogXCJSZWNvcmRlZCBmaXJzdGhhbmQgY2xpZW50IHRlc3RpbW9ueSBzaGFyaW5nIGhlciBhdXRoZW50aWMgaGVhbGluZyBqb3VybmV5IGFuZCBhdXJhIHNjYW5uaW5nIGV4cGVyaWVuY2Ugd2l0aCBEci4gUHJpeWEgUmFuamFuIFNhaHUuXCJcclxuICB9LFxyXG4gIHtcclxuICAgIGlkOiBcInJlaWtpLW1haGFyYXNodHJhXCIsXHJcbiAgICBuYW1lOiBcIkNsaWVudCBFeHBlcmllbmNlXCIsXHJcbiAgICBsb2NhdGlvbjogXCJNYWhhcmFzaHRyYSwgSW5kaWFcIixcclxuICAgIGNvdW50cnlGbGFnOiBcIvCfh67wn4ezXCIsXHJcbiAgICBzZXJ2aWNlOiBcIlJlaWtpIEhlYWxpbmcgU2Vzc2lvblwiLFxyXG4gICAgdmlkZW9Vcmw6IFwiL3Rlc3RpbW9ueS0xLm1wNFwiLFxyXG4gICAgcG9zdGVyVXJsOiBcIi90ZXN0aW1vbnktMS1wb3N0ZXIuanBnXCIsXHJcbiAgICBxdW90ZTogXCJGZWx0IGEgcHJvZm91bmQgc2Vuc2Ugb2YgbGlnaHRuZXNzIGFuZCBlbW90aW9uYWwgcmVsZWFzZS5cIixcclxuICAgIGRldGFpbDogXCJBdXRoZW50aWMgY2xpZW50IHRlc3RpbW9ueSBmcm9tIE1haGFyYXNodHJhIHNoYXJpbmcgaGVyIHJlbW90ZSBSZWlraSBoZWFsaW5nIHNlc3Npb24gYW5kIGlubmVyIHNoaWZ0IHdpdGggRHIuIFByaXlhIFJhbmphbiBTYWh1LlwiXHJcbiAgfSxcclxuICB7XHJcbiAgICBpZDogXCJwdW5hbS13ZXN0LWJlbmdhbFwiLFxyXG4gICAgbmFtZTogXCJQdW5hbVwiLFxyXG4gICAgbG9jYXRpb246IFwiV2VzdCBCZW5nYWwsIEluZGlhXCIsXHJcbiAgICBjb3VudHJ5RmxhZzogXCLwn4eu8J+Hs1wiLFxyXG4gICAgc2VydmljZTogXCJSZWlraSBTZXNzaW9uIEZlZWRiYWNrXCIsXHJcbiAgICB2aWRlb1VybDogXCIvdGVzdGltb255LTIubXA0XCIsXHJcbiAgICBwb3N0ZXJVcmw6IFwiL3Rlc3RpbW9ueS0yLXBvc3Rlci5qcGdcIixcclxuICAgIHF1b3RlOiBcIlRoZSBwb3NpdGl2ZSBlbmVyZ3kgYW5kIGhlYWxpbmcgbWFkZSBhIG5vdGljZWFibGUgZGlmZmVyZW5jZS5cIixcclxuICAgIGRldGFpbDogXCJQdW5hbSBmcm9tIFdlc3QgQmVuZ2FsIHNoYXJpbmcgaGVyIHBlcnNvbmFsIGZlZWRiYWNrIGZvbGxvd2luZyBhIHRyYW5zZm9ybWF0aXZlIFJlaWtpIGhlYWxpbmcgc2Vzc2lvbi5cIlxyXG4gIH0sXHJcbiAge1xyXG4gICAgaWQ6IFwic3ViLWluc3BlY3Rvci1ybi1vZGlzaGFcIixcclxuICAgIG5hbWU6IFwiU3ViIEluc3BlY3RvciBSLiBOLlwiLFxyXG4gICAgbG9jYXRpb246IFwiT2Rpc2hhLCBJbmRpYVwiLFxyXG4gICAgY291bnRyeUZsYWc6IFwi8J+HrvCfh7NcIixcclxuICAgIHNlcnZpY2U6IFwiUmVpa2kgU2Vzc2lvbiBGZWVkYmFja1wiLFxyXG4gICAgdmlkZW9Vcmw6IFwiL3Rlc3RpbW9ueS0zLm1wNFwiLFxyXG4gICAgcG9zdGVyVXJsOiBcIi90ZXN0aW1vbnktMy1wb3N0ZXIuanBnXCIsXHJcbiAgICBxdW90ZTogXCJCcm91Z2h0IGNsYXJpdHksIHJlbGllZiBmcm9tIHN0cmVzcywgYW5kIHJlc3RvcmVkIGlubmVyIGJhbGFuY2UuXCIsXHJcbiAgICBkZXRhaWw6IFwiTGF3IGVuZm9yY2VtZW50IG9mZmljZXIgU3ViIEluc3BlY3RvciBSLiBOLiBmcm9tIE9kaXNoYSByZWZsZWN0aW5nIG9uIGhpcyBSZWlraSBoZWFsaW5nIGZlZWRiYWNrIGFuZCBwZWFjZSBvZiBtaW5kLlwiXHJcbiAgfSxcclxuICB7XHJcbiAgICBpZDogXCJkci1zdXJiaGktdXR0YXItcHJhZGVzaFwiLFxyXG4gICAgbmFtZTogXCJEci4gU3VyYmhpXCIsXHJcbiAgICBsb2NhdGlvbjogXCJVdHRhciBQcmFkZXNoLCBJbmRpYVwiLFxyXG4gICAgY291bnRyeUZsYWc6IFwi8J+HrvCfh7NcIixcclxuICAgIHNlcnZpY2U6IFwiUmVpa2kgU2Vzc2lvbiBGZWVkYmFja1wiLFxyXG4gICAgdmlkZW9Vcmw6IFwiL3Rlc3RpbW9ueS00Lm1wNFwiLFxyXG4gICAgcG9zdGVyVXJsOiBcIi90ZXN0aW1vbnktNC1wb3N0ZXIuanBnXCIsXHJcbiAgICBxdW90ZTogXCJBIGRlZXBseSBncm91bmRpbmcgZXhwZXJpZW5jZSB0aGF0IGhlbHBlZCByZWxlYXNlIG1lbnRhbCB0ZW5zaW9uLlwiLFxyXG4gICAgZGV0YWlsOiBcIkRyLiBTdXJiaGkgZnJvbSBVdHRhciBQcmFkZXNoIHNoYXJpbmcgaGVyIHByb2Zlc3Npb25hbCBhbmQgaG9saXN0aWMgZXhwZXJpZW5jZSBmb2xsb3dpbmcgaGVyIHBlcnNvbmFsaXplZCBSZWlraSBzZXNzaW9uLlwiXHJcbiAgfVxyXG5dO1xyXG5cclxuZXhwb3J0IGNvbnN0IHNlcnZpY2VzID0gW1xyXG4gIHsgXHJcbiAgICB0aXRsZTogXCJOTFBcIiwgXHJcbiAgICBzbHVnOiBcIi9zZXJ2aWNlcy9ubHBcIiwgXHJcbiAgICBpbWFnZTogbmxwLCBcclxuICAgIGV5ZWJyb3c6IFwiMDEgLyBNSU5EXCIsIFxyXG4gICAgc3VtbWFyeTogXCJSZXByb2dyYW0gZGVlcCByb290ZWQgYmVsaWVmcyBhbmQgZW1vdGlvbmFsIGJsb2NrcyB0byBjcmVhdGUgbGFzdGluZyB0cmFuc2Zvcm1hdGlvbiBhbmQgdHJ1ZSBoZWFsaW5nLlwiLCBcclxuICAgIGRldGFpbDogXCJOTFAgc2Vzc2lvbnMgZm9jdXMgb24gaWRlbnRpZnlpbmcgYW5kIHJlZnJhbWluZyBiZWxpZWZzLCBmZWFycyBhbmQgZW1vdGlvbmFsIHBhdHRlcm5zLiBUaGUgcHJhY3RpY2UgdXRpbGl6ZXMgdGVjaG5pcXVlcyBpbmNsdWRpbmcgYW5jaG9yaW5nLCB0aW1lbGluZSB0aGVyYXB5IGFuZCBzdWJjb25zY2lvdXMgcmVmcmFtaW5nLlwiLCBcclxuICAgIGludHJvUXVvdGU6IFwiWW91ciBtaW5kIGhvbGRzIHRoZSBwb3dlciB0byBoZWFsIHlvdXIgYm9keS5cIixcclxuICAgIGZ1bGxEZXNjcmlwdGlvbjogW1xyXG4gICAgICBcIlRocm91Z2ggTmV1cm8gTGluZ3Vpc3RpYyBQcm9ncmFtbWluZyAoTkxQKSwgd2UgaWRlbnRpZnkgYW5kIHJlcHJvZ3JhbSBkZWVwIHJvb3RlZCBiZWxpZWZzLCBmZWFycywgYW5kIGVtb3Rpb25hbCBibG9ja3MgdGhhdCBwcmV2ZW50IHRydWUgaGVhbGluZy5cIixcclxuICAgICAgXCJVc2luZyB0ZWNobmlxdWVzIGxpa2UgYW5jaG9yaW5nLCB0aW1lbGluZSB0aGVyYXB5IGFuZCBzdWJjb25zY2lvdXMgcmVmcmFtaW5nLCB3ZSBhbGlnbiB5b3VyIHRob3VnaHRzLCBlbW90aW9ucyBhbmQgZW5lcmd5IHRvIGNyZWF0ZSBsYXN0aW5nIHRyYW5zZm9ybWF0aW9uLlwiLFxyXG4gICAgICBcIldoZW4gYmxlbmRlZCB3aXRoIFJlaWtpIGhlYWxpbmcsIHRoaXMgcHJvY2VzcyByZXN0b3JlcyBiYWxhbmNlLCBwZWFjZSBhbmQgaGFybW9ueSwgaGVscGluZyB5b3UgYmVjb21lIHRoZSBiZXN0IHZlcnNpb24gb2YgeW91cnNlbGYuXCJcclxuICAgIF0sXHJcbiAgICBjbG9zaW5nUXVvdGU6IFwiSGVhbCB0aGUgbWluZCBhbmQgdGhlIGJvZHkgZm9sbG93cy5cIixcclxuICAgIHBvaW50czogW1wiU3ViY29uc2Npb3VzIHJlZnJhbWluZ1wiLCBcIlRpbWVsaW5lIHRoZXJhcHkgJiBhbmNob3JpbmdcIiwgXCJBbGlnbmluZyB0aG91Z2h0cywgZW1vdGlvbnMsIGFuZCBlbmVyZ3lcIl0gXHJcbiAgfSxcclxuICB7IFxyXG4gICAgdGl0bGU6IFwiUmVpa2kgSGVhbGluZ1wiLCBcclxuICAgIHNsdWc6IFwiL3NlcnZpY2VzL3JlaWtpXCIsIFxyXG4gICAgaW1hZ2U6IHJlaWtpLCBcclxuICAgIGV5ZWJyb3c6IFwiMDIgLyBFTkVSR1lcIiwgXHJcbiAgICBzdW1tYXJ5OiBcIlRoZSBTY2llbmNlIG9mIFVuaXZlcnNhbCBMaWZlIEVuZXJneS4gT3ZlcmNvbWUgYW54aWV0eSwgc3RyZXNzLCBhbmQgZmF0aWd1ZSBieSBhbGlnbmluZyB5b3VyIGlubmVyIGVuZXJneS5cIiwgXHJcbiAgICBkZXRhaWw6IFwiUmVpa2kgaXMgYSBKYXBhbmVzZSBlbmVyZ3kgaGVhbGluZyBwcmFjdGljZSBvZmZlcmVkIGJ5IFRoZSBXaXNkb20gQmhhcmF0LiBTZXNzaW9ucyBjcmVhdGUgYSBxdWlldCBzcGFjZSBmb3IgcmVsYXhhdGlvbiBhbmQgcmVmbGVjdGlvbjsgUmVpa2kgdHJhaW5pbmcgaXMgYWxzbyBvZmZlcmVkIGFjcm9zcyBMZXZlbHMgMSB0byAzLlwiLCBcclxuICAgIGludHJvUXVvdGU6IFwiSW4gYSB3b3JsZCBmdWxsIG9mIG5vaXNlLCBwcmVzc3VyZSBhbmQgaW1iYWxhbmNlLCBoZWFsaW5nIGlzIG5vdCBhIGx1eHVyeSwgaXQncyBhIG5lY2Vzc2l0eS5cIixcclxuICAgIGZ1bGxEZXNjcmlwdGlvbjogW1xyXG4gICAgICBcIkFzIGEgUmVpa2kgTWFzdGVyLCBJIHVzZSBpbnR1aXRpdmUgYW5kIGd1aWRlZCBoZWFsaW5nIHRlY2huaXF1ZXMgdG8gaGVscCBpbmRpdmlkdWFscyBvdmVyY29tZSBhbnhpZXR5LCBzdHJlc3MsIGZhdGlndWUsIHJlbGF0aW9uc2hpcCBjaGFsbGVuZ2VzIGFuZCBwaHlzaWNhbCBkaXNjb21mb3J0LlwiLFxyXG4gICAgICBcIldlIGRvIHRoaXMgbm90IGJ5IGZpZ2h0aW5nIHlvdXIgY2hhbGxlbmdlcywgYnV0IGJ5IGFsaWduaW5nIHRoZSBpbm5lciBlbmVyZ3kgdGhhdCBjcmVhdGVzIHRoZW0uIEl0IGlzIGEgZGVlcGx5IHJlc3RvcmF0aXZlIHByYWN0aWNlIHRoYXQgaW52aXRlcyBwcm9mb3VuZCBzcGFjZSBmb3IgcmVzdCwgYmFsYW5jZSwgYW5kIHJlY29ubmVjdGlvbi5cIixcclxuICAgICAgXCJXZSBhbHNvIG9mZmVyIGNvbXByZWhlbnNpdmUgUmVpa2kgdHJhaW5pbmcgYWNyb3NzIExldmVscyAxLCAyLCBhbmQgMyBmb3IgdGhvc2Ugd2lzaGluZyB0byBtYXN0ZXIgdGhlIHByYWN0aWNlIHRoZW1zZWx2ZXMuXCJcclxuICAgIF0sXHJcbiAgICBjbG9zaW5nUXVvdGU6IFwiQmVjYXVzZSB3aGVuIHlvdXIgZW5lcmd5IGZsb3dzIGZyZWVseSwgeW91ciBsaWZlIGJlZ2lucyB0byBnbG93LlwiLFxyXG4gICAgcG9pbnRzOiBbXCJHdWlkZWQgaW50dWl0aXZlIGhlYWxpbmdcIiwgXCJPdmVyY29tZSBzdHJlc3MgYW5kIGZhdGlndWVcIiwgXCJSZWlraSB0cmFpbmluZywgTGV2ZWxzIDEgdG8gM1wiXSBcclxuICB9LFxyXG4gIHsgXHJcbiAgICB0aXRsZTogXCJHYXJiaHNhbnNrYXJcIiwgXHJcbiAgICBzbHVnOiBcIi9zZXJ2aWNlcy9nYXJiaHNhbnNrYXJcIiwgXHJcbiAgICBpbWFnZTogZ2FyYmhzYW5za2FyLCBcclxuICAgIGV5ZWJyb3c6IFwiMDMgLyBCRUdJTk5JTkdTXCIsIFxyXG4gICAgc3VtbWFyeTogXCJBbmNpZW50IFdpc2RvbSBmb3IgTW9kZXJuIE1vdGhlcnMuIENvbnNjaW91c2x5IG51cnR1cmUgeW91ciBiYWJ5IGFuZCBiZWdpbiBwYXJlbnRpbmcgYmVmb3JlIGJpcnRoLlwiLCBcclxuICAgIGRldGFpbDogXCJHYXJiaHNhbnNrYXIgZ3VpZGFuY2UgaXMgZGVzaWduZWQgZm9yIGNvdXBsZXMgZnJvbSBwcmUgY29uY2VwdGlvbiB0aHJvdWdoIHByZWduYW5jeSwgYnJpbmdpbmcgdG9nZXRoZXIgbWVkaXRhdGlvbiwgYWZmaXJtYXRpb25zLCBzb3VuZCwgYW5kIGNvbnNjaW91cyBwYXJlbnRpbmcgcHJhY3RpY2VzLlwiLCBcclxuICAgIGludHJvUXVvdGU6IFwiQ29uc2Npb3VzbHkgTnVydHVyZSBZb3VyIEJhYnkuIEVtb3Rpb25hbGx5IFByZXBhcmUgWW91cnNlbGYuIEJlZ2luIFBhcmVudGluZyBCZWZvcmUgQmlydGguXCIsXHJcbiAgICBmdWxsRGVzY3JpcHRpb246IFtcclxuICAgICAgXCJHYXJiaHNhbnNrYXIgaXMgbm90IGp1c3QgYSBwcmFjdGljZTsgaXQgaXMgYSBzYWNyZWQgam91cm5leSwgYSBjb25zY2lvdXMgY29ubmVjdGlvbiBiZXR3ZWVuIHRoZSBtb3RoZXIsIGZhdGhlciwgYW5kIHRoZSB1bmJvcm4gY2hpbGQuXCIsXHJcbiAgICAgIFwiVGhyb3VnaCBzaW1wbGUgeWV0IHBvd2VyZnVsIHRlY2huaXF1ZXMsIHBhcmVudHMgY2FuIG51cnR1cmUgYSBoYXBweSwgaGVhbHRoeSwgYW5kIGhpZ2ggdmlicmF0aW9uIGJhYnkuIE91ciBob2xpc3RpYyBwcmVuYXRhbCBqb3VybmV5IGludGVncmF0ZXMgR2FyYmhzYW1iYWQsIGd1aWRlZCBtZWRpdGF0aW9uLCBwb3NpdGl2ZSBhZmZpcm1hdGlvbnMsIHNvdW5kICYgbWFudHJhLCBOTFAsIFJlaWtpLCBhbmQgY29uc2Npb3VzIHBhcmVudGluZy5cIixcclxuICAgICAgXCJJdCBpcyB0aGUgc2NpZW5jZSBvZiBzb3VsZnVsIHBhcmVudGluZywgYmxlbmRpbmcgYW5jaWVudCByaXR1YWxzIHdpdGggbW9kZXJuIHBzeWNob2xvZ3ksIGhlbHBpbmcgZmFtaWxpZXMgd2VsY29tZSB0aGVpciBiYWJ5IHdpdGggYXdhcmVuZXNzLCBqb3kgYW5kIGRpdmluZSBncmFjZS5cIlxyXG4gICAgXSxcclxuICAgIGNsb3NpbmdRdW90ZTogXCJXZWxjb21lIHlvdXIgY2hpbGQgbm90IGp1c3QgYmlvbG9naWNhbGx5LCBidXQgc3Bpcml0dWFsbHksIGVtb3Rpb25hbGx5LCBhbmQgY29uc2Npb3VzbHkuXCIsXHJcbiAgICBwb2ludHM6IFtcIlByZSBjb25jZXB0aW9uIGFuZCBwcmVnbmFuY3kgZ3VpZGFuY2VcIiwgXCJHdWlkZWQgbWVkaXRhdGlvbiAmIGFmZmlybWF0aW9uc1wiLCBcIlNvdWxmdWwgcGFyZW50aW5nIHByYWN0aWNlc1wiXSBcclxuICB9LFxyXG4gIHsgXHJcbiAgICB0aXRsZTogXCJMaWZlICYgSGlnaCBQZXJmb3JtYW5jZSBDb2FjaGluZ1wiLCBcclxuICAgIHNsdWc6IFwiL3NlcnZpY2VzL2xpZmUtY29hY2hpbmdcIiwgXHJcbiAgICBpbWFnZTogY29hY2hpbmcsIFxyXG4gICAgZXllYnJvdzogXCIwNCAvIEdST1dUSFwiLCBcclxuICAgIHN1bW1hcnk6IFwiQXdha2VuIFlvdXIgVWx0aW1hdGUgSGlnaCBQZXJmb3JtYW5jZSBMaWZlIHdpdGggZ3VpZGVkIE1pbmQsIEJvZHkgJiBFbmVyZ3kgdHJhbnNmb3JtYXRpb24uXCIsIFxyXG4gICAgZGV0YWlsOiBcIkxpZmUgYW5kIGhpZ2ggcGVyZm9ybWFuY2UgY29hY2hpbmcgYnJpbmdzIHRvZ2V0aGVyIG1pbmRzZXQsIGhhYml0cyBhbmQgZW5lcmd5IGFsaWdubWVudC4gU2Vzc2lvbnMgYXJlIGRlc2lnbmVkIHRvIGhlbHAgeW91IHJlZmxlY3Qgb24gd2hhdCBtYXR0ZXJzIGFuZCB0YWtlIHB1cnBvc2VmdWwgc3RlcHMgZm9yd2FyZC5cIiwgXHJcbiAgICBpbnRyb1F1b3RlOiBcIlVubG9jayB5b3VyIHRydWUgcG90ZW50aWFsIGJ5IG1hc3RlcmluZyBtaW5kc2V0LCBoYWJpdHMgYW5kIGVuZXJneSBhbGlnbm1lbnQuXCIsXHJcbiAgICBmdWxsRGVzY3JpcHRpb246IFtcclxuICAgICAgXCJPdXIgY29hY2hpbmcgZnJhbWV3b3JrIGJsZW5kcyBwcm92ZW4gc3RyYXRlZ2llcyBmcm9tIE5MUCBhbmQgYW5jaWVudCB3aXNkb20sIGJsZW5kaW5nIHNjaWVuY2UgYW5kIHNwaXJpdHVhbGl0eSB0byBoZWxwIHlvdSBwZXJmb3JtIGF0IHlvdXIgcGVhayB3aGlsZSBzdGF5aW5nIGdyb3VuZGVkIGFuZCBmdWxmaWxsZWQuXCIsXHJcbiAgICAgIFwiV2hldGhlciB5b3UncmUgYW4gZW50cmVwcmVuZXVyLCBzdHVkZW50IG9yIHNlZWtlciBvZiBzZWxmIG1hc3RlcnksIHRoaXMgcGVyc29uYWxpemVkIG9uZSB0byBvbmUgY29hY2hpbmcgd2lsbCBoZWxwIHlvdSBidWlsZCBhIGhpZ2ggcGVyZm9ybWFuY2UgbGlmZXN0eWxlLlwiLFxyXG4gICAgICBcIlRvZ2V0aGVyLCB3ZSBidWlsZCBhIGZvdW5kYXRpb24gdGhhdCBzdXBwb3J0cyBjb250aW51b3VzIGdyb3d0aCB3aXRoIGJhbGFuY2UsIHB1cnBvc2UgYW5kIGFic29sdXRlIGpveS5cIlxyXG4gICAgXSxcclxuICAgIGNsb3NpbmdRdW90ZTogXCJCZWxpZXZlIGluIHlvdXJzZWxmIGFuZCBhbGwgdGhhdCB5b3UgYXJlLlwiLFxyXG4gICAgcG9pbnRzOiBbXCJQZXJzb25hbGl6ZWQgb25lIHRvIG9uZSBjb2FjaGluZ1wiLCBcIlNjaWVuY2UgbWVldHMgc3Bpcml0dWFsaXR5XCIsIFwiSGlnaCBwZXJmb3JtYW5jZSBsaWZlc3R5bGUgYnVpbGRpbmdcIl0gXHJcbiAgfSxcclxuXSBhcyBjb25zdDtcclxuZXhwb3J0IGNvbnN0IHByb2dyYW1zID0gW1xyXG4gIHsgdGl0bGU6IFwiQmVjb21lIFlvdXIgT3duIERvY3RvclwiLCBkZXRhaWw6IFwiQSAxMCB3ZWVrICg3MCBkYXkpIHByb2dyYW0gbGlzdGVkIG9uIHRoZSBvcmlnaW5hbCB3ZWJzaXRlLlwiIH0sXHJcbiAgeyB0aXRsZTogXCIxIG9uIDEgTkxQIENvdW5zZWxsaW5nICYgQ29hY2hpbmdcIiwgZGV0YWlsOiBcIkluZGl2aWR1YWwgZ3VpZGFuY2UgZXhwbG9yaW5nIG1pbmRzZXQgYW5kIHBlcnNvbmFsIHBhdHRlcm5zLlwiIH0sXHJcbiAgeyB0aXRsZTogXCJSZWlraSBIZWFsaW5nICYgVHJhaW5pbmdcIiwgZGV0YWlsOiBcIkhlYWxpbmcgc2Vzc2lvbnMgYW5kIFJlaWtpIHRyYWluaW5nIGFjcm9zcyBMZXZlbHMgMSB0byAzLlwiIH0sXHJcbiAgeyB0aXRsZTogXCJHYXJiaHNhbnNrYXIgR3VpZGFuY2VcIiwgZGV0YWlsOiBcIkNvbnNjaW91cyBwcmVnbmFuY3kgc3VwcG9ydCBmb3IgcGFyZW50cyBhbmQgcGFyZW50cyB0byBiZS5cIiB9LFxyXG5dO1xyXG5leHBvcnQgY29uc3QgZmFxcyA9IFtcclxuICB7IHE6IFwiV2hhdCBjYW4gSSBleHBlY3QgZnJvbSBhIGNvbnN1bHRhdGlvbj9cIiwgYTogXCJBIGNoYW5jZSB0byBkaXNjdXNzIHdoYXQgeW91IGFyZSBsb29raW5nIGZvciBhbmQgZXhwbG9yZSB3aGljaCBvZiB0aGUgZm91ciBvZmZlcmluZ3MgbWF5IGJlIHN1aXRhYmxlLiBVc2UgdGhlIGJvb2tpbmcgbGluayB0byBzZWUgYXZhaWxhYmlsaXR5LlwiIH0sXHJcbiAgeyBxOiBcIkRvIEkgbmVlZCBwcmV2aW91cyBleHBlcmllbmNlIHdpdGggTkxQIG9yIFJlaWtpP1wiLCBhOiBcIk5vdCBhdCBhbGwuIFdoZXRoZXIgeW91IGFyZSBjb21wbGV0ZWx5IG5ldyB0byBlbmVyZ3kgaGVhbGluZyBvciBoYXZlIHByaW9yIGV4cGVyaWVuY2UsIHdlIHRhaWxvciBldmVyeSBzZXNzaW9uIHRvIHlvdXIgY29tZm9ydCBsZXZlbCBhbmQgbmVlZHMuXCIgfSxcclxuICB7IHE6IFwiSXMgR2FyYmhzYW5za2FyIG9ubHkgZm9yIG1vdGhlcnM/XCIsIGE6IFwiTm8uIFRoZSBXaXNkb20gQmhhcmF0IGRlc2NyaWJlcyBpdHMgR2FyYmhzYW5za2FyIGd1aWRhbmNlIGFzIGEgam91cm5leSBmb3IgYm90aCBtb3RoZXJzIGFuZCBmYXRoZXJzLCBmcm9tIHByZSBjb25jZXB0aW9uIHRocm91Z2ggcHJlZ25hbmN5LlwiIH0sXHJcbiAgeyBxOiBcIkhvdyBkb2VzIE5MUCAoTmV1cm8gTGluZ3Vpc3RpYyBQcm9ncmFtbWluZykgd29yaz9cIiwgYTogXCJOTFAgaWRlbnRpZmllcyBhbmQgcmVwcm9ncmFtcyBkZWVwIHJvb3RlZCBiZWxpZWZzLCBmZWFycywgYW5kIGVtb3Rpb25hbCBibG9ja3MuIFVzaW5nIHRlY2huaXF1ZXMgbGlrZSBhbmNob3JpbmcgYW5kIHRpbWVsaW5lIHRoZXJhcHksIHdlIGhlbHAgYWxpZ24geW91ciB0aG91Z2h0cyB0byBjcmVhdGUgbGFzdGluZyB0cmFuc2Zvcm1hdGlvbi5cIiB9LFxyXG4gIHsgcTogXCJXaGF0IGRvZXMgYSBSZWlraSBoZWFsaW5nIHNlc3Npb24gaW52b2x2ZT9cIiwgYTogXCJSZWlraSB1c2VzIGludHVpdGl2ZSwgZ3VpZGVkIGhlYWxpbmcgdGVjaG5pcXVlcyB0byBoZWxwIG92ZXJjb21lIGFueGlldHksIHN0cmVzcywgZmF0aWd1ZSwgYW5kIHBoeXNpY2FsIGRpc2NvbWZvcnQgYnkgYWxpZ25pbmcgeW91ciBpbm5lciBlbmVyZ3kuIEl0IGlzIGEgZ2VudGxlLCBkZWVwbHkgcmVzdG9yYXRpdmUgcHJvY2Vzcy5cIiB9LFxyXG4gIHsgcTogXCJXaG8gY2FuIGJlbmVmaXQgZnJvbSB0aGUgSGlnaCBQZXJmb3JtYW5jZSBjb2FjaGluZz9cIiwgYTogXCJPdXIgY29hY2hpbmcgaXMgZGVzaWduZWQgZm9yIGVudHJlcHJlbmV1cnMsIHN0dWRlbnRzLCBwcm9mZXNzaW9uYWxzLCBhbmQgc2Vla2VycyBvZiBzZWxmIG1hc3Rlcnkgd2hvIHdhbnQgdG8gdW5sb2NrIHRoZWlyIHRydWUgcG90ZW50aWFsIHdoaWxlIG1haW50YWluaW5nIGJhbGFuY2UsIHB1cnBvc2UsIGFuZCBqb3kuXCIgfSxcclxuICB7IHE6IFwiQXJlIHNlc3Npb25zIGNvbmR1Y3RlZCBvbmxpbmUgb3IgaW4gcGVyc29uP1wiLCBhOiBcIldlIG9mZmVyIGJvdGghIFlvdSBjYW4gdmlzaXQgb3VyIGNlbnRlciBhdCBKYXlhZGV2IFZpaGFyLCBCaHViYW5lc3dhciwgb3Igd2UgY2FuIGFycmFuZ2UgdmlydHVhbCBzZXNzaW9ucyBkZXBlbmRpbmcgb24gdGhlIHByb2dyYW0gYW5kIHlvdXIgbG9jYXRpb24uXCIgfSxcclxuICB7IHE6IFwiQXJlIHRoZXNlIHNlcnZpY2VzIGEgc3Vic3RpdHV0ZSBmb3IgbWVkaWNhbCBjYXJlP1wiLCBhOiBcIk5vLiBDb2FjaGluZywgUmVpa2kgYW5kIEdhcmJoc2Fuc2thciBndWlkYW5jZSBhcmUgbm90IHN1YnN0aXR1dGVzIGZvciBtZWRpY2FsIHRyZWF0bWVudC4gUGxlYXNlIGNvbnN1bHQgYSBxdWFsaWZpZWQgaGVhbHRoY2FyZSBwcm9mZXNzaW9uYWwgZm9yIG1lZGljYWwgY29uY2VybnMuXCIgfSxcclxuXTtcclxuIl19

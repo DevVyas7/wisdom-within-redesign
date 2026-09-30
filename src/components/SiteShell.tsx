@@ -5,9 +5,11 @@ import { Button } from "@/components/ui/button";
 import { assets, bookingUrl, email, services, whatsappUrl } from "@/lib/site";
 
 const links = [
-  { label: "Home", to: "/" }, { label: "About", to: "/about" },
-  { label: "Programs", to: "/programs" }, { label: "The Book", to: "/the-book" },
-  { label: "Testimonials", to: "/testimonials" }, { label: "FAQ", to: "/faq" },
+  { label: "Home", to: "/" },
+  { label: "About", to: "/about" },
+  { label: "Programs", to: "/programs" },
+  { label: "The Book", to: "/the-book" },
+  { label: "FAQ", to: "/faq" },
   { label: "Contact", to: "/contact" },
 ] as const;
 
@@ -38,13 +40,13 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
     <main>{children}</main>
     <footer className="footer"><div className="container-wide footer-grid">
       <div><Link to="/" className="footer-brand"><img src={assets.logo} alt=""/><span>THE WISDOM<br/><b>BHARAT</b></span></Link><p>Awaken the wisdom within.</p><p>Mind. Energy. Conscious living.</p></div>
-      <div><h3>Explore</h3><Link to="/about">About</Link><Link to="/services">Services</Link><Link to="/programs">Programs</Link><Link to="/the-book">The Book</Link><Link to="/testimonials">Testimonials</Link></div>
+      <div><h3>Explore</h3><Link to="/about">About</Link><Link to="/services">Services</Link><Link to="/programs">Programs</Link><Link to="/the-book">The Book</Link><Link to="/" hash="experiences">Testimonials</Link></div>
       <div><h3>Support</h3><Link to="/faq">FAQ</Link><Link to="/contact">Contact</Link><Link to="/book-consultation">Book a Consultation</Link><Link to="/privacy-policy">Privacy Policy</Link><Link to="/terms-and-conditions">Terms & Conditions</Link></div>
       <div><h3>Get in touch</h3><p>Jayadev Vihar, Bhubaneswar<br/>Odisha, India</p><a href="tel:+919437085701"><Phone size={15}/> +91 94370 85701</a><a href={`mailto:${email}`}><Mail size={15}/> {email}</a><a href={whatsappUrl} target="_blank" rel="noopener noreferrer">WhatsApp <ArrowRight size={14}/></a><a href="https://www.instagram.com/thewisdombharat/" target="_blank" rel="noopener noreferrer"><Instagram size={15}/> Instagram</a></div>
     </div><div className="container-wide footer-bottom"><span>© {new Date().getFullYear()} The Wisdom Bharat. All rights reserved.</span><span>Awaken The Wisdom Within</span></div></footer>
   </>;
 }
-export function ActionLink({ to = "/book-consultation", children, light = false }: { to?: "/book-consultation" | "/services" | "/about" | "/programs" | "/the-book" | "/testimonials" | "/contact"; children: React.ReactNode; light?: boolean }) {
+export function ActionLink({ to = "/book-consultation", children, light = false }: { to?: "/book-consultation" | "/services" | "/about" | "/programs" | "/the-book" | "/contact"; children: React.ReactNode; light?: boolean }) {
   return <Button asChild className={light ? "action-link light" : "action-link"}><Link to={to}>{children}<ArrowRight size={17}/></Link></Button>;
 }
 export function SectionHeading({ eyebrow, title, description, centered = false }: { eyebrow: string; title: string; description?: string; centered?: boolean }) { return <div className={`section-heading ${centered ? "centered" : ""}`}><span className="eyebrow">{eyebrow}</span><h2>{title}</h2>{description && <p>{description}</p>}</div>; }

@@ -691,3 +691,8 @@ h1,h2,h3,blockquote { padding-bottom: .12em; }
   .achievement { grid-template-columns: 30px 1fr; gap: 12px; }
   .hero h1,.section-heading h2,.page-header h1,.service-hero h1 { overflow-wrap: anywhere; }
 }
+
+@keyframes carouselProgress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
