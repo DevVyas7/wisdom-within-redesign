@@ -327,11 +327,16 @@ export const videoTestimonials: VideoTestimonial[] = [
   }
 ];
 
+const serviceNlpImage = encodeURI("/service images/NLP IMG.jpg");
+const serviceReikiImage = encodeURI("/service images/REIKI IMG.jpg");
+const serviceGarbhsanskarImage = encodeURI("/service images/GARBHASANSKAR IMG.jpg");
+const serviceCoachingImage = encodeURI("/service images/LIFE & HIGH PERFORMANCE IMG.jpg");
+
 export const services = [
   { 
     title: "NLP", 
     slug: "/services/nlp", 
-    image: nlp, 
+    image: serviceNlpImage, 
     eyebrow: "01 / MIND", 
     summary: "Reprogram deep rooted beliefs and emotional blocks to create lasting transformation and true healing.", 
     detail: "NLP sessions focus on identifying and reframing beliefs, fears and emotional patterns. The practice utilizes techniques including anchoring, timeline therapy and subconscious reframing.", 
@@ -347,7 +352,7 @@ export const services = [
   { 
     title: "Reiki Healing", 
     slug: "/services/reiki", 
-    image: reiki, 
+    image: serviceReikiImage, 
     eyebrow: "02 / ENERGY", 
     summary: "The Science of Universal Life Energy. Overcome anxiety, stress, and fatigue by aligning your inner energy.", 
     detail: "Reiki is a Japanese energy healing practice offered by The Wisdom Bharat. Sessions create a quiet space for relaxation and reflection; Reiki training is also offered across Levels 1 to 3.", 
@@ -363,7 +368,7 @@ export const services = [
   { 
     title: "Garbhsanskar", 
     slug: "/services/garbhsanskar", 
-    image: garbhsanskar, 
+    image: serviceGarbhsanskarImage, 
     eyebrow: "03 / BEGINNINGS", 
     summary: "Ancient Wisdom for Modern Mothers. Consciously nurture your baby and begin parenting before birth.", 
     detail: "Garbhsanskar guidance is designed for couples from pre conception through pregnancy, bringing together meditation, affirmations, sound, and conscious parenting practices.", 
@@ -379,7 +384,7 @@ export const services = [
   { 
     title: "Life & High Performance Coaching", 
     slug: "/services/life-coaching", 
-    image: coaching, 
+    image: serviceCoachingImage, 
     eyebrow: "04 / GROWTH", 
     summary: "Awaken Your Ultimate High Performance Life with guided Mind, Body & Energy transformation.", 
     detail: "Life and high performance coaching brings together mindset, habits and energy alignment. Sessions are designed to help you reflect on what matters and take purposeful steps forward.", 
