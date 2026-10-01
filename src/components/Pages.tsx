@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowDown, ArrowRight, Check, Mail, MapPin, Phone, Award, ZoomIn, Star, ChevronLeft, ChevronRight, ShieldCheck, X, Play, Pause, Volume2, VolumeX, Maximize, RotateCcw, ExternalLink } from "lucide-react";
+import { ArrowDown, ArrowRight, Check, Mail, MapPin, Phone, Award, ZoomIn, Star, ChevronLeft, ChevronRight, ShieldCheck, X, Play, Pause, Volume2, VolumeX, Maximize, Minimize, RotateCcw, ExternalLink } from "lucide-react";
 import { useState, useEffect, useRef, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { ActionLink, BottomCTA, ExternalButton, SectionHeading } from "@/components/SiteShell";
@@ -373,9 +373,25 @@ function VideoTestimonialPlayer({
   const [duration, setDuration] = useState(0);
   const [isMuted, setIsMuted] = useState(false);
   const [showControls, setShowControls] = useState(true);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const [hoverTime, setHoverTime] = useState<number | null>(null);
   const [hoverPos, setHoverPos] = useState<number | null>(null);
   const controlsTimeoutRef = useRef<any>(null);
+
+  // Sync fullscreen state with document fullscreen changes
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      const fsEl = document.fullscreenElement || (document as any).webkitFullscreenElement;
+      setIsFullscreen(fsEl === containerRef.current);
+    };
+
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    document.addEventListener("webkitfullscreenchange", handleFullscreenChange);
+    return () => {
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
+      document.removeEventListener("webkitfullscreenchange", handleFullscreenChange);
+    };
+  }, []);
 
   // Notify parent of play state changes
   useEffect(() => {
@@ -471,11 +487,25 @@ function VideoTestimonialPlayer({
 
   const toggleFullscreen = () => {
     const c = containerRef.current;
+    const v = videoRef.current;
     if (!c) return;
-    if (!document.fullscreenElement) {
-      c.requestFullscreen().catch(() => {});
+
+    const isFs = !!(document.fullscreenElement || (document as any).webkitFullscreenElement);
+
+    if (!isFs) {
+      if (c.requestFullscreen) {
+        c.requestFullscreen().catch(() => {});
+      } else if ((c as any).webkitRequestFullscreen) {
+        (c as any).webkitRequestFullscreen();
+      } else if (v && (v as any).webkitEnterFullscreen) {
+        (v as any).webkitEnterFullscreen();
+      }
     } else {
-      document.exitFullscreen().catch(() => {});
+      if (document.exitFullscreen) {
+        document.exitFullscreen().catch(() => {});
+      } else if ((document as any).webkitExitFullscreen) {
+        (document as any).webkitExitFullscreen();
+      }
     }
   };
 
@@ -575,7 +605,11 @@ function VideoTestimonialPlayer({
       ref={containerRef}
       onMouseMove={resetControlsTimeout}
       onTouchStart={resetControlsTimeout}
-      className="relative w-full max-w-[215px] sm:max-w-[225px] aspect-[9/16] max-h-[370px] sm:max-h-[385px] rounded-lg overflow-hidden bg-black shadow-lg border border-white/10 group select-none mx-auto"
+      className={`relative w-full aspect-[9/16] rounded-lg overflow-hidden bg-black shadow-lg border border-white/10 group select-none mx-auto video-card-container ${
+        isFullscreen
+          ? "!max-w-none !max-h-none !aspect-auto !w-full !h-full !rounded-none !border-none flex items-center justify-center"
+          : "max-w-[215px] sm:max-w-[225px] max-h-[370px] sm:max-h-[385px]"
+      }`}
     >
       <video
         ref={videoRef}
@@ -583,7 +617,9 @@ function VideoTestimonialPlayer({
         poster={video.posterUrl}
         playsInline
         preload="metadata"
-        className="w-full h-full object-cover cursor-pointer"
+        className={`w-full h-full cursor-pointer ${
+          isFullscreen ? "object-contain" : "object-cover"
+        }`}
         onClick={togglePlay}
         onPlay={() => {
           setIsPlaying(true);
@@ -651,6 +687,8 @@ function VideoTestimonialPlayer({
       {/* Floating Bottom Control Bar */}
       <div
         className={`absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-2.5 pt-6 transition-opacity duration-300 flex flex-col gap-1.5 ${
+          isFullscreen ? "max-w-2xl mx-auto pb-5 px-4" : ""
+        } ${
           showControls || !isPlaying ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         onClick={(e) => e.stopPropagation()}
@@ -729,9 +767,9 @@ function VideoTestimonialPlayer({
               type="button"
               onClick={toggleFullscreen}
               className="p-1 hover:text-primary transition-colors focus:outline-none cursor-pointer"
-              aria-label="Toggle fullscreen"
+              aria-label={isFullscreen ? "Exit fullscreen" : "Toggle fullscreen"}
             >
-              <Maximize size={14} />
+              {isFullscreen ? <Minimize size={14} /> : <Maximize size={14} />}
             </button>
           </div>
         </div>
