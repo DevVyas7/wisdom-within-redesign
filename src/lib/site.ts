@@ -9,11 +9,12 @@ import reikiMasterCert from "@/assets/reiki-master-cert.png";
 import logoClean from "@/assets/logo-clean.png";
 const heroVideo = "/hero-video.mp4";
 const heroGif = "/hero-video.gif";
+const garbhsanskar2 = encodeURI("/service images/GARBHASANSKAR_2 IMG.jpg");
 
 const founder = { url: "https://img1.wsimg.com/isteam/ip/f781fbeb-6590-4b29-9a04-a94f51cadf95/blob-07898e5.png" };
 const book = { url: "https://img1.wsimg.com/isteam/ip/f781fbeb-6590-4b29-9a04-a94f51cadf95/BookCover.jpg" };
 
-export const assets = { logo: logoClean, founder: founder.url, book: book.url, yoga, nlp, reiki, garbhsanskar, coaching, nlpCert, reikiCert, reikiMasterCert, heroVideo, heroGif };
+export const assets = { logo: logoClean, founder: founder.url, book: book.url, yoga, nlp, reiki, garbhsanskar: garbhsanskar2, garbhsanskar2, coaching, nlpCert, reikiCert, reikiMasterCert, heroVideo, heroGif };
 export const bookingUrl = "https://brand.thewisdombharat.com/widget/booking/ZVduiLYZzsRTOzyxDjC0";
 export const whatsappUrl = "https://wa.me/919178112471";
 export const email = "thewisdombharat@gmail.com";
