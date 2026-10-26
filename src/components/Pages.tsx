@@ -3,7 +3,7 @@ import { ArrowDown, ArrowRight, Check, Mail, MapPin, Phone, Award, ZoomIn, Star,
 import { useState, useEffect, useRef, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { ActionLink, BottomCTA, ExternalButton, SectionHeading } from "@/components/SiteShell";
-import { assets, bookingUrl, bookUrl, email, faqs, founderAchievements, programs, services, whatsappUrl, testimonials, videoTestimonials, type GoogleReview, googleReviewScreenshots } from "@/lib/site";
+import { assets, bookingUrl, bookUrl, email, faqs, founderAchievements, programs, services, whatsappUrl, testimonials, videoTestimonials, type GoogleReview, type GoogleReviewScreenshot, googleReviewScreenshots } from "@/lib/site";
 
 export function ServiceCards() { return <div className="service-grid">{services.map((s) => <Link className="service-card" to={s.slug} key={s.slug}><div className="service-image"><img src={s.image} alt={`${s.title} session`} loading="lazy" width={1024} height={768}/></div><div className="service-card-body"><span className="eyebrow">{s.eyebrow}</span><div className="service-card-title"><h3>{s.title}</h3><ArrowRight size={19}/></div><p>{s.summary}</p></div></Link>)}</div>; }
 export function FaqList({ limit }: { limit?: number }) { return <div className="faq-list">{faqs.slice(0, limit).map((f,i) => <details key={f.q}><summary><span className="faq-num">0{i+1}</span>{f.q}<span className="faq-plus">+</span></summary><p>{f.a}</p></details>)}</div>; }
@@ -173,7 +173,7 @@ export function CertificateGallery() {
     }
   ];
 
-  const cert = credentials[active];
+  const cert = credentials[active]!;
 
   return (
     <section className="section-pad bg-muted/20 border-t border-border">
@@ -786,7 +786,7 @@ function VideoTestimonialsCarousel() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const touchStartXRef = useRef<number | null>(null);
   const count = videoTestimonials.length;
-  const currentVideo = videoTestimonials[activeVideoIndex] || videoTestimonials[0];
+  const currentVideo = videoTestimonials[activeVideoIndex] || videoTestimonials[0]!;
 
   const handleNextVideo = () => {
     setIsVideoPlaying(false);
@@ -810,12 +810,14 @@ function VideoTestimonialsCarousel() {
   }, [isVideoPlaying, count, activeVideoIndex]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartXRef.current = e.touches[0].clientX;
+    const touch = e.touches[0];
+    if (touch) touchStartXRef.current = touch.clientX;
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
     if (touchStartXRef.current === null) return;
-    const diff = touchStartXRef.current - e.changedTouches[0].clientX;
+    const touch = e.changedTouches[0];
+    const diff = touchStartXRef.current - (touch?.clientX ?? 0);
     if (diff > 45 && count > 1) {
       handleNextVideo();
     } else if (diff < -45 && count > 1) {
@@ -828,7 +830,7 @@ function VideoTestimonialsCarousel() {
     if (name.startsWith("Dr.")) return name;
     if (name.startsWith("Sub Inspector")) return "SI R. N.";
     if (name === "Client Experience" && location) {
-      return location.split(",")[0].trim();
+      return location.split(",")[0]!.trim();
     }
     return name.split(" ")[0];
   };
@@ -1085,25 +1087,27 @@ function GoogleReviewsCarousel() {
   };
 
   useEffect(() => {
-    if (!isTransitioning) {
-      const raf = requestAnimationFrame(() => {
-        setIsTransitioning(true);
-      });
-      return () => cancelAnimationFrame(raf);
-    }
+    if (isTransitioning) return undefined;
+    const raf = requestAnimationFrame(() => {
+      setIsTransitioning(true);
+    });
+    return () => cancelAnimationFrame(raf);
   }, [isTransitioning]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartXRef.current = e.touches[0].clientX;
-    touchStartYRef.current = e.touches[0].clientY;
+    const touch = e.touches[0];
+    if (!touch) return;
+    touchStartXRef.current = touch.clientX;
+    touchStartYRef.current = touch.clientY;
     setIsHovered(true);
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
     setIsHovered(false);
     if (touchStartXRef.current === null) return;
-    const diffX = touchStartXRef.current - e.changedTouches[0].clientX;
-    const diffY = (touchStartYRef.current || 0) - e.changedTouches[0].clientY;
+    const touch = e.changedTouches[0];
+    const diffX = touchStartXRef.current - (touch?.clientX ?? 0);
+    const diffY = (touchStartYRef.current || 0) - (touch?.clientY ?? 0);
 
     if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
       if (diffX > 0) {

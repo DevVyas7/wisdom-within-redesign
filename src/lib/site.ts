@@ -200,7 +200,6 @@ export const testimonials: GoogleReview[] = [
     authorAttribution: {
       displayName: "Sasmita Pattnaik",
       uri: "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA",
-      photoURI: undefined,
     }
   },
   {
@@ -213,7 +212,6 @@ export const testimonials: GoogleReview[] = [
     authorAttribution: {
       displayName: "Subhashree Sahu",
       uri: "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA",
-      photoURI: undefined,
     }
   },
   {
@@ -226,7 +224,6 @@ export const testimonials: GoogleReview[] = [
     authorAttribution: {
       displayName: "Shraddhashree Sahu",
       uri: "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA",
-      photoURI: undefined,
     }
   },
   {
@@ -239,7 +236,6 @@ export const testimonials: GoogleReview[] = [
     authorAttribution: {
       displayName: "Saswat Nayak",
       uri: "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA",
-      photoURI: undefined,
     }
   },
   {
@@ -252,7 +248,6 @@ export const testimonials: GoogleReview[] = [
     authorAttribution: {
       displayName: "Kanchan Witore",
       uri: "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA",
-      photoURI: undefined,
     }
   },
   {
@@ -265,7 +260,6 @@ export const testimonials: GoogleReview[] = [
     authorAttribution: {
       displayName: "Pankaj Modi",
       uri: "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA",
-      photoURI: undefined,
     }
   }
 ];
