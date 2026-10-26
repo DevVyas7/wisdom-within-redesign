@@ -51,10 +51,10 @@ export async function fetchLiveGoogleReviews(
 ): Promise<GoogleReview[] | null> {
   const apiKey =
     apiKeyOverride ||
-    (typeof process !== "undefined" ? process.env?.GOOGLE_PLACES_API_KEY : undefined);
+    (typeof process !== "undefined" ? process.env?.["GOOGLE_PLACES_API_KEY"] : undefined);
 
   if (!apiKey) {
-    if (typeof process !== "undefined" && process.env?.NODE_ENV !== "production") {
+    if (typeof process !== "undefined" && process.env?.["NODE_ENV"] !== "production") {
       console.info(
         "[Google Places API] No GOOGLE_PLACES_API_KEY configured in environment. Using verified static reviews fallback."
       );
@@ -134,13 +134,13 @@ export async function fetchLiveGoogleReviews(
         review: reviewText,
         rating: typeof raw.rating === "number" ? raw.rating : 5,
         initials,
-        avatarUrl: photoURI,
+        ...(photoURI ? { avatarUrl: photoURI } : {}),
         googleMapsUri:
           raw.googleMapsUri || profileUri || "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA",
         authorAttribution: {
           displayName,
-          uri: profileUri,
-          photoURI,
+          ...(profileUri ? { uri: profileUri } : {}),
+          ...(photoURI ? { photoURI } : {}),
         },
       };
     });
