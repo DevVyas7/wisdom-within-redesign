@@ -830,7 +830,7 @@ function VideoTestimonialsCarousel() {
     if (name.startsWith("Dr.")) return name;
     if (name.startsWith("Sub Inspector")) return "SI R. N.";
     if (name === "Client Experience" && location) {
-      return location.split(",")[0].trim();
+      return location.split(",")[0]!.trim();
     }
     return name.split(" ")[0];
   };
