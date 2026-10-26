@@ -173,7 +173,7 @@ export function CertificateGallery() {
     }
   ];
 
-  const cert = credentials[active];
+  const cert = credentials[active]!;
 
   return (
     <section className="section-pad bg-muted/20 border-t border-border">
@@ -810,12 +810,14 @@ function VideoTestimonialsCarousel() {
   }, [isVideoPlaying, count, activeVideoIndex]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartXRef.current = e.touches[0].clientX;
+    const touch = e.touches[0];
+    if (touch) touchStartXRef.current = touch.clientX;
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
     if (touchStartXRef.current === null) return;
-    const diff = touchStartXRef.current - e.changedTouches[0].clientX;
+    const touch = e.changedTouches[0];
+    const diff = touchStartXRef.current - (touch?.clientX ?? 0);
     if (diff > 45 && count > 1) {
       handleNextVideo();
     } else if (diff < -45 && count > 1) {
