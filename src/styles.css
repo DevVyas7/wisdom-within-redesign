@@ -583,7 +583,8 @@ h1,h2,h3,blockquote { font-family: var(--font-display); font-weight: 500; letter
 .page-header .eyebrow,.page-header p { color: var(--foreground); }
 .page-header h1 { max-width: 1030px; }
 .service-hero img,.editorial-photo img { border-bottom: 8px solid var(--primary); }
-.bottom-cta { background: var(--primary); }
+.bottom-cta { background: var(--foreground); color: var(--dark-text); }
+.bottom-cta .eyebrow { color: var(--gold); }
 .footer { background: var(--foreground); }
 .footer-grid a:not(.footer-brand),.footer-grid p,.footer-bottom { color: color-mix(in oklab,var(--dark-text) 78%,var(--foreground)); }
 @media (max-width: 1100px) {
