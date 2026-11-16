@@ -9,23 +9,104 @@ import reikiMasterCert from "@/assets/reiki-master-cert.png";
 import logoClean from "@/assets/logo-clean.png";
 const heroVideo = "/hero-video.mp4";
 const heroGif = "/hero-video.gif";
-const garbhsanskar2 = encodeURI("/service images/GARBHASANSKAR_2 IMG.jpg");
+const garbhasanskarHero = "/images/client-updates/garbhasanskar-hero.jpg";
+const guidedMeditation = "/images/client-updates/guided-meditation.jpg";
+const positiveAffirmations = "/images/client-updates/positive-affirmations.jpg";
+const positiveSoundMantra = "/images/client-updates/positive-sound-mantra.jpg";
+const reikiWellness = "/images/client-updates/reiki-wellness.jpg";
+const reikiChakra = "/images/client-updates/reiki-chakra.jpg";
+const reikiHealing = "/images/client-updates/reiki-healing.jpg";
+const consciousParenting = "/images/client-updates/conscious-parenting.jpg";
+const awardVedicResearchIama = "/images/client-updates/award-vedic-research-iama.jpg";
+const awardExcellenceVedicResearch = "/images/client-updates/award-excellence-vedic-research.jpg";
+const awardMedalOfHonour = "/images/client-updates/award-medal-of-honour.jpg";
 
-const founder = { url: "https://img1.wsimg.com/isteam/ip/f781fbeb-6590-4b29-9a04-a94f51cadf95/blob-07898e5.png" };
+const founder = { url: "/images/client-updates/founder-phd.jpg" };
 const book = { url: "https://img1.wsimg.com/isteam/ip/f781fbeb-6590-4b29-9a04-a94f51cadf95/BookCover.jpg" };
 
-export const assets = { logo: logoClean, founder: founder.url, book: book.url, yoga, nlp, reiki, garbhsanskar: garbhsanskar2, garbhsanskar2, coaching, nlpCert, reikiCert, reikiMasterCert, heroVideo, heroGif };
+export const assets = {
+  logo: logoClean,
+  founder: founder.url,
+  book: book.url,
+  yoga,
+  nlp,
+  reiki: reikiHealing,
+  reikiHealing,
+  reikiChakra,
+  garbhsanskar: consciousParenting,
+  garbhsanskar2: consciousParenting,
+  garbhasanskarHero,
+  guidedMeditation,
+  positiveAffirmations,
+  positiveSoundMantra,
+  reikiWellness,
+  consciousParenting,
+  awardVedicResearchIama,
+  awardExcellenceVedicResearch,
+  awardMedalOfHonour,
+  coaching,
+  nlpCert,
+  reikiCert,
+  reikiMasterCert,
+  heroVideo,
+  heroGif,
+};
 export const bookingUrl = "https://brand.thewisdombharat.com/widget/booking/ZVduiLYZzsRTOzyxDjC0";
+export const phoneNumber = "+91 94370 85701";
+export const phoneHref = "tel:+919437085701";
+export const whatsappNumber = "+91 9178112471";
 export const whatsappUrl = "https://wa.me/919178112471";
-export const email = "thewisdombharat@gmail.com";
+export const whatsappSecondaryNumber = "+91 94370 85701";
+export const whatsappSecondaryUrl = "https://wa.me/919437085701";
+export const email = "TheWisdombharat@gmail.com";
+export const address = "CellCity Kendujhar &\nJayadev Vihar, Bhubaneswar\nOdisha";
+export const socialLinks = {
+  instagram: "https://www.instagram.com/thewisdombharat/",
+  youtube: "https://www.youtube.com/@thewisdombharat",
+} as const;
 export const bookUrl = "https://www.amazon.in/Awaken-Your-Ultimate-High-Performance-System/dp/B0CCMG3717";
-// Wording follows the founder profile published at thewisdombharat.com.
 export const founderAchievements = [
   { label: "Author", detail: "Awaken Your Ultimate High Performance System" },
   { label: "Reiki Master", detail: "Reiki healing and training" },
   { label: "Certified NLP Practitioner", detail: "Neuro Linguistic Programming" },
   { label: "10+ years", detail: "Experience in human transformation" },
-  { label: "PhD in Reiki (continuing)", detail: "Advanced studies in progress" },
+  { label: "PhD in Reiki", detail: "Doctorate in Reiki" },
+] as const;
+
+export const founderAwards = [
+  {
+    id: "vedic-research-iama",
+    title: "Vedic Research Recognition & Academic Participation",
+    description:
+      "Recognition from Shree Maharshi College of Vedic Astrology, Udaipur, for contributions towards Vedic Research Studies, dated 27 September 2026. The accompanying certificate recognises participation in the inaugural ceremony of IAMA Open University, Florida, USA, on 27 September 2026.",
+    image: awardVedicResearchIama,
+    alt: "Shree Maharshi College of Vedic Astrology Udaipur recognition and IAMA Open University Florida USA inaugural participation certificates presented to Dr. Priya Ranjan Sahu",
+    width: 1024,
+    height: 721,
+    date: "27 September 2026",
+  },
+  {
+    id: "award-of-excellence-vedic-research",
+    title: "Award of Excellence – Vedic Research",
+    description:
+      "Award presented by Shree Maharshi College of Vedic Astrology for the Ph.D. Vedic Research Ceremony, September 2026.",
+    image: awardExcellenceVedicResearch,
+    alt: "Shree Maharshi College of Vedic Astrology Award of Excellence plaque for Ph.D. Vedic Research Ceremony September 2026",
+    width: 884,
+    height: 1024,
+    date: "September 2026",
+  },
+  {
+    id: "medal-of-honour-vedic-study",
+    title: "Medal of Honour – Doctorate of Philosophy in Vedic Study",
+    description:
+      "A Medal of Honour bearing the title “Doctorate of Philosophy in Vedic Study”, dated 2026.",
+    image: awardMedalOfHonour,
+    alt: "Medal of Honour bearing the title Doctorate of Philosophy in Vedic Study dated 2026",
+    width: 928,
+    height: 1024,
+    date: "2026",
+  },
 ] as const;
 
 export interface GoogleAuthorAttribution {
@@ -323,13 +404,14 @@ export const videoTestimonials: VideoTestimonial[] = [
 ];
 
 const serviceNlpImage = encodeURI("/service images/NLP IMG.jpg");
-const serviceReikiImage = encodeURI("/service images/REIKI IMG.jpg");
-const serviceGarbhsanskarImage = encodeURI("/service images/GARBHASANSKAR IMG.jpg");
+const serviceReikiImage = reikiHealing;
+const serviceGarbhsanskarImage = garbhasanskarHero;
 const serviceCoachingImage = encodeURI("/service images/LIFE & HIGH PERFORMANCE IMG.jpg");
+const serviceAuraImage = reikiChakra;
 
 export const services = [
   { 
-    title: "NLP", 
+    title: "NLP Guided Meditation", 
     slug: "/services/nlp", 
     image: serviceNlpImage, 
     eyebrow: "01 / MIND", 
@@ -350,15 +432,14 @@ export const services = [
     image: serviceReikiImage, 
     eyebrow: "02 / ENERGY", 
     summary: "The Science of Universal Life Energy. Overcome anxiety, stress, and fatigue by aligning your inner energy.", 
-    detail: "Reiki is a Japanese energy healing practice offered by The Wisdom Bharat. Sessions create a quiet space for relaxation and reflection; Reiki training is also offered across Levels 1 to 3.", 
+    detail: "Reiki is a Japanese energy healing practice offered by The Wisdom Bharat. Sessions create a quiet space for relaxation and reflection.", 
     introQuote: "In a world full of noise, pressure and imbalance, healing is not a luxury, it's a necessity.",
     fullDescription: [
       "As a Reiki Master, I use intuitive and guided healing techniques to help individuals overcome anxiety, stress, fatigue, relationship challenges and physical discomfort.",
-      "We do this not by fighting your challenges, but by aligning the inner energy that creates them. It is a deeply restorative practice that invites profound space for rest, balance, and reconnection.",
-      "We also offer comprehensive Reiki training across Levels 1, 2, and 3 for those wishing to master the practice themselves."
+      "We do this not by fighting your challenges, but by aligning the inner energy that creates them. It is a deeply restorative practice that invites profound space for rest, balance, and reconnection."
     ],
     closingQuote: "Because when your energy flows freely, your life begins to glow.",
-    points: ["Guided intuitive healing", "Overcome stress and fatigue", "Reiki training, Levels 1 to 3"] 
+    points: ["Guided intuitive healing", "Overcome stress and fatigue", "Restorative space and inner balance"] 
   },
   { 
     title: "Garbhsanskar", 
@@ -377,7 +458,7 @@ export const services = [
     points: ["Pre conception and pregnancy guidance", "Guided meditation & affirmations", "Soulful parenting practices"] 
   },
   { 
-    title: "Life & High Performance Coaching", 
+    title: "Lifestyle & Conscious Living Practices", 
     slug: "/services/life-coaching", 
     image: serviceCoachingImage, 
     eyebrow: "04 / GROWTH", 
@@ -392,20 +473,500 @@ export const services = [
     closingQuote: "Believe in yourself and all that you are.",
     points: ["Personalized one to one coaching", "Science meets spirituality", "High performance lifestyle building"] 
   },
+  {
+    title: "AURA Energy Scanning",
+    slug: "/services/aura",
+    image: serviceAuraImage,
+    eyebrow: "05 / TRANSFORMATION",
+    summary: "Activate Your Energy. Rebalance Your Chakras. Awaken Your Awareness. Your journey from inner awareness to personal transformation.",
+    detail: "AURA Energy Scanning brings together four complementary practices: NLP & Mind Programming, Universal Energy – Reiki Healing, Chakra Healing & Awareness, and Guided Meditation.",
+    introQuote: "Activate Your Energy. Rebalance Your Chakras. Awaken Your Awareness.",
+    fullDescription: [
+      "AURA Energy Scanning is a holistic wellness and personal-transformation program by The Wisdom Bharat, designed to help individuals explore their inner potential, develop positive mental patterns, cultivate spiritual awareness and build a mindful lifestyle.",
+      "AURA Energy Scanning brings together four complementary practices: NLP & Mind Programming, Universal Energy – Reiki Healing, Chakra Healing & Awareness, and Guided Meditation.",
+      "Through a structured combination of these practices, AURA Energy Scanning encourages individuals to develop greater self-awareness, emotional balance, positive thinking, relaxation and a deeper connection with themselves."
+    ],
+    closingQuote: "Your Journey from Inner Awareness to Personal Transformation",
+    points: [
+      "NLP & Mind Programming",
+      "Universal Energy – Reiki Healing",
+      "Chakra Healing & Awareness",
+      "Guided Meditation"
+    ]
+  },
 ] as const;
 export const programs = [
-  { title: "Become Your Own Doctor", detail: "A 10 week (70 day) program listed on the original website." },
   { title: "1 on 1 NLP Counselling & Coaching", detail: "Individual guidance exploring mindset and personal patterns." },
-  { title: "Reiki Healing & Training", detail: "Healing sessions and Reiki training across Levels 1 to 3." },
+  { title: "Reiki Healing", detail: "Guided energy healing sessions for deep relaxation and inner alignment." },
   { title: "Garbhsanskar Guidance", detail: "Conscious pregnancy support for parents and parents to be." },
 ];
 export const faqs = [
-  { q: "What can I expect from a consultation?", a: "A chance to discuss what you are looking for and explore which of the four offerings may be suitable. Use the booking link to see availability." },
-  { q: "Do I need previous experience with NLP or Reiki?", a: "Not at all. Whether you are completely new to energy healing or have prior experience, we tailor every session to your comfort level and needs." },
-  { q: "Is Garbhsanskar only for mothers?", a: "No. The Wisdom Bharat describes its Garbhsanskar guidance as a journey for both mothers and fathers, from pre conception through pregnancy." },
-  { q: "How does NLP (Neuro Linguistic Programming) work?", a: "NLP identifies and reprograms deep rooted beliefs, fears, and emotional blocks. Using techniques like anchoring and timeline therapy, we help align your thoughts to create lasting transformation." },
-  { q: "What does a Reiki healing session involve?", a: "Reiki uses intuitive, guided healing techniques to help overcome anxiety, stress, fatigue, and physical discomfort by aligning your inner energy. It is a gentle, deeply restorative process." },
-  { q: "Who can benefit from the High Performance coaching?", a: "Our coaching is designed for entrepreneurs, students, professionals, and seekers of self mastery who want to unlock their true potential while maintaining balance, purpose, and joy." },
-  { q: "Are sessions conducted online or in person?", a: "We offer both! You can visit our center at Jayadev Vihar, Bhubaneswar, or we can arrange virtual sessions depending on the program and your location." },
-  { q: "Are these services a substitute for medical care?", a: "No. Coaching, Reiki and Garbhsanskar guidance are not substitutes for medical treatment. Please consult a qualified healthcare professional for medical concerns." },
-];
+  {
+    q: "What can I expect from an initial consultation?",
+    a: "During your initial consultation, we understand your concerns, personal goals and expectations. Based on your needs, we suggest suitable healing, meditation or personal-development practices.",
+  },
+  {
+    q: "What services does The Wisdom Bharat offer?",
+    a: "We offer a range of holistic wellness and personal-development services, including Reiki Healing, AURA Scanning & Healing, Garbha Sanskar, Chakra Healing, NLP Guided Meditation and personalised wellness programs.",
+  },
+  {
+    q: "Do I need previous experience with NLP, Reiki or meditation?",
+    a: "Not at all! Our sessions are designed for beginners as well as those who already have experience. Every practice is explained and guided step by step.",
+  },
+  {
+    q: "What is Reiki Healing, and how does it work?",
+    a: "Reiki is a complementary energy-based wellness practice traditionally associated with relaxation and spiritual well-being. A practitioner uses gentle hand placements or works without physical contact, depending on the session and individual preference.",
+  },
+  {
+    q: "What is AURA Scanning & Healing?",
+    a: "AURA Scanning & Healing is a holistic wellness offering at The Wisdom Bharat that combines aura-related assessment, chakra awareness, Reiki practices and guided meditation to support self-awareness and personal well-being.",
+  },
+  {
+    q: "Can I take Reiki Healing sessions online?",
+    a: "Yes! We offer online and distance Reiki sessions. You can participate from the comfort of your home after discussing the session process with our team.",
+  },
+  {
+    q: "What is Garbha Sanskar, and who can benefit from it?",
+    a: "Garbha Sanskar is a traditional Indian approach to conscious prenatal nurturing. Our program supports couples planning for pregnancy and expecting parents through meditation, affirmations, NLP-based mind programming, Reiki-based wellness practices and conscious parenting guidance.",
+  },
+  {
+    q: "Is Garbha Sanskar only for expecting mothers?",
+    a: "No. Fathers and partners are equally encouraged to participate. We believe conscious parenting is a shared journey that begins before birth.",
+  },
+  {
+    q: "What is NLP Guided Meditation?",
+    a: "NLP Guided Meditation combines guided visualisation, positive language patterns and mind-programming techniques to encourage self-awareness, positive thinking and supportive mental habits.",
+  },
+  {
+    q: "What is Chakra Healing?",
+    a: "Chakra Healing is a holistic spiritual wellness practice based on the traditional concept of energy centres in the body. It may incorporate meditation, visualisation, affirmations and Reiki-based practices.",
+  },
+  {
+    q: "Can I book a session for emotional well-being or stress management?",
+    a: "Yes. We offer guided meditation, Reiki-based wellness support and personalised practices that may help support relaxation, emotional awareness and self-reflection.",
+  },
+  {
+    q: "Are your sessions available online and offline?",
+    a: "Yes. Depending on the service and availability, we offer both online and offline sessions. Please contact our team for details.",
+  },
+  {
+    q: "How many sessions will I need?",
+    a: "The number of sessions depends on your individual goals, chosen service and preferences. After an initial consultation, we can suggest a suitable session plan.",
+  },
+  {
+    q: "Are the sessions personalised?",
+    a: "Yes. We understand that every individual has different experiences and expectations. Our approach focuses on understanding your needs and suggesting appropriate practices.",
+  },
+  {
+    q: "Can I join if I am completely new to spiritual healing?",
+    a: "Absolutely! You do not need any prior spiritual or healing experience. We welcome everyone interested in exploring meditation, self-awareness and holistic wellness.",
+  },
+  {
+    q: "How can I book a consultation or healing session?",
+    a: "You can contact us through our website, WhatsApp or official contact number. Our team will guide you through the consultation and booking process.",
+  },
+  {
+    q: "Are these services a replacement for medical treatment?",
+    a: "No. Reiki, aura-related practices, NLP Guided Meditation, Chakra Healing and other services are complementary holistic wellness and personal-development offerings. They do not diagnose, cure or replace medical or mental healthcare, medication or professional treatment.",
+  },
+  {
+    q: "Who is the founder of The Wisdom Bharat?",
+    a: "The Wisdom Bharat was founded by Dr. Priya Ranjan Sahu (Life Coach PR), a Reiki PhD holder, author, NLP practitioner, public speaker and healing and life coach. His vision is to encourage personal transformation, self-awareness and conscious living through holistic wellness practices.",
+  },
+] as const;
+
+export const garbhaSanskarFaqs = [
+  {
+    q: "When should we start Garbha Sanskar?",
+    a: "You can begin while planning for pregnancy or during any trimester, with practices adapted to your individual circumstances.",
+  },
+  {
+    q: "Can couples join before conception?",
+    a: "Yes. Couples can participate in preparation practices focused on mindfulness, emotional readiness and conscious parenting.",
+  },
+  {
+    q: "Can I join during the third trimester?",
+    a: "Yes. The practices can be adapted to the stage of pregnancy.",
+  },
+  {
+    q: "Are online sessions available?",
+    a: "Yes. Personalised online guidance and sessions can be arranged.",
+  },
+  {
+    q: "Does Garbha Sanskar guarantee a particular type of baby or pregnancy outcome?",
+    a: "No. Garbha Sanskar is a nurturing and wellness-oriented approach. It does not guarantee a baby's intelligence, personality, health or birth outcome.",
+  },
+  {
+    q: "Can Garbha Sanskar replace medical care?",
+    a: "No. This program is complementary wellness and personal-development support. It does not replace antenatal check-ups, medical advice or treatment.",
+  },
+] as const;
+
+export const garbhaSanskarContent = {
+  hero: {
+    heading: "Consciously Nurture Your Baby. Emotionally Prepare Yourself. Begin Parenting Before Birth.",
+    paragraphs: [
+      "Garbha Sanskar is a holistic prenatal nurturing program designed to support expecting parents in creating a positive, peaceful and nurturing environment during pregnancy.",
+      "At The Wisdom Bharat, we combine traditional Garbha Sanskar wisdom with guided meditation, affirmations, NLP techniques, Reiki-based wellness practices, positive sound and conscious parenting guidance.",
+      "Our approach encourages parents to nurture their emotional well-being, develop a deeper connection with their baby and embrace parenthood consciously.",
+    ],
+    image: garbhasanskarHero,
+    imageAlt: "Pregnant woman in orange saree meditating during Garbha Sanskar practice",
+  },
+  whatIs: {
+    heading: "What is Garbha Sanskar?",
+    paragraphs: [
+      "Garbha Sanskar is an ancient Indian tradition that emphasises the importance of a mother's thoughts, emotions, environment and lifestyle during pregnancy.",
+      "The word Garbha means womb, while Sanskar refers to nurturing, values and positive impressions.",
+      "It encourages parents to create a loving, peaceful and supportive environment for the developing baby while also preparing themselves emotionally and mentally for parenthood.",
+      "At The Wisdom Bharat, we present this traditional wisdom through a structured, contemporary and holistic approach.",
+    ],
+  },
+  approach: {
+    heading: "Our Holistic Garbha Sanskar Approach",
+    practices: [
+      {
+        title: "1. Guided Meditation",
+        description: "Relaxation and mindfulness practices to encourage calmness, self-awareness and emotional balance.",
+        image: guidedMeditation,
+        imageAlt: "Pregnant woman meditating on the terrace in white clothing",
+        width: 1024,
+        height: 682,
+        objectPosition: "center 22%",
+      },
+      {
+        title: "2. Positive Affirmations",
+        description: "Encouraging positive thoughts, confidence, gratitude and emotional connection with the baby.",
+        image: positiveAffirmations,
+        imageAlt: "Pregnant woman meditating indoors in traditional beige clothing",
+        width: 1024,
+        height: 682,
+        objectPosition: "center 20%",
+      },
+      {
+        title: "3. Positive Sound & Mantra",
+        description: "Incorporating soothing music, traditional mantras and mindful listening into the prenatal journey.",
+        image: positiveSoundMantra,
+        imageAlt: "Pregnant woman wearing headphones outdoors",
+        width: 1024,
+        height: 681,
+        objectPosition: "center 18%",
+      },
+      {
+        title: "4. Reiki-Based Wellness Support",
+        description: "Gentle, complementary relaxation and spiritual wellness practices for the expecting mother.",
+        image: reikiWellness,
+        imageAlt: "Reiki practitioner performing a session with a woman lying down",
+        width: 980,
+        height: 653,
+        objectPosition: "center 22%",
+      },
+      {
+        title: "5. NLP & Mind Programming",
+        description: "Guided techniques for positive thinking, supportive beliefs, emotional awareness and mental preparation.",
+        image: reikiChakra,
+        imageAlt: "Woman receiving chakra healing with colourful energy points",
+        width: 800,
+        height: 600,
+        objectPosition: "center center",
+      },
+      {
+        title: "6. Garbhsambad & Conscious Parenting",
+        description: "Developing a loving connection with the baby through communication, gratitude and mindful parenting practices.",
+        image: consciousParenting,
+        imageAlt: "Pregnant couple meditating together during Garbhsambad and conscious parenting",
+        width: 1024,
+        height: 682,
+        objectPosition: "center 22%",
+      },
+    ],
+  },
+  whoCanJoin: {
+    heading: "Who Can Join?",
+    introduction: "Our Garbha Sanskar program is designed for:",
+    points: [
+      "Couples planning to conceive.",
+      "Women preparing for pregnancy.",
+      "Expecting mothers in their first, second or third trimester.",
+      "Couples who wish to develop conscious parenting habits.",
+      "Parents seeking emotional and spiritual preparation for parenthood.",
+    ],
+  },
+  experience: {
+    heading: "What Will You Experience?",
+    points: [
+      "Personalised Garbha Sanskar guidance.",
+      "Guided meditation and relaxation sessions.",
+      "Positive affirmation practices.",
+      "NLP-based guided mind programming.",
+      "Reiki-based wellness support.",
+      "Garbhsambad and bonding activities.",
+      "Guidance for partners to participate in the journey.",
+    ],
+  },
+  whyChooseUs: {
+    heading: "Why Choose The Wisdom Bharat?",
+    paragraphs: [
+      "At The Wisdom Bharat, we believe parenting begins before birth.",
+      "Our approach integrates traditional Indian wisdom with contemporary personal-development and holistic wellness practices.",
+      "The program is guided by Dr. Priya Ranjan Sahu, PhD in Reiki, Author, NLP Practitioner and Life & Healing Coach.",
+      "Our intention is to help parents approach pregnancy with greater awareness, positivity, emotional preparedness and conscious connection.",
+    ],
+  },
+} as const;
+
+export const auraFaqs = [
+  {
+    q: "What does AURA stand for?",
+    a: "AURA represents Activate Universal Energy, Rebalance Chakras and Awaken Awareness. It brings together NLP and mind programming, Reiki, chakra practices and guided meditation.",
+  },
+  {
+    q: "Do I need previous Reiki experience?",
+    a: "No. AURA Energy Scanning is open to beginners as well as individuals who already have experience with Reiki or meditation.",
+  },
+  {
+    q: "What is AURA Scanning?",
+    a: "AURA Scanning is an aura-related wellness assessment offered as part of the program to encourage personal reflection and energy awareness. It is not a medical or scientifically validated diagnostic test.",
+  },
+  {
+    q: "Is AURA Energy Scanning available online?",
+    a: "Yes. Online guidance and sessions are available, depending on the selected program.",
+  },
+  {
+    q: "How long does the AURA Energy Scanning program take?",
+    a: "The duration depends on the selected level and program package. Please contact us for current details.",
+  },
+  {
+    q: "Can I join AURA Energy Scanning if I have never meditated?",
+    a: "Absolutely. Guided practices are suitable for beginners, and you can gradually develop your own meditation routine.",
+  },
+  {
+    q: "Does AURA Energy Scanning help with emotional challenges?",
+    a: "AURA Energy Scanning incorporates mindfulness, meditation, positive affirmations and self-awareness practices that may support emotional well-being. It is not a substitute for mental healthcare.",
+  },
+  {
+    q: "What is the difference between Reiki and AURA Energy Scanning?",
+    a: "Reiki is one of the practices included in AURA Energy Scanning. AURA Energy Scanning is a broader structured program that combines Reiki with NLP-based mind programming, chakra practices and meditation.",
+  },
+  {
+    q: "Are personal sessions included?",
+    a: "Personal one-to-one and group sessions may be included depending on the selected program level.",
+  },
+  {
+    q: "How can I enrol in AURA Energy Scanning?",
+    a: "You can book an initial consultation with Dr. PRIYA RANJAN SAHU through The Wisdom Bharat website to understand the program and available options.",
+  },
+] as const;
+
+export const auraContent = {
+  hero: {
+    heading: "AURA Energy Scanning – Activate, Universal Energy, Rebalance Chakras, Awaken Awareness",
+    subheading: "Your Journey from Inner Awareness to Personal Transformation",
+    paragraphs: [
+      "AURA Energy Scanning is a holistic wellness and personal-transformation program by The Wisdom Bharat, designed to help individuals explore their inner potential, develop positive mental patterns, cultivate spiritual awareness and build a mindful lifestyle.",
+      "Through a structured combination of these practices, AURA Energy Scanning encourages individuals to develop greater self-awareness, emotional balance, positive thinking, relaxation and a deeper connection with themselves.",
+    ],
+    practicesIntro: "AURA Energy Scanning brings together four complementary practices:",
+    practices: [
+      "NLP & Mind Programming",
+      "Universal Energy – Reiki Healing",
+      "Chakra Healing & Awareness",
+      "Guided Meditation",
+    ],
+    tagline: "Activate Your Energy. Rebalance Your Chakras. Awaken Your Awareness.",
+    image: reikiChakra,
+    imageAlt: "Woman receiving chakra healing with colourful energy points representing AURA Energy Scanning",
+  },
+  whatIs: {
+    heading: "What is AURA Energy Scanning?",
+    paragraphs: [
+      "AURA Energy Scanning is a structured holistic wellness and personal-development journey that integrates traditional energy-based practices with contemporary mind-programming techniques.",
+      "At The Wisdom Bharat, we believe that personal transformation begins with awareness.",
+      "AURA Energy Scanning provides an opportunity to explore your thought patterns, develop mindfulness, experience Reiki-based practices, understand the traditional chakra system and establish positive daily habits.",
+      "It is not just a single healing session; it is a guided journey towards greater self-awareness and conscious living.",
+    ],
+  },
+  pillars: {
+    heading: "The Four Pillars of AURA Energy Scanning",
+    items: [
+      {
+        letter: "A",
+        title: "A – NLP & Mind Programming",
+        subtitle: "Transform Your Thoughts. Develop a Positive Mindset.",
+        lead: "The mind plays an important role in how we perceive ourselves and respond to everyday situations.",
+        listIntro: "This component focuses on:",
+        points: [
+          "Understanding limiting beliefs.",
+          "Exploring negative thought patterns.",
+          "Positive affirmations.",
+          "Mind programming techniques.",
+          "Guided visualisation.",
+          "Building confidence and self-awareness.",
+        ],
+        image: positiveAffirmations,
+        imageAlt: "Woman meditating indoors in traditional beige clothing during NLP and mind programming",
+        width: 1024,
+        height: 682,
+        objectPosition: "center 20%",
+      },
+      {
+        letter: "U",
+        title: "U – Universal Energy: Reiki Healing",
+        subtitle: "Connect with Inner Peace and Spiritual Wellness.",
+        lead: "Reiki is a traditional Japanese energy-based spiritual wellness practice.",
+        listIntro: "This component introduces:",
+        points: [
+          "Reiki-based healing sessions.",
+          "Energy awareness practices.",
+          "Personal relaxation and mindfulness.",
+          "Spiritual wellness guidance.",
+          "Self-care and positive daily practices.",
+        ],
+        image: reikiHealing,
+        imageAlt: "Reiki practitioner performing a healing session with hands gently placed for relaxation",
+        width: 1024,
+        height: 682,
+        objectPosition: "center center",
+      },
+      {
+        letter: "R",
+        title: "R – Rebalance Chakras",
+        subtitle: "Explore Your Energy Centres. Cultivate Inner Awareness.",
+        lead: "Based on the traditional chakra system, this component introduces the seven major chakras and their associated qualities.",
+        listIntro: "The practices may include:",
+        points: [
+          "Seven Chakra Awareness.",
+          "Guided Chakra Meditation.",
+          "Chakra-focused affirmations.",
+          "Reiki-based chakra practices.",
+          "Visualisation and mindfulness.",
+        ],
+        image: reikiChakra,
+        imageAlt: "Woman receiving chakra healing with colourful energy points",
+        width: 800,
+        height: 600,
+        objectPosition: "center center",
+      },
+      {
+        letter: "A",
+        title: "A – Awaken Awareness Through Meditation",
+        subtitle: "Develop Mindfulness. Discover Your Inner Self.",
+        lead: "Meditation provides an opportunity to slow down, observe your thoughts and develop greater awareness.",
+        listIntro: "This component includes:",
+        points: [
+          "Guided meditation.",
+          "Mindfulness practices.",
+          "Breathing awareness.",
+          "Relaxation techniques.",
+          "Gratitude and positive thinking.",
+          "Daily meditation guidance.",
+        ],
+        image: guidedMeditation,
+        imageAlt: "Woman meditating in a peaceful outdoor setting on a terrace",
+        width: 1024,
+        height: 682,
+        objectPosition: "center 22%",
+      },
+    ],
+  },
+  inclusions: {
+    heading: "What is Included in the AURA Energy Scanning Program?",
+    introduction: "Depending on the selected program level, participants may receive:",
+    points: [
+      "Personalised AURA assessment and scanner report.",
+      "Chakra awareness and Reiki practices.",
+      "NLP-based guided meditation.",
+      "Personalised one-to-one sessions.",
+      "Group healing and meditation sessions.",
+      "Biweekly progress analysis.",
+      "Sunday group Q&A and guidance.",
+      "AURA wellness kit.",
+      "Ongoing practice guidance.",
+    ],
+    note: "The exact inclusions depend on the selected program.",
+  },
+  whoCanJoin: {
+    heading: "Who Can Join AURA Energy Scanning?",
+    introduction: "AURA Energy Scanning is designed for individuals who wish to explore holistic wellness and personal development.",
+    prompt: "You may consider joining if you:",
+    points: [
+      "Want to develop greater self-awareness.",
+      "Wish to work on negative thought patterns and limiting beliefs.",
+      "Want to explore Reiki and chakra-based practices.",
+      "Are interested in meditation and mindfulness.",
+      "Wish to develop a positive mindset.",
+      "Want to explore spiritual growth.",
+      "Are looking for a structured personal-development journey.",
+    ],
+    note: "No previous experience with Reiki, NLP or meditation is necessary.",
+  },
+  journeyLevels: {
+    heading: "The AURA Energy Scanning Journey – Four Levels",
+    introduction: "We offer a progressive journey through four program levels:",
+    levels: [
+      {
+        number: "01",
+        name: "LEVEL 1 – DISCOVERY",
+        description: "Begin understanding yourself, your thought patterns and your energy awareness.",
+      },
+      {
+        number: "02",
+        name: "LEVEL 2 – HEALING",
+        description: "Explore Reiki, chakra awareness, meditation and positive mind-programming practices.",
+      },
+      {
+        number: "03",
+        name: "LEVEL 3 – TRANSFORMATION",
+        description: "Develop consistent practices, strengthen self-awareness and work towards positive personal changes.",
+      },
+      {
+        number: "04",
+        name: "LEVEL 4 – MASTERY",
+        description: "Deepen your understanding and establish a sustainable personal wellness and meditation practice.",
+      },
+    ],
+    note: "Each level offers a different stage of learning and personal exploration.",
+  },
+  whyChooseUs: {
+    heading: "Why Choose AURA Energy Scanning at The Wisdom Bharat?",
+    lead: "AURA Energy Scanning combines multiple holistic practices within one structured program.",
+    approachIntro: "Our approach brings together:",
+    points: [
+      "Traditional Reiki and chakra practices.",
+      "NLP-based mind programming.",
+      "Guided meditation and mindfulness.",
+      "Individual and group guidance.",
+      "Structured progress reviews.",
+      "Personalised wellness support.",
+    ],
+    paragraphs: [
+      "The program is guided by Dr. PRIYA RANJAN SAHU (Life Coach PR), Founder of The Wisdom Bharat, PhD in Reiki, Author, Reiki Healer and NLP Practitioner.",
+      "His approach integrates spiritual wisdom, personal-development practices and a research-oriented understanding of mind-body programming.",
+    ],
+  },
+  expectations: {
+    heading: "What Can You Expect?",
+    introduction: "AURA Energy Scanning is designed to encourage you to:",
+    points: [
+      "Become more aware of your thoughts and emotions.",
+      "Explore positive thinking and mindfulness.",
+      "Develop a regular meditation practice.",
+      "Understand Reiki and the traditional chakra system.",
+      "Build a deeper connection with yourself.",
+      "Take an active role in your personal growth.",
+    ],
+    disclaimer: "Individual experiences vary. AURA Energy Scanning does not promise guaranteed healing, medical outcomes or specific life results.",
+  },
+  beginJourney: {
+    heading: "Begin Your AURA Energy Scanning Journey",
+    subheading: "Your Transformation Begins with Awareness.",
+    paragraphs: [
+      "You do not have to understand everything before beginning.",
+      "Take the first step towards exploring your mind, energy awareness and inner potential.",
+    ],
+    ctaHeader: "Book Your Personalised AURA Energy Scanning Consultation with Dr. PRIYA RANJAN SAHU.",
+    ctaDescription: "Explore the program, understand the available levels and discover which approach may suit your requirements.",
+    tagline: "The Wisdom Bharat – Mind. Energy. Awareness. Transformation.",
+  },
+  disclaimer: "AURA Energy Scanning is a holistic wellness, spiritual and personal-development program. Reiki, aura-related assessments, chakra practices, NLP and meditation are not medical diagnostic or treatment methods. They do not replace professional medical or mental healthcare.",
+} as const;

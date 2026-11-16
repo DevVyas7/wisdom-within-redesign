@@ -1,0 +1,17 @@
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  X-Permitted-Cross-Domain-Policies: none
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.googleusercontent.com https://*.googleapis.com https://brand.thewisdombharat.com https://images.unsplash.com https://img1.wsimg.com; media-src 'self' data: blob:; connect-src 'self' https://places.googleapis.com https://maps.googleapis.com https://brand.thewisdombharat.com https://*.cloudflareinsights.com; frame-src 'self' https://brand.thewisdombharat.com https://www.google.com https://maps.google.com; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests;
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/*.mp4
+  Cache-Control: public, max-age=604800, stale-while-revalidate=2592000

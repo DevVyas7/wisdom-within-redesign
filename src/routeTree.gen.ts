@@ -20,6 +20,7 @@ import { Route as TermsAndConditionsRouteImport } from './routes/terms-and-condi
 import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as TheBookRouteImport } from './routes/the-book'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as ServicesAuraRouteImport } from './routes/services.aura'
 import { Route as ServicesGarbhsanskarRouteImport } from './routes/services.garbhsanskar'
 import { Route as ServicesLifeCoachingRouteImport } from './routes/services.life-coaching'
 import { Route as ServicesNlpRouteImport } from './routes/services.nlp'
@@ -80,6 +81,11 @@ const ServicesIndexRoute = ServicesIndexRouteImport.update({
   path: '/services/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesAuraRoute = ServicesAuraRouteImport.update({
+  id: '/services/aura',
+  path: '/services/aura',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesGarbhsanskarRoute = ServicesGarbhsanskarRouteImport.update({
   id: '/services/garbhsanskar',
   path: '/services/garbhsanskar',
@@ -112,6 +118,7 @@ export interface FileRoutesByFullPath {
   '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/testimonials': typeof TestimonialsRoute
   '/the-book': typeof TheBookRoute
+  '/services/aura': typeof ServicesAuraRoute
   '/services/garbhsanskar': typeof ServicesGarbhsanskarRoute
   '/services/life-coaching': typeof ServicesLifeCoachingRoute
   '/services/nlp': typeof ServicesNlpRoute
@@ -129,6 +136,7 @@ export interface FileRoutesByTo {
   '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/testimonials': typeof TestimonialsRoute
   '/the-book': typeof TheBookRoute
+  '/services/aura': typeof ServicesAuraRoute
   '/services/garbhsanskar': typeof ServicesGarbhsanskarRoute
   '/services/life-coaching': typeof ServicesLifeCoachingRoute
   '/services/nlp': typeof ServicesNlpRoute
@@ -147,6 +155,7 @@ export interface FileRoutesById {
   '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/testimonials': typeof TestimonialsRoute
   '/the-book': typeof TheBookRoute
+  '/services/aura': typeof ServicesAuraRoute
   '/services/garbhsanskar': typeof ServicesGarbhsanskarRoute
   '/services/life-coaching': typeof ServicesLifeCoachingRoute
   '/services/nlp': typeof ServicesNlpRoute
@@ -166,6 +175,7 @@ export interface FileRouteTypes {
     | '/terms-and-conditions'
     | '/testimonials'
     | '/the-book'
+    | '/services/aura'
     | '/services/garbhsanskar'
     | '/services/life-coaching'
     | '/services/nlp'
@@ -183,6 +193,7 @@ export interface FileRouteTypes {
     | '/terms-and-conditions'
     | '/testimonials'
     | '/the-book'
+    | '/services/aura'
     | '/services/garbhsanskar'
     | '/services/life-coaching'
     | '/services/nlp'
@@ -200,6 +211,7 @@ export interface FileRouteTypes {
     | '/terms-and-conditions'
     | '/testimonials'
     | '/the-book'
+    | '/services/aura'
     | '/services/garbhsanskar'
     | '/services/life-coaching'
     | '/services/nlp'
@@ -218,6 +230,7 @@ export interface RootRouteChildren {
   TermsAndConditionsRoute: typeof TermsAndConditionsRoute
   TestimonialsRoute: typeof TestimonialsRoute
   TheBookRoute: typeof TheBookRoute
+  ServicesAuraRoute: typeof ServicesAuraRoute
   ServicesGarbhsanskarRoute: typeof ServicesGarbhsanskarRoute
   ServicesLifeCoachingRoute: typeof ServicesLifeCoachingRoute
   ServicesNlpRoute: typeof ServicesNlpRoute
@@ -304,6 +317,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/aura': {
+      id: '/services/aura'
+      path: '/services/aura'
+      fullPath: '/services/aura'
+      preLoaderRoute: typeof ServicesAuraRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services/garbhsanskar': {
       id: '/services/garbhsanskar'
       path: '/services/garbhsanskar'
@@ -346,6 +366,7 @@ const rootRouteChildren: RootRouteChildren = {
   TermsAndConditionsRoute: TermsAndConditionsRoute,
   TestimonialsRoute: TestimonialsRoute,
   TheBookRoute: TheBookRoute,
+  ServicesAuraRoute: ServicesAuraRoute,
   ServicesGarbhsanskarRoute: ServicesGarbhsanskarRoute,
   ServicesLifeCoachingRoute: ServicesLifeCoachingRoute,
   ServicesNlpRoute: ServicesNlpRoute,
