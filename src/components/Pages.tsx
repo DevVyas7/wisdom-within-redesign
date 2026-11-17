@@ -5,7 +5,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { ActionLink, BottomCTA, ExternalButton, SectionHeading } from "@/components/SiteShell";
-import { address, assets, auraContent, auraFaqs, bookingUrl, bookUrl, email, faqs, founderAchievements, founderAwards, garbhaSanskarContent, garbhaSanskarFaqs, phoneHref, phoneNumber, programs, services, whatsappNumber, whatsappSecondaryNumber, whatsappSecondaryUrl, whatsappUrl, testimonials, videoTestimonials, type GoogleReview, type GoogleReviewScreenshot, googleReviewScreenshots } from "@/lib/site";
+import { address, assets, auraContent, auraFaqs, bookingUrl, bookUrl, email, faqs, founderAchievements, founderAwards, founderCertificates, garbhaSanskarContent, garbhaSanskarFaqs, phoneHref, phoneNumber, programs, services, whatsappNumber, whatsappSecondaryNumber, whatsappSecondaryUrl, whatsappUrl, testimonials, videoTestimonials, type GoogleReview, type GoogleReviewScreenshot, googleReviewScreenshots } from "@/lib/site";
 
 export function ServiceCards() { return <div className="service-grid">{services.map((s) => <Link className="service-card" to={s.slug} key={s.slug}><div className="service-image"><img src={s.image} alt={`${s.title} session`} className="object-top" loading="lazy" width={1024} height={682}/></div><div className="service-card-body"><span className="eyebrow">{s.eyebrow}</span><div className="service-card-title"><h3>{s.title}</h3><ArrowRight size={19}/></div><p>{s.summary}</p></div></Link>)}</div>; }
 
@@ -117,7 +117,7 @@ export function HomePage() {
   <section id="faq" className="section-pad faq-section"><div className="container-wide space-y-10"><SectionHeading eyebrow="GOOD TO KNOW" title="A few questions, answered."/><FaqList items={faqs} columns={2}/></div></section><BottomCTA/>
 </>; }
 export function PageHeader({ eyebrow, title, intro }: { eyebrow: string; title: string; intro?: string }) { return <div className="page-header"><div className="container-wide"><span className="eyebrow">{eyebrow}</span><h1>{title}</h1>{intro && <p>{intro}</p>}</div></div>; }
-export function AboutPage() { return <><PageHeader eyebrow="ABOUT THE WISDOM BHARAT" title="An invitation to grow from within." intro="A personal approach to mind, energy and conscious living with Dr. Priya Ranjan Sahu."/><section className="section-pad"><div className="container-wide editorial-split"><div className="editorial-photo"><img src={assets.founder} alt="Dr. Priya Ranjan Sahu, founder of The Wisdom Bharat"/><span className="image-caption mt-3 block">DR. PRIYA RANJAN SAHU · FOUNDER</span></div><div className="editorial-copy"><span className="eyebrow">MEET THE FOUNDER</span><h2>Dr. Priya Ranjan Sahu</h2><p className="text-primary font-semibold tracking-wider text-xs uppercase mb-4">Founder · Author · Life Coach PR</p><p>Dr. Priya Ranjan Sahu, also known as Life Coach PR, is the founder of The Wisdom Bharat. His work brings together NLP, Reiki, Garbhsanskar and life and high performance coaching.</p><p>Dr. Priya Ranjan Sahu is an author, certified NLP practitioner, Reiki Master and Garbhsanskar guide. He is the author of <em>Awaken Your Ultimate High Performance System</em>.</p><blockquote>&ldquo;Healing is not magic, it&apos;s inner alignment.&rdquo;</blockquote><ActionLink>Book a Consultation</ActionLink></div></div></section><CertificateGallery /><section className="section-pad achievements-section"><div className="container-wide achievements-layout"><div><span className="eyebrow">THE FOUNDER’S JOURNEY</span><h2>Experience &amp; practice.</h2><p>Authentic credentials and qualifications held by Dr. Priya Ranjan Sahu across mind, energy and conscious living practices.</p></div><div className="achievements-list">{founderAchievements.map((achievement,i)=><div className="achievement" key={achievement.label}><span className="achievement-number">0{i+1}</span><div><h3>{achievement.label}</h3><p>{achievement.detail}</p></div></div>)}</div></div></section><section className="section-pad alternate"><div className="container-wide narrow-centered"><SectionHeading eyebrow="OUR OUTLOOK" title="When parents are awakened, the next generation is enlightened." centered/><p>The Wisdom Bharat’s vision is to help individuals and families approach life with more awareness, emotional balance and intention.</p></div></section><BottomCTA/></>; }
+export function AboutPage() { return <><PageHeader eyebrow="ABOUT THE WISDOM BHARAT" title="An invitation to grow from within." intro="A personal approach to mind, energy and conscious living with Dr. Priya Ranjan Sahu."/><section className="section-pad"><div className="container-wide editorial-split"><div className="editorial-photo"><img src={assets.founder} alt="Dr. Priya Ranjan Sahu, founder of The Wisdom Bharat"/><span className="image-caption mt-3 block">DR. PRIYA RANJAN SAHU · FOUNDER</span></div><div className="editorial-copy"><span className="eyebrow">MEET THE FOUNDER</span><h2>Dr. Priya Ranjan Sahu</h2><p className="text-primary font-semibold tracking-wider text-xs uppercase mb-4">Founder · Author · Life Coach PR</p><p>Dr. Priya Ranjan Sahu, also known as Life Coach PR, is the founder of The Wisdom Bharat. His work brings together NLP, Reiki, Garbhsanskar and life and high performance coaching.</p><p>Dr. Priya Ranjan Sahu is an author, certified NLP practitioner, Reiki Master and Garbhsanskar guide. He is the author of <em>Awaken Your Ultimate High Performance System</em>.</p><blockquote>&ldquo;Healing is not magic, it&apos;s inner alignment.&rdquo;</blockquote><ActionLink>Book a Consultation</ActionLink></div></div></section><CertificationsSection /><AwardsSection /><section className="section-pad achievements-section"><div className="container-wide achievements-layout"><div><span className="eyebrow">THE FOUNDER’S JOURNEY</span><h2>Experience &amp; practice.</h2><p>Authentic credentials and qualifications held by Dr. Priya Ranjan Sahu across mind, energy and conscious living practices.</p></div><div className="achievements-list">{founderAchievements.map((achievement,i)=><div className="achievement" key={achievement.label}><span className="achievement-number">0{i+1}</span><div><h3>{achievement.label}</h3><p>{achievement.detail}</p></div></div>)}</div></div></section><section className="section-pad alternate"><div className="container-wide narrow-centered"><SectionHeading eyebrow="OUR OUTLOOK" title="When parents are awakened, the next generation is enlightened." centered/><p>The Wisdom Bharat’s vision is to help individuals and families approach life with more awareness, emotional balance and intention.</p></div></section><BottomCTA/></>; }
 export function ServicesPage() { return <><PageHeader eyebrow="OUR OFFERINGS" title="Find your path forward." intro="Five distinct practices, each with space to meet you where you are."/><section className="section-pad"><div className="container-wide"><ServiceCards/></div></section><BottomCTA/></>; }
 export function ServicePage({ index }: { index: number }) { 
   const s = services[index] as any; 
@@ -563,7 +563,7 @@ export function AuraPage() {
                 src={assets.founder}
                 alt="Dr. Priya Ranjan Sahu, founder of The Wisdom Bharat"
                 loading="lazy"
-                className="w-full aspect-[4/5] object-cover object-top block"
+                className="w-full aspect-[4/5] object-cover object-[50%_46%] block"
               />
             </div>
             <span className="text-center text-[11px] font-mono tracking-wider text-muted-foreground uppercase mt-2.5 block">
@@ -754,7 +754,7 @@ export function BookingPage() {
                 <img 
                   src={assets.founder} 
                   alt="Dr. Priya Ranjan Sahu" 
-                  className="w-24 h-24 rounded-full object-cover object-[56%_38%] border-2 border-primary/50 shrink-0 shadow-md"
+                  className="w-24 h-24 rounded-full object-cover object-[50%_48%] border-2 border-primary/50 shrink-0 shadow-md"
                 />
                 <div>
                   <span className="text-[10px] font-bold tracking-[0.2em] text-primary uppercase block mb-1">
@@ -806,15 +806,313 @@ export function PrivacyPage() { return <><PageHeader eyebrow="LEGAL" title="Priv
 export function TermsPage() { return <><PageHeader eyebrow="LEGAL" title="Terms & Conditions"/><section className="section-pad"><article className="container-wide legal-copy"><h2>1. Acceptance of terms</h2><p>By accessing or using our website or enrolling in any program, you agree to these terms.</p><h2>2. Services</h2><p>We offer educational, coaching and healing services including NLP, Reiki, Garbhsanskar and wellness courses. These are not a substitute for medical treatment.</p><h2>3. Payment & refunds</h2><p>All payments are non refundable unless specifically mentioned. In case of technical or scheduling issues, sessions may be rescheduled.</p><h2>4. User conduct</h2><p>You agree to provide accurate information and not misuse the website or its content.</p><h2>5. Confidentiality</h2><p>All client information shared during coaching or healing sessions is kept strictly confidential.</p><h2>6. Limitation of liability</h2><p>The Wisdom Bharat is not responsible for any health or emotional outcomes resulting from misuse or non implementation of the guidance provided.</p><h2>7. Updates to terms</h2><p>We reserve the right to update these terms at any time. Continued use of the website implies acceptance of updated terms.</p></article></section></>; }
 
 
-function AwardsCarousel({
-  isZoomOpen,
-  onZoomAward,
-}: {
-  isZoomOpen: boolean;
-  onZoomAward: (awardIndex: number) => void;
-}) {
-  const count = founderAwards.length;
-  const awardSlides = [...founderAwards, ...founderAwards];
+// ============================================================================
+// SECTION ONE: PROFESSIONAL CERTIFICATIONS
+// ============================================================================
+export function CertificationsSection() {
+  const [activeDocIndex, setActiveDocIndex] = useState<number | null>(null);
+
+  const nlpCert = founderCertificates.find((c) => c.discipline === "NLP") || founderCertificates[0];
+  const reikiCerts = founderCertificates.filter((c) => c.discipline === "Reiki");
+
+  // All qualification documents for the unified document viewer modal (5 authentic certificates)
+  const allQualificationDocs = [
+    nlpCert,
+    ...reikiCerts,
+  ];
+
+  useEffect(() => {
+    if (activeDocIndex === null) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setActiveDocIndex(null);
+      if (e.key === "ArrowLeft") setActiveDocIndex((prev) => (prev === null ? null : (prev - 1 + allQualificationDocs.length) % allQualificationDocs.length));
+      if (e.key === "ArrowRight") setActiveDocIndex((prev) => (prev === null ? null : (prev + 1) % allQualificationDocs.length));
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [activeDocIndex, allQualificationDocs.length]);
+
+  const activeDoc = activeDocIndex !== null ? allQualificationDocs[activeDocIndex] : null;
+
+  return (
+    <section className="py-12 md:py-16 bg-background border-t border-border" id="certifications">
+      <div className="container-wide">
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-6 border-b border-border/80 gap-4">
+          <div>
+            <span className="eyebrow text-primary">CREDENTIALS &amp; ACCREDITATIONS</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-foreground mt-2">
+              Professional Certifications
+            </h2>
+          </div>
+          <p className="text-muted-foreground text-sm max-w-md">
+            Verified qualifications held by Dr. Priya Ranjan Sahu across Neuro-Linguistic Programming and the traditional Vedic-Usui Reiki lineage.
+          </p>
+        </div>
+
+        {/* 1. SEPARATE NLP PRACTITIONER QUALIFICATION */}
+        <div className="mb-12">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-[11px] font-mono font-bold tracking-widest uppercase text-primary">
+              Independent Practice &bull; Mind Transformation
+            </span>
+            <span className="h-px bg-border flex-1" />
+          </div>
+
+          <div
+            onClick={() => setActiveDocIndex(0)}
+            className="group bg-[#FAF7F2] border border-[#E7DFD5] hover:border-primary/50 transition-all duration-300 p-5 md:p-6 rounded-[2px] flex flex-col md:flex-row items-start md:items-center gap-6 cursor-pointer shadow-[0_2px_12px_rgba(58,42,32,0.04)] hover:shadow-[0_8px_24px_-4px_rgba(58,42,32,0.08)]"
+          >
+            {/* Landscape Archival Document Frame */}
+            <div className="w-full md:w-56 lg:w-64 h-[190px] sm:h-[210px] shrink-0 bg-[#FDFBF7] p-3 border border-[#E0D6C8] rounded-[2px] relative overflow-hidden flex items-center justify-center shadow-[inset_0_1px_3px_rgba(0,0,0,0.02)]">
+              <img
+                src={nlpCert.image}
+                alt={nlpCert.alt}
+                loading="lazy"
+                className="max-h-full max-w-full w-auto h-auto object-contain drop-shadow-[0_2px_6px_rgba(58,42,32,0.12)] transition-transform duration-300 group-hover:scale-[1.015]"
+              />
+              <span className="absolute inset-0 bg-[#3A2A20]/15 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[1px]">
+                <span className="bg-[#FAF7F2] text-foreground text-[10px] font-mono font-semibold tracking-widest uppercase px-3 py-1 rounded-[2px] shadow-sm flex items-center gap-1.5 border border-[#E0D6C8]">
+                  <ZoomIn size={12} className="text-primary" /> Inspect Document
+                </span>
+              </span>
+            </div>
+
+            {/* Editorial Content */}
+            <div className="flex-1 min-w-0">
+              <div className="flex flex-wrap items-center gap-2.5 mb-2">
+                <span className="text-[10px] font-mono font-bold tracking-widest uppercase px-2 py-0.5 rounded-[2px] bg-primary/10 text-primary border border-primary/20">
+                  Certified NLP Practitioner
+                </span>
+                <span className="text-xs font-mono text-muted-foreground">
+                  {nlpCert.date}
+                </span>
+              </div>
+              <h3 className="font-display text-2xl sm:text-3xl text-foreground font-bold mb-1.5 group-hover:text-primary transition-colors">
+                {nlpCert.title}
+              </h3>
+              <p className="text-xs sm:text-sm font-semibold text-primary/90 mb-2">
+                {nlpCert.institution}
+              </p>
+              <p className="text-xs sm:text-[13px] text-muted-foreground leading-relaxed max-w-3xl mb-3.5">
+                {nlpCert.description}
+              </p>
+              <div className="flex items-center gap-2 text-xs">
+                <span className="text-primary font-semibold uppercase tracking-wider text-[11px] group-hover:underline flex items-center gap-1.5">
+                  <ZoomIn size={13} /> View Full Resolution Document in Archival Viewer
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 2. REIKI QUALIFICATION PROGRESSION: LEVEL 1 → LEVEL 2 → LEVEL 3 → MASTER */}
+        <div>
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-6">
+            <div>
+              <span className="text-[11px] font-mono font-bold tracking-widest uppercase text-primary block">
+                Traditional &amp; Vedic-Usui Reiki Lineage
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-display text-foreground font-bold mt-1">
+                Reiki Qualification Progression
+              </h3>
+            </div>
+            <p className="text-xs font-mono text-muted-foreground">
+              Sequential Initiation Progression: Level 1 &rarr; Level 2 &rarr; Level 3 &rarr; Master Level
+            </p>
+          </div>
+
+          {/* Refined Horizontal Progression Track Indicator */}
+          <div className="hidden lg:block relative mb-7 px-4">
+            <div className="absolute left-10 right-10 top-[18px] h-[2px] bg-gradient-to-r from-primary/30 via-primary to-[var(--gold)]/70 -z-0" />
+            <div className="grid grid-cols-4 gap-4 relative z-10">
+              <div className="flex items-center gap-2 bg-background pr-3 w-fit">
+                <span className="w-8 h-8 rounded-full bg-primary text-primary-foreground font-mono text-xs font-bold flex items-center justify-center shadow-xs">01</span>
+                <div>
+                  <span className="text-[11px] font-mono font-bold tracking-widest uppercase text-foreground block">Level 1</span>
+                  <span className="text-[10px] text-muted-foreground">Attunement</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 bg-background px-3 w-fit">
+                <span className="w-8 h-8 rounded-full bg-primary text-primary-foreground font-mono text-xs font-bold flex items-center justify-center shadow-xs">02</span>
+                <div>
+                  <span className="text-[11px] font-mono font-bold tracking-widest uppercase text-foreground block">Level 2</span>
+                  <span className="text-[10px] text-muted-foreground">Advanced Practice</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 bg-background px-3 w-fit">
+                <span className="w-8 h-8 rounded-full bg-primary text-primary-foreground font-mono text-xs font-bold flex items-center justify-center shadow-xs">03</span>
+                <div>
+                  <span className="text-[11px] font-mono font-bold tracking-widest uppercase text-foreground block">Level 3</span>
+                  <span className="text-[10px] text-muted-foreground">Master Attunement</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 bg-background pl-3 w-fit ml-auto">
+                <span className="w-8 h-8 rounded-full bg-[var(--gold)] text-white font-mono text-xs font-bold flex items-center justify-center shadow-xs ring-2 ring-[var(--gold)]/30">04</span>
+                <div>
+                  <span className="text-[11px] font-mono font-bold tracking-widest uppercase text-[var(--gold)] block">Master Level</span>
+                  <span className="text-[10px] text-muted-foreground">Final Initiation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Sequential Reiki Document Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {reikiCerts.map((cert, index) => {
+              const isFinal = index === reikiCerts.length - 1;
+              const globalDocIdx = index + 1; // 0 is NLP, 1..4 are Reiki
+
+              return (
+                <div
+                  key={cert.id}
+                  onClick={() => setActiveDocIndex(globalDocIdx)}
+                  className={`group bg-[#FAF7F2] border transition-all duration-300 p-4 rounded-[2px] flex flex-col justify-between cursor-pointer shadow-[0_2px_8px_rgba(58,42,32,0.04)] hover:shadow-[0_8px_20px_-4px_rgba(58,42,32,0.08)] ${
+                    isFinal
+                      ? "border-[var(--gold)]/40 hover:border-[var(--gold)] bg-gradient-to-b from-[#FAF7F2] to-[#FAF5EC]"
+                      : "border-[#E7DFD5] hover:border-primary/50"
+                  }`}
+                >
+                  <div>
+                    {/* Consistent Landscape Document Frame */}
+                    <div className="w-full h-[190px] sm:h-[205px] bg-[#FDFBF7] p-3 rounded-[2px] border border-[#E0D6C8] flex items-center justify-center relative overflow-hidden mb-3.5 shadow-[inset_0_1px_3px_rgba(0,0,0,0.02)]">
+                      <img
+                        src={cert.image}
+                        alt={cert.alt}
+                        loading="lazy"
+                        className="max-h-full max-w-full w-auto h-auto object-contain drop-shadow-[0_2px_4px_rgba(58,42,32,0.12)] transition-transform duration-300 group-hover:scale-[1.015]"
+                      />
+                      <span className="absolute inset-0 bg-[#3A2A20]/15 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[1px]">
+                        <span className="bg-[#FAF7F2] text-foreground text-[10px] font-mono font-semibold tracking-widest uppercase px-2.5 py-1 rounded-[2px] shadow-sm flex items-center gap-1 border border-[#E0D6C8]">
+                          <ZoomIn size={12} className="text-primary" /> Inspect Document
+                        </span>
+                      </span>
+                    </div>
+
+                    {/* Stage & Date Indicators */}
+                    <div className="flex items-center justify-between gap-1 mb-2">
+                      <span
+                        className={`text-[10px] font-mono font-bold tracking-widest uppercase px-2 py-0.5 rounded-[2px] border ${
+                          isFinal
+                            ? "bg-[var(--gold)]/15 text-[var(--gold)] border-[var(--gold)]/30"
+                            : "bg-primary/10 text-primary border-primary/20"
+                        }`}
+                      >
+                        {isFinal ? "Final Stage · Master" : `Stage 0${index + 1} · ${cert.stage}`}
+                      </span>
+                      <span className="font-mono text-muted-foreground text-[10px]">
+                        {cert.date}
+                      </span>
+                    </div>
+
+                    {/* Official Document Title */}
+                    <h4 className="font-display text-base font-bold text-foreground leading-snug mb-1 group-hover:text-primary transition-colors">
+                      {cert.title}
+                    </h4>
+
+                    {/* Issuing Organisation */}
+                    <p className="text-xs font-semibold text-primary/90 mb-1.5 line-clamp-1">
+                      {cert.institution}
+                    </p>
+
+                    {/* Document Details */}
+                    <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2 mb-2">
+                      {cert.description}
+                    </p>
+                  </div>
+
+                  {/* Card Bottom CTA */}
+                  <div className="pt-2.5 border-t border-[#E5DDD2] flex items-center justify-between text-[11px]">
+                    <span className="text-primary font-semibold uppercase tracking-wider text-[10px] flex items-center gap-1 group-hover:underline">
+                      <ZoomIn size={11} /> Inspect Document
+                    </span>
+                    <span className="text-[10px] font-mono text-muted-foreground">
+                      0{index + 2} / 05
+                    </span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      {/* Premium Document Viewer Modal */}
+      {activeDoc && activeDocIndex !== null && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 md:p-8 bg-black/85 backdrop-blur-sm"
+          onClick={() => setActiveDocIndex(null)}
+        >
+          <div className="relative max-w-4xl w-full max-h-full flex flex-col items-center justify-center" onClick={(e) => e.stopPropagation()}>
+            {/* Modal Header */}
+            <div className="w-full flex items-center justify-between gap-4 pb-3 text-white mb-2">
+              <div className="min-w-0 pr-2">
+                <span className="text-[11px] font-bold tracking-[0.2em] text-primary uppercase block truncate">
+                  {"institution" in activeDoc ? activeDoc.institution : ""} &bull; {activeDoc.date}
+                </span>
+                <h4 className="font-display text-base sm:text-xl text-white truncate">
+                  {activeDoc.title}
+                </h4>
+              </div>
+              <div className="flex items-center gap-2 shrink-0">
+                <button
+                  type="button"
+                  onClick={() => setActiveDocIndex((activeDocIndex - 1 + allQualificationDocs.length) % allQualificationDocs.length)}
+                  className="w-9 h-9 inline-flex items-center justify-center text-white/85 hover:text-white bg-white/10 hover:bg-white/20 rounded-[2px] transition-colors cursor-pointer"
+                  aria-label="Previous certificate"
+                >
+                  <ChevronLeft size={16} />
+                </button>
+                <span className="text-white/70 font-mono text-xs px-1">
+                  0{activeDocIndex + 1} / 0{allQualificationDocs.length}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setActiveDocIndex((activeDocIndex + 1) % allQualificationDocs.length)}
+                  className="w-9 h-9 inline-flex items-center justify-center text-white/85 hover:text-white bg-white/10 hover:bg-white/20 rounded-[2px] transition-colors cursor-pointer"
+                  aria-label="Next certificate"
+                >
+                  <ChevronRight size={16} />
+                </button>
+                <button
+                  type="button"
+                  className="inline-flex items-center gap-1.5 text-white/80 hover:text-white transition-colors text-xs font-bold tracking-widest uppercase bg-white/10 hover:bg-white/20 px-3 py-2 rounded-[2px] cursor-pointer ml-1"
+                  onClick={() => setActiveDocIndex(null)}
+                >
+                  <X size={16} /> Close
+                </button>
+              </div>
+            </div>
+
+            {/* Preserved Aspect Ratio Document View */}
+            <div className="bg-black/40 border border-white/15 p-2 md:p-3 rounded-[2px] max-h-[78vh] flex items-center justify-center overflow-hidden">
+              <img
+                src={activeDoc.image}
+                alt={activeDoc.alt}
+                className="max-w-full max-h-[74vh] w-auto h-auto object-contain drop-shadow-2xl"
+              />
+            </div>
+
+            {"description" in activeDoc && (
+              <p className="text-white/80 text-xs text-center max-w-2xl mt-2 line-clamp-2 px-4">
+                {activeDoc.description}
+              </p>
+            )}
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
+
+// ============================================================================
+// SECTION TWO: AWARDS & RECOGNITIONS
+// ============================================================================
+export function AwardsSection() {
+  const [activeAwardIndex, setActiveAwardIndex] = useState<number | null>(null);
+
+  const count = founderAwards.length; // strictly the 3 awards
+  const awardSlides = [...founderAwards, ...founderAwards, ...founderAwards];
   const initialIndex = count;
 
   const [carouselRef, emblaApi] = useEmblaCarousel({
@@ -851,12 +1149,12 @@ function AwardsCarousel({
   }, [emblaApi]);
 
   useEffect(() => {
-    if (!emblaApi || isPaused || isZoomOpen || prefersReducedMotion) return;
+    if (!emblaApi || isPaused || activeAwardIndex !== null || prefersReducedMotion) return;
     const timer = window.setInterval(() => {
       emblaApi.scrollNext();
     }, 3500);
     return () => window.clearInterval(timer);
-  }, [emblaApi, isPaused, isZoomOpen, prefersReducedMotion, selectedSnap]);
+  }, [emblaApi, isPaused, activeAwardIndex, prefersReducedMotion, selectedSnap]);
 
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
@@ -866,418 +1164,268 @@ function AwardsCarousel({
       if (!emblaApi) return;
       const optionA = targetRealIdx;
       const optionB = targetRealIdx + count;
+      const optionC = targetRealIdx + count * 2;
       const distA = Math.abs(optionA - selectedSnap);
       const distB = Math.abs(optionB - selectedSnap);
-      emblaApi.scrollTo(distA <= distB ? optionA : optionB);
+      const distC = Math.abs(optionC - selectedSnap);
+      const best = distA <= distB && distA <= distC ? optionA : distB <= distC ? optionB : optionC;
+      emblaApi.scrollTo(best);
     },
     [emblaApi, count, selectedSnap],
   );
 
   const activeRealIndex = ((selectedSnap % count) + count) % count;
 
-  return (
-    <div
-      className="relative max-w-5xl mx-auto"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-      role="region"
-      aria-roledescription="carousel"
-      aria-label="Awards & Recognitions"
-    >
-      <div className="relative overflow-hidden py-2">
-        <div ref={carouselRef} className="overflow-hidden px-1 sm:px-3">
-          <div className="flex items-stretch -ml-3 sm:-ml-4">
-            {awardSlides.map((award, slideIdx) => {
-              const isActive = slideIdx === selectedSnap;
-              const realIdx = slideIdx % count;
-
-              return (
-                <div
-                  key={`${award.id}-${slideIdx}`}
-                  role="group"
-                  aria-roledescription="slide"
-                  aria-label={`${realIdx + 1} of ${count}: ${award.title}`}
-                  className="min-w-0 shrink-0 grow-0 basis-[76%] sm:basis-[58%] md:basis-[52%] lg:basis-[50%] pl-3 sm:pl-4 flex"
-                >
-                  <article
-                    onClick={() => {
-                      if (isActive) {
-                        onZoomAward(realIdx);
-                      } else {
-                        emblaApi?.scrollTo(slideIdx);
-                      }
-                    }}
-                    className={`group w-full flex flex-col text-left rounded-sm p-3.5 sm:p-4 border transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none cursor-pointer ${
-                      isActive
-                        ? "bg-background border-primary/45 shadow-[0_14px_30px_-14px_rgba(58,42,32,0.16)] scale-100 opacity-100 z-10 hover:border-primary/70"
-                        : "bg-background/85 border-border/75 scale-[0.86] sm:scale-[0.88] opacity-55 hover:opacity-80 z-0"
-                    }`}
-                  >
-                    <div className="w-full h-[165px] sm:h-[185px] md:h-[195px] flex items-center justify-center bg-muted/30 p-2.5 rounded-sm border border-border/60 border-b-2 border-b-primary/75 relative overflow-hidden mb-3">
-                      <img
-                        src={award.image}
-                        alt={award.alt}
-                        width={award.width}
-                        height={award.height}
-                        loading="lazy"
-                        className={`max-h-full max-w-full w-auto h-auto object-contain drop-shadow-sm transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${
-                          isActive ? "group-hover:scale-[1.03] motion-reduce:group-hover:scale-100" : ""
-                        }`}
-                      />
-                      {isActive && (
-                        <span className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                          <span className="bg-background text-foreground px-3 py-1.5 text-[10px] font-semibold tracking-widest uppercase rounded-sm shadow-md flex items-center gap-1.5 border border-border">
-                            <ZoomIn size={13} /> View Full Resolution
-                          </span>
-                        </span>
-                      )}
-                    </div>
-
-                    <h4 className="font-display text-lg sm:text-xl text-foreground mb-1.5 leading-snug">
-                      {award.title}
-                    </h4>
-                    <p className="text-muted-foreground text-xs sm:text-[13px] leading-[1.6] flex-1">
-                      {award.description}
-                    </p>
-
-                    <div className="w-full mt-3 pt-2.5 border-t border-border/60 flex items-center justify-between gap-2 text-[11px]">
-                      {isActive ? (
-                        <button
-                          type="button"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            onZoomAward(realIdx);
-                          }}
-                          className="inline-flex items-center gap-1.5 font-semibold tracking-wider uppercase text-primary hover:underline cursor-pointer"
-                        >
-                          <ZoomIn size={13} /> View Full Resolution
-                        </button>
-                      ) : (
-                        <span className="text-muted-foreground font-medium tracking-wide">
-                          Click to inspect
-                        </span>
-                      )}
-                      <span className="font-mono text-muted-foreground">{award.date}</span>
-                    </div>
-                  </article>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        <button
-          type="button"
-          onClick={scrollPrev}
-          aria-label="Previous award"
-          className="absolute left-1.5 sm:left-3 top-[92px] sm:top-[104px] z-20 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-background/95 border border-border text-foreground shadow-sm hover:border-primary hover:text-primary flex items-center justify-center transition-colors cursor-pointer"
-        >
-          <ChevronLeft size={18} />
-        </button>
-
-        <button
-          type="button"
-          onClick={scrollNext}
-          aria-label="Next award"
-          className="absolute right-1.5 sm:right-3 top-[92px] sm:top-[104px] z-20 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-background/95 border border-border text-foreground shadow-sm hover:border-primary hover:text-primary flex items-center justify-center transition-colors cursor-pointer"
-        >
-          <ChevronRight size={18} />
-        </button>
-      </div>
-
-      <div className="mt-4 flex items-center justify-center gap-3">
-        <div className="flex items-center gap-1.5" role="tablist" aria-label="Select award">
-          {founderAwards.map((award, idx) => {
-            const isSelected = activeRealIndex === idx;
-            return (
-              <button
-                key={award.id}
-                type="button"
-                role="tab"
-                aria-selected={isSelected}
-                aria-label={`View ${award.title}`}
-                onClick={() => scrollToRealIndex(idx)}
-                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                  isSelected ? "w-6 bg-primary" : "w-2 bg-border hover:bg-primary/50"
-                }`}
-              />
-            );
-          })}
-        </div>
-        <span className="text-[11px] font-mono text-muted-foreground tracking-widest">
-          0{activeRealIndex + 1} / 0{count}
-        </span>
-      </div>
-    </div>
-  );
-}
-
-export function CertificateGallery() {
-  const [active, setActive] = useState(0);
-  const [zoomedIndex, setZoomedIndex] = useState<number | null>(null);
-
-  const credentials = [
-    {
-      id: "nlp",
-      title: "Certified NLP Practitioner",
-      institution: "Neuro Linguistic Programming",
-      description: "Advanced certification in identifying and reframing limiting beliefs, timeline therapy, and subconscious alignment for enduring human transformation.",
-      image: assets.nlpCert,
-      badge: "Verified Practitioner"
-    },
-    {
-      id: "reiki-master",
-      title: "Reiki Master & Teacher",
-      institution: "Traditional Reiki Healing",
-      description: "Mastery level degree in Japanese energy healing, encompassing high level energy alignment and practitioner attunements across Levels 1, 2, and 3.",
-      image: assets.reikiMasterCert,
-      badge: "Master Degree"
-    },
-    {
-      id: "reiki-first",
-      title: "Reiki First Degree",
-      institution: "Traditional Usui Shiki Ryoho",
-      description: "Foundation in hands on holistic healing, energy harmonization, stress alleviation, and traditional meditative self healing protocols.",
-      image: assets.reikiCert,
-      badge: "First Degree Lineage"
-    }
-  ];
-
-  const modalItems = [
-    ...credentials.map((c) => ({
-      title: c.title,
-      subtitle: c.institution,
-      image: c.image,
-      alt: c.title,
-    })),
-    ...founderAwards.map((a) => ({
-      title: a.title,
-      subtitle: a.date,
-      image: a.image,
-      alt: a.alt,
-    })),
-  ];
-
   useEffect(() => {
-    if (zoomedIndex === null) return;
+    if (activeAwardIndex === null) return;
     const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setZoomedIndex(null);
-      if (e.key === "ArrowLeft") setZoomedIndex((prev) => (prev === null ? null : (prev - 1 + modalItems.length) % modalItems.length));
-      if (e.key === "ArrowRight") setZoomedIndex((prev) => (prev === null ? null : (prev + 1) % modalItems.length));
+      if (e.key === "Escape") setActiveAwardIndex(null);
+      if (e.key === "ArrowLeft") setActiveAwardIndex((prev) => (prev === null ? null : (prev - 1 + count) % count));
+      if (e.key === "ArrowRight") setActiveAwardIndex((prev) => (prev === null ? null : (prev + 1) % count));
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [zoomedIndex, modalItems.length]);
+  }, [activeAwardIndex, count]);
 
-  const cert = credentials[active]!;
-  const zoomedItem = zoomedIndex !== null ? modalItems[zoomedIndex] : null;
+  const activeAward = activeAwardIndex !== null ? founderAwards[activeAwardIndex] : null;
 
   return (
-    <section className="section-pad bg-muted/20 border-t border-border">
+    <section className="py-12 md:py-16 bg-[#F5EFEB]/70 border-t border-b border-[#E5DDD2]" id="awards">
       <div className="container-wide">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 pb-8 border-b border-border">
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-5 border-b border-[#E0D6C8] gap-3">
           <div>
-            <span className="eyebrow">CREDENTIALS &amp; ACCREDITATIONS</span>
+            <span className="eyebrow text-primary">ACADEMIC HONOURS &amp; CONVOCATION</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-foreground mt-2">
-              Verified certifications.
+              Awards &amp; Recognitions
             </h2>
           </div>
-          <p className="text-muted-foreground text-base max-w-md">
-            Authentic qualifications held by Dr. Priya Ranjan Sahu across Neuro Linguistic Programming and Traditional Reiki healing lineage.
+          <p className="text-muted-foreground text-xs sm:text-sm max-w-md">
+            Academic honours, research excellence awards, and convocation recognitions presented to Dr. Priya Ranjan Sahu.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Certificate Showcase Display Frame */}
-          <div className="lg:col-span-7 flex flex-col">
-            <div 
-              onClick={() => setZoomedIndex(active)} 
-              className="relative bg-background border border-border p-4 sm:p-6 md:p-8 flex flex-col items-center justify-center cursor-pointer group rounded-sm shadow-sm hover:border-primary/50 transition-all duration-300"
-            >
-              <div className="w-full flex items-center justify-between pb-4 mb-4 border-b border-border/70 text-xs">
-                <span className="inline-flex items-center gap-1.5 text-primary font-semibold tracking-wider uppercase text-[11px]">
-                  <ShieldCheck size={16} /> Official Certificate Document
-                </span>
-                <span className="text-muted-foreground font-mono text-[11px] font-medium tracking-widest">
-                  0{active + 1} / 0{credentials.length}
-                </span>
-              </div>
+        {/* Refined Horizontal Editorial Gallery Carousel */}
+        <div
+          className="relative max-w-4xl mx-auto"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="Awards & Recognitions Gallery"
+        >
+          <div className="relative overflow-hidden py-2">
+            <div ref={carouselRef} className="overflow-hidden px-1 sm:px-3">
+              <div className="flex items-stretch -ml-3 sm:-ml-4">
+                {awardSlides.map((award, slideIdx) => {
+                  const isActive = slideIdx === selectedSnap;
+                  const realIdx = slideIdx % count;
 
-              <div className="w-full h-[360px] sm:h-[420px] md:h-[450px] flex items-center justify-center bg-muted/30 p-3 sm:p-5 rounded-sm border border-border/50 relative overflow-hidden">
-                <img 
-                  src={cert.image} 
-                  alt={cert.title} 
-                  className="max-h-full max-w-full object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-[1.01]" 
-                />
-                <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
-                  <span className="bg-background text-foreground px-4 py-2.5 text-xs font-semibold tracking-widest uppercase rounded-sm shadow-lg flex items-center gap-2 border border-border">
-                    <ZoomIn size={16} /> Click to View Full Resolution
-                  </span>
-                </div>
-              </div>
-
-              <div className="w-full flex items-center justify-between pt-4 mt-4 border-t border-border/70">
-                <p className="text-xs text-muted-foreground">
-                  Click certificate to inspect high-resolution scan
-                </p>
-                <div className="flex items-center gap-2">
-                  <button 
-                    onClick={(e) => { 
-                      e.stopPropagation(); 
-                      setActive((active - 1 + credentials.length) % credentials.length); 
-                    }}
-                    className="w-9 h-9 flex items-center justify-center border border-border bg-background hover:bg-muted text-foreground transition-colors rounded-sm"
-                    aria-label="Previous certificate"
-                  >
-                    <ChevronLeft size={16} />
-                  </button>
-                  <button 
-                    onClick={(e) => { 
-                      e.stopPropagation(); 
-                      setActive((active + 1) % credentials.length); 
-                    }}
-                    className="w-9 h-9 flex items-center justify-center border border-border bg-background hover:bg-muted text-foreground transition-colors rounded-sm"
-                    aria-label="Next certificate"
-                  >
-                    <ChevronRight size={16} />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Interactive Certificate Selection Tabs & Info */}
-          <div className="lg:col-span-5 flex flex-col gap-4">
-            {credentials.map((c, i) => {
-              const isSelected = active === i;
-              return (
-                <div 
-                  key={c.id} 
-                  onClick={() => setActive(i)}
-                  className={`p-6 border transition-all duration-300 cursor-pointer text-left relative rounded-sm ${
-                    isSelected 
-                      ? "bg-background border-primary shadow-sm ring-1 ring-primary/20" 
-                      : "bg-background/60 border-border hover:border-primary/40 hover:bg-background"
-                  }`}
-                >
-                  {isSelected && (
-                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-l-sm" />
-                  )}
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="pr-2">
-                      <span className="text-[10px] font-bold tracking-[0.2em] text-primary uppercase block mb-1">
-                        {c.institution}
-                      </span>
-                      <h3 className="font-display text-xl md:text-2xl text-foreground">
-                        {c.title}
-                      </h3>
-                    </div>
-                    <div className="w-14 h-11 shrink-0 bg-muted/60 border border-border p-1 rounded-sm overflow-hidden flex items-center justify-center">
-                      <img src={c.image} alt={c.title} className="w-full h-full object-contain" />
-                    </div>
-                  </div>
-
-                  {isSelected && (
-                    <div className="mt-4 pt-4 border-t border-border/70">
-                      <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                        {c.description}
-                      </p>
-                      <button 
-                        onClick={(e) => { e.stopPropagation(); setZoomedIndex(active); }}
-                        className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-wider uppercase text-primary hover:underline"
+                  return (
+                    <div
+                      key={`${award.id}-${slideIdx}`}
+                      role="group"
+                      aria-roledescription="slide"
+                      aria-label={`${realIdx + 1} of ${count}: ${award.title}`}
+                      className="min-w-0 shrink-0 grow-0 basis-[80%] sm:basis-[58%] md:basis-[50%] lg:basis-[44%] pl-3 sm:pl-4 flex"
+                    >
+                      <article
+                        onClick={() => {
+                          if (isActive) {
+                            setActiveAwardIndex(realIdx);
+                          } else {
+                            emblaApi?.scrollTo(slideIdx);
+                          }
+                        }}
+                        className={`group w-full flex flex-col text-left rounded-[2px] p-4 sm:p-5 border transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none cursor-pointer ${
+                          isActive
+                            ? "bg-[#FAF7F2] border-[var(--gold)]/60 shadow-[0_16px_36px_-12px_rgba(58,42,32,0.18)] scale-100 opacity-100 z-10 hover:border-primary/80"
+                            : "bg-[#FAF7F2]/80 border-[#E7DFD5] scale-[0.88] opacity-50 hover:opacity-75 z-0"
+                        }`}
                       >
-                        <ZoomIn size={14} /> View full resolution scan
-                      </button>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+                        {/* Consistent Archival Document Frame */}
+                        <div className="w-full h-[185px] sm:h-[200px] flex items-center justify-center bg-[#FDFBF7] p-2.5 rounded-[2px] border border-[#E0D6C8] border-b-2 border-b-primary/75 relative overflow-hidden mb-3 shadow-[inset_0_1px_3px_rgba(0,0,0,0.02)]">
+                          <img
+                            src={award.image}
+                            alt={award.alt}
+                            width={award.width}
+                            height={award.height}
+                            loading="lazy"
+                            className={`max-h-full max-w-full w-auto h-auto object-contain drop-shadow-[0_2px_4px_rgba(58,42,32,0.12)] transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${
+                              isActive ? "group-hover:scale-[1.02]" : ""
+                            }`}
+                          />
+                          {isActive && (
+                            <span className="absolute inset-0 bg-[#3A2A20]/15 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px]">
+                              <span className="bg-[#FAF7F2] text-foreground px-3 py-1 text-[10px] font-mono font-semibold tracking-widest uppercase rounded-[2px] shadow-sm flex items-center gap-1.5 border border-[#E0D6C8]">
+                                <ZoomIn size={12} className="text-primary" /> Inspect Award Scan
+                              </span>
+                            </span>
+                          )}
+                        </div>
 
-            {/* Credential summary trust metrics */}
-            <div className="p-6 bg-background/80 border border-border flex items-center justify-between gap-4 mt-2 rounded-sm shadow-xs">
-              <div>
-                <p className="text-2xl font-display text-primary font-bold">100%</p>
-                <p className="text-[11px] text-muted-foreground uppercase font-semibold tracking-wider mt-0.5">Authentic lineage</p>
-              </div>
-              <div className="h-8 w-[1px] bg-border" />
-              <div>
-                <p className="text-2xl font-display text-primary font-bold">15+ Years</p>
-                <p className="text-[11px] text-muted-foreground uppercase font-semibold tracking-wider mt-0.5">Study &amp; Practice</p>
-              </div>
-              <div className="h-8 w-[1px] bg-border" />
-              <div>
-                <p className="text-2xl font-display text-primary font-bold">PhD</p>
-                <p className="text-[11px] text-muted-foreground uppercase font-semibold tracking-wider mt-0.5">Degree Level</p>
+                        {/* Category & Step Number */}
+                        <div className="flex items-center justify-between gap-2 mb-1.5">
+                          <span className="text-[10px] font-mono font-bold tracking-widest text-primary uppercase">
+                            {award.category}
+                          </span>
+                          <span className="text-[10px] font-mono text-muted-foreground ml-auto">
+                            0{realIdx + 1} / 0{count}
+                          </span>
+                        </div>
+
+                        {/* Title and Details */}
+                        <h4 className="font-display text-base sm:text-lg text-foreground font-bold mb-1 leading-snug">
+                          {award.title}
+                        </h4>
+                        <p className="text-[11px] font-semibold text-primary/90 mb-1 line-clamp-1">
+                          {award.institution}
+                        </p>
+                        <p className="text-muted-foreground text-xs leading-[1.5] flex-1 line-clamp-3 mb-2.5">
+                          {award.description}
+                        </p>
+
+                        {/* Bottom Actions */}
+                        <div className="w-full mt-auto pt-2.5 border-t border-[#E5DDD2] flex items-center justify-between gap-2 text-[10px]">
+                          {isActive ? (
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setActiveAwardIndex(realIdx);
+                              }}
+                              className="inline-flex items-center gap-1 font-semibold tracking-wider uppercase text-primary hover:underline cursor-pointer"
+                            >
+                              <ZoomIn size={12} /> Inspect Document Scan
+                            </button>
+                          ) : (
+                            <span className="text-muted-foreground font-medium tracking-wide">
+                              Click to view
+                            </span>
+                          )}
+                          <span className="font-mono text-muted-foreground">{award.date}</span>
+                        </div>
+                      </article>
+                    </div>
+                  );
+                })}
               </div>
             </div>
-          </div>
-        </div>
 
-        {/* Dedicated Awards & Recognitions Subsection */}
-        <div className="mt-12 pt-10 border-t border-border">
-          <div className="mb-6">
-            <span className="eyebrow">RECOGNITIONS</span>
-            <h3 className="text-2xl md:text-3xl lg:text-4xl font-display text-foreground mt-2">
-              Awards &amp; Recognitions
-            </h3>
+            {/* Previous and Next Navigation Arrows */}
+            <button
+              type="button"
+              onClick={scrollPrev}
+              aria-label="Previous award"
+              className="absolute left-1 sm:left-2 top-[95px] sm:top-[105px] z-20 w-9 h-9 rounded-full bg-[#FAF7F2] border border-[#E0D6C8] text-foreground shadow-xs hover:border-primary hover:text-primary flex items-center justify-center transition-colors cursor-pointer"
+            >
+              <ChevronLeft size={16} />
+            </button>
+
+            <button
+              type="button"
+              onClick={scrollNext}
+              aria-label="Next award"
+              className="absolute right-1 sm:right-2 top-[95px] sm:top-[105px] z-20 w-9 h-9 rounded-full bg-[#FAF7F2] border border-[#E0D6C8] text-foreground shadow-xs hover:border-primary hover:text-primary flex items-center justify-center transition-colors cursor-pointer"
+            >
+              <ChevronRight size={16} />
+            </button>
           </div>
 
-          <AwardsCarousel
-            isZoomOpen={zoomedIndex !== null}
-            onZoomAward={(awardIdx) => setZoomedIndex(credentials.length + awardIdx)}
-          />
+          {/* Indicator Dots */}
+          <div className="mt-4 flex items-center justify-center gap-2.5">
+            <div className="flex items-center gap-1.5" role="tablist" aria-label="Select award">
+              {founderAwards.map((award, idx) => {
+                const isSelected = activeRealIndex === idx;
+                return (
+                  <button
+                    key={award.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={isSelected}
+                    aria-label={`View ${award.title}`}
+                    onClick={() => scrollToRealIndex(idx)}
+                    className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                      isSelected ? "w-6 bg-primary" : "w-2 bg-[#D8CEBF] hover:bg-primary/50"
+                    }`}
+                  />
+                );
+              })}
+            </div>
+            <span className="text-[11px] font-mono text-muted-foreground tracking-widest">
+              0{activeRealIndex + 1} / 0{count}
+            </span>
+          </div>
         </div>
       </div>
 
-      {zoomedItem && zoomedIndex !== null && (
+      {/* Lightbox Modal for Section 2 */}
+      {activeAward && activeAwardIndex !== null && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8 bg-black/90 backdrop-blur-md"
-          onClick={() => setZoomedIndex(null)}
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 md:p-8 bg-black/85 backdrop-blur-sm"
+          onClick={() => setActiveAwardIndex(null)}
         >
-          <div className="relative max-w-5xl w-full max-h-full flex flex-col items-center justify-center" onClick={e => e.stopPropagation()}>
+          <div className="relative max-w-4xl w-full max-h-full flex flex-col items-center justify-center" onClick={(e) => e.stopPropagation()}>
             <div className="w-full flex items-center justify-between gap-4 pb-3 text-white mb-2">
-              <div>
-                <span className="text-[11px] font-bold tracking-[0.2em] text-primary uppercase block">
-                  {zoomedItem.subtitle}
+              <div className="min-w-0 pr-2">
+                <span className="text-[11px] font-bold tracking-[0.2em] text-primary uppercase block truncate">
+                  {activeAward.institution} &bull; {activeAward.date}
                 </span>
-                <h4 className="font-display text-lg text-white">
-                  {zoomedItem.title}
+                <h4 className="font-display text-base sm:text-xl text-white truncate">
+                  {activeAward.title}
                 </h4>
               </div>
               <div className="flex items-center gap-2 shrink-0">
                 <button
                   type="button"
-                  onClick={() => setZoomedIndex((zoomedIndex - 1 + modalItems.length) % modalItems.length)}
-                  className="w-9 h-9 inline-flex items-center justify-center text-white/85 hover:text-white bg-white/10 hover:bg-white/20 rounded-sm transition-colors"
-                  aria-label="Previous image"
+                  onClick={() => setActiveAwardIndex((activeAwardIndex - 1 + count) % count)}
+                  className="w-9 h-9 inline-flex items-center justify-center text-white/85 hover:text-white bg-white/10 hover:bg-white/20 rounded-[2px] transition-colors cursor-pointer"
+                  aria-label="Previous award"
                 >
                   <ChevronLeft size={16} />
                 </button>
+                <span className="text-white/70 font-mono text-xs px-1">
+                  0{activeAwardIndex + 1} / 0{count}
+                </span>
                 <button
                   type="button"
-                  onClick={() => setZoomedIndex((zoomedIndex + 1) % modalItems.length)}
-                  className="w-9 h-9 inline-flex items-center justify-center text-white/85 hover:text-white bg-white/10 hover:bg-white/20 rounded-sm transition-colors"
-                  aria-label="Next image"
+                  onClick={() => setActiveAwardIndex((activeAwardIndex + 1) % count)}
+                  className="w-9 h-9 inline-flex items-center justify-center text-white/85 hover:text-white bg-white/10 hover:bg-white/20 rounded-[2px] transition-colors cursor-pointer"
+                  aria-label="Next award"
                 >
                   <ChevronRight size={16} />
                 </button>
                 <button
                   type="button"
-                  className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors text-xs font-bold tracking-widest uppercase bg-white/10 hover:bg-white/20 px-3 py-2 rounded-sm"
-                  onClick={() => setZoomedIndex(null)}
+                  className="inline-flex items-center gap-1.5 text-white/80 hover:text-white transition-colors text-xs font-bold tracking-widest uppercase bg-white/10 hover:bg-white/20 px-3 py-2 rounded-[2px] cursor-pointer ml-1"
+                  onClick={() => setActiveAwardIndex(null)}
                 >
                   <X size={16} /> Close
                 </button>
               </div>
             </div>
-            <div className="bg-black/40 border border-white/15 p-2 rounded-sm max-h-[85vh] flex items-center justify-center overflow-hidden">
-              <img src={zoomedItem.image} alt={zoomedItem.alt} className="max-w-full max-h-[80vh] object-contain" />
+            <div className="bg-black/40 border border-white/15 p-2 md:p-3 rounded-[2px] max-h-[78vh] flex items-center justify-center overflow-hidden">
+              <img src={activeAward.image} alt={activeAward.alt} className="max-w-full max-h-[74vh] w-auto h-auto object-contain drop-shadow-2xl" />
             </div>
+            {activeAward.description && (
+              <p className="text-white/80 text-xs text-center max-w-2xl mt-2 line-clamp-2 px-4">
+                {activeAward.description}
+              </p>
+            )}
           </div>
         </div>
       )}
     </section>
+  );
+}
+
+// Backward-compatible alias combining both sections
+export function CertificateGallery() {
+  return (
+    <>
+      <CertificationsSection />
+      <AwardsSection />
+    </>
   );
 }
 

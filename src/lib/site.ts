@@ -21,12 +21,19 @@ const awardVedicResearchIama = "/images/client-updates/award-vedic-research-iama
 const awardExcellenceVedicResearch = "/images/client-updates/award-excellence-vedic-research.jpg";
 const awardMedalOfHonour = "/images/client-updates/award-medal-of-honour.jpg";
 
-const founder = { url: "/images/client-updates/founder-phd.jpg" };
+const certNlpPractitioner = "/images/certificates/Certificate_NLP_pract_BC_PR.jpg";
+const certVedicReikiL1 = "/images/certificates/L1-Priya Ranjan Sahu.png";
+const certVedicReikiL2 = "/images/certificates/L2-Certificate_Priya Ranjan Sahu.jpg";
+const certVedicReikiL3 = "/images/certificates/L3-Priya Ranjan Sahu.png";
+const certReikiMasterRishikesh = "/images/certificates/Master Certificate.jpg";
+
+const founder = { url: "/images/client-updates/founder-phd-convocation.jpg" };
 const book = { url: "https://img1.wsimg.com/isteam/ip/f781fbeb-6590-4b29-9a04-a94f51cadf95/BookCover.jpg" };
 
 export const assets = {
   logo: logoClean,
   founder: founder.url,
+  founderConvocation: founder.url,
   book: book.url,
   yoga,
   nlp,
@@ -44,6 +51,11 @@ export const assets = {
   awardVedicResearchIama,
   awardExcellenceVedicResearch,
   awardMedalOfHonour,
+  certNlpPractitioner,
+  certVedicReikiL1,
+  certVedicReikiL2,
+  certVedicReikiL3,
+  certReikiMasterRishikesh,
   coaching,
   nlpCert,
   reikiCert,
@@ -61,7 +73,7 @@ export const whatsappSecondaryUrl = "https://wa.me/919437085701";
 export const email = "TheWisdombharat@gmail.com";
 export const address = "CellCity Kendujhar &\nJayadev Vihar, Bhubaneswar\nOdisha";
 export const socialLinks = {
-  instagram: "https://www.instagram.com/thewisdombharat/",
+  instagram: "https://www.instagram.com/_the_wisdom._.bharat._?mdxt=amRuZjF1ZzFpZjFn",
   youtube: "https://www.youtube.com/@thewisdombharat",
 } as const;
 export const bookUrl = "https://www.amazon.in/Awaken-Your-Ultimate-High-Performance-System/dp/B0CCMG3717";
@@ -73,10 +85,133 @@ export const founderAchievements = [
   { label: "PhD in Reiki", detail: "Doctorate in Reiki" },
 ] as const;
 
+export const founderCertificates = [
+  {
+    id: "nlp-practitioner-cert",
+    title: "NLP Practitioner Certification",
+    category: "Neuro-Linguistic Programming",
+    discipline: "NLP",
+    stage: "Foundational Qualification",
+    institution: "Dr. Yogendra Singh Rathore (Inner Wellness Coach | NLP Mentor)",
+    recipient: "PRIYA RANJAN SAHU",
+    description:
+      "Completed NLP Workshop Training & demonstrated the competence and skill of NLP practitioner (Batch of Jan'23). Provides the right to use the title of NLP practitioner or Coach.",
+    image: certNlpPractitioner,
+    alt: "NLP Practitioner Certification awarded to Priya Ranjan Sahu by Dr. Yogendra Singh Rathore",
+    width: 723,
+    height: 1024,
+    date: "January 2023",
+  },
+  {
+    id: "vedic-reiki-level-1",
+    title: "Online Level -I Vedic-Usui Reiki™",
+    category: "Vedic-Usui Reiki",
+    discipline: "Reiki",
+    stage: "Level 1",
+    stepNumber: "01",
+    institution: "Siddhartha Bhardwaj Foundation™",
+    recipient: "Priya Ranjan Sahu",
+    description:
+      "Certificate of Completion for Online Level -I Vedic-Usui Reiki™. Attunement and knowledge of Vedic Concepts behind Reiki provided by Dr. Siddhartha Bhardwaj (Course Mentor & Reiki Grandmaster).",
+    image: certVedicReikiL1,
+    alt: "Certificate of Completion for Online Level -I Vedic-Usui Reiki awarded to Priya Ranjan Sahu by Siddhartha Bhardwaj Foundation",
+    width: 1024,
+    height: 638,
+    date: "19-01-2025",
+  },
+  {
+    id: "vedic-reiki-level-2",
+    title: "Online Level -II Vedic-Usui Reiki™",
+    category: "Vedic-Usui Reiki",
+    discipline: "Reiki",
+    stage: "Level 2",
+    stepNumber: "02",
+    institution: "Siddhartha Bhardwaj Foundation™",
+    recipient: "Priya Ranjan Sahu",
+    description:
+      "Certificate of Completion for Online Level -II Vedic-Usui Reiki™. Intermediate attunement and knowledge of Vedic Concepts behind Reiki provided by Dr. Siddhartha Bhardwaj (Course Mentor & Reiki Grandmaster).",
+    image: certVedicReikiL2,
+    alt: "Certificate of Completion for Online Level -II Vedic-Usui Reiki awarded to Priya Ranjan Sahu by Siddhartha Bhardwaj Foundation",
+    width: 1024,
+    height: 723,
+    date: "09/03/2025",
+  },
+  {
+    id: "vedic-reiki-level-3",
+    title: "Online Level -III Vedic-Usui Reiki™ (Master Level)",
+    category: "Vedic-Usui Reiki",
+    discipline: "Reiki",
+    stage: "Level 3",
+    stepNumber: "03",
+    institution: "Siddhartha Bhardwaj Foundation™",
+    recipient: "Priya Ranjan Sahu",
+    description:
+      "Certificate of Completion for Online Level -III Vedic-Usui Reiki™ (Master Level). Master Level attunement and Vedic Concepts behind Reiki provided by Dr. Siddhartha Bhardwaj (Course Mentor & Reiki Grandmaster).",
+    image: certVedicReikiL3,
+    alt: "Certificate of Completion for Online Level -III Vedic-Usui Reiki Master Level awarded to Priya Ranjan Sahu by Siddhartha Bhardwaj Foundation",
+    width: 1024,
+    height: 723,
+    date: "06-04-2025",
+  },
+  {
+    id: "reiki-master-rishikesh",
+    title: "Certificate of Achievement – Reiki-Master Level",
+    category: "Traditional Reiki Master Level",
+    discipline: "Reiki",
+    stage: "Master Level",
+    stepNumber: "04",
+    institution: "Healing Hands Reiki School (Reiki School India), Laxman Jhula, Rishikesh",
+    recipient: "PRIYA RANJAN SAHU",
+    description:
+      "Certificate of Achievement for successfully completing Reiki-Master Level initiation and instruction, demonstrating proficiency in natural healing Art & Science. Held at Rishikesh, S.No.: 339.",
+    image: certReikiMasterRishikesh,
+    alt: "Healing Hands Reiki School Rishikesh Certificate of Achievement Reiki-Master Level presented to Priya Ranjan Sahu",
+    width: 713,
+    height: 1024,
+    date: "21 June 2025",
+  },
+] as const;
+
+export const archivalCertificates = [
+  {
+    id: "archival-nlp",
+    title: "Certified NLP Practitioner",
+    institution: "Neuro Linguistic Programming",
+    description: "Advanced certification in identifying and reframing limiting beliefs, timeline therapy, and subconscious alignment for enduring human transformation.",
+    image: nlpCert,
+    alt: "NLP Practitioner Certificate Lineage Record",
+    date: "Lineage Record",
+    badge: "Verified Practitioner",
+  },
+  {
+    id: "archival-reiki-master",
+    title: "Reiki Master & Teacher",
+    institution: "Traditional Reiki Healing",
+    description: "Mastery level degree in Japanese energy healing, encompassing high level energy alignment and practitioner attunements across Levels 1, 2, and 3.",
+    image: reikiMasterCert,
+    alt: "Reiki Master & Teacher Lineage Record",
+    date: "Lineage Record",
+    badge: "Master Lineage",
+  },
+  {
+    id: "archival-reiki-first",
+    title: "Reiki First Degree",
+    institution: "Traditional Usui Shiki Ryoho",
+    description: "Foundation in hands on holistic healing, energy harmonization, stress alleviation, and traditional meditative self healing protocols.",
+    image: reikiCert,
+    alt: "Reiki First Degree Lineage Record",
+    date: "Lineage Record",
+    badge: "First Degree Lineage",
+  },
+] as const;
+
 export const founderAwards = [
   {
     id: "vedic-research-iama",
     title: "Vedic Research Recognition & Academic Participation",
+    category: "Academic Recognition",
+    institution: "Shree Maharshi College of Vedic Astrology & IAMA Open University, Florida, USA",
+    recipient: "Dr. Priya Ranjan Sahu",
     description:
       "Recognition from Shree Maharshi College of Vedic Astrology, Udaipur, for contributions towards Vedic Research Studies, dated 27 September 2026. The accompanying certificate recognises participation in the inaugural ceremony of IAMA Open University, Florida, USA, on 27 September 2026.",
     image: awardVedicResearchIama,
@@ -88,6 +223,9 @@ export const founderAwards = [
   {
     id: "award-of-excellence-vedic-research",
     title: "Award of Excellence – Vedic Research",
+    category: "Vedic Research Ceremony",
+    institution: "Shree Maharshi College of Vedic Astrology",
+    recipient: "Dr. Priya Ranjan Sahu",
     description:
       "Award presented by Shree Maharshi College of Vedic Astrology for the Ph.D. Vedic Research Ceremony, September 2026.",
     image: awardExcellenceVedicResearch,
@@ -99,6 +237,9 @@ export const founderAwards = [
   {
     id: "medal-of-honour-vedic-study",
     title: "Medal of Honour – Doctorate of Philosophy in Vedic Study",
+    category: "Doctorate of Philosophy in Vedic Study",
+    institution: "Ph.D. Convocation Ceremony",
+    recipient: "Dr. Priya Ranjan Sahu",
     description:
       "A Medal of Honour bearing the title “Doctorate of Philosophy in Vedic Study”, dated 2026.",
     image: awardMedalOfHonour,
