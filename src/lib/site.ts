@@ -580,6 +580,86 @@ export interface ServicePackage {
   featured?: boolean;
   previewSummary: string;
   inclusions: readonly string[];
+  paymentUrl?: string;
+}
+
+export const paymentConfig = {
+  merchantName: "The Wisdom Bharat",
+  beneficiaryName: "PRIYA RANJAN SAHU",
+  primaryUpiId: "thewisdombharat561576.rzp@rxairtel", // Official Razorpay Merchant VPA from QR
+  secondaryUpiId: "9692117171@cnrb", // Direct VPA
+  mcc: "7298", // Health & Personal Wellness services
+  qrImage: "/images/payments/razorpay-upi-qr.jpg",
+  // Strict domain allowlist to prevent arbitrary redirects
+  allowedDomains: [
+    "pages.razorpay.com",
+    "rzp.io",
+    "api.razorpay.com",
+    "thewisdombharat.com",
+  ],
+  // Master payment URLs (can be populated with direct Razorpay payment page URLs)
+  urls: {
+    "introductory-session": "",
+    "basic-healing": "",
+    "deep-healing": "",
+    "pro-healing": "",
+    "consultation": "",
+  } as Record<string, string>,
+};
+
+/**
+ * Generates an audit session token for payment tracking
+ */
+export function createPaymentSessionRef(packageId: string): string {
+  const ts = Math.floor(Date.now() / 1000);
+  const nonce = Math.random().toString(36).substring(2, 6).toUpperCase();
+  const cleanId = packageId.replace(/[^a-zA-Z0-9]/g, "").slice(0, 6).toUpperCase();
+  return `WB-${cleanId}-${ts}-${nonce}`;
+}
+
+/**
+ * Validates that a target URL is strictly hosted on approved Razorpay domains
+ * and appends secure tracking parameters (package, amount, session token).
+ */
+export function buildSecurePaymentUrl(
+  targetUrl: string,
+  params: { packageId: string; packageName: string; amount: number; sessionRef?: string }
+): string {
+  if (!targetUrl) return "";
+  try {
+    const url = new URL(targetUrl);
+    const isAllowed = paymentConfig.allowedDomains.some(
+      (d) => url.hostname === d || url.hostname.endsWith(`.${d}`)
+    );
+    if (!isAllowed) {
+      console.warn("Blocked untrusted payment redirect to:", targetUrl);
+      return "";
+    }
+    const token = params.sessionRef || createPaymentSessionRef(params.packageId);
+    url.searchParams.set("pkg_id", params.packageId);
+    url.searchParams.set("pkg_name", params.packageName);
+    url.searchParams.set("amount", String(params.amount));
+    url.searchParams.set("currency", "INR");
+    url.searchParams.set("source", "thewisdombharat_web");
+    url.searchParams.set("ref", token);
+    return url.toString();
+  } catch {
+    return "";
+  }
+}
+
+/**
+ * Builds a strict, validated UPI intent URI for instant 1-click mobile payment apps (GPay, PhonePe, Paytm, BHIM)
+ */
+export function buildUpiPayUri(params: {
+  amount: number;
+  packageId: string;
+  packageName: string;
+  sessionRef?: string;
+}): string {
+  const token = params.sessionRef || createPaymentSessionRef(params.packageId);
+  const note = `The Wisdom Bharat - ${params.packageName.slice(0, 25)} (${token})`;
+  return `upi://pay?pa=${paymentConfig.primaryUpiId}&pn=${encodeURIComponent(paymentConfig.merchantName)}&mc=${paymentConfig.mcc}&am=${params.amount}&cu=INR&tn=${encodeURIComponent(note)}`;
 }
 
 export const auraPackages: readonly ServicePackage[] = [

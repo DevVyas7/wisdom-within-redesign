@@ -6,6 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Button } from "@/components/ui/button";
 import { ActionLink, BottomCTA, ExternalButton, SectionHeading } from "@/components/SiteShell";
 import { address, assets, auraContent, auraFaqs, auraPackages, bookingUrl, bookUrl, email, faqs, founderAchievements, founderAwards, founderCertificates, garbhaSanskarCertificate, garbhaSanskarContent, garbhaSanskarFaqs, phoneHref, phoneNumber, programs, services, whatsappNumber, whatsappSecondaryNumber, whatsappSecondaryUrl, whatsappUrl, testimonials, videoTestimonials, type GoogleReview, type GoogleReviewScreenshot, googleReviewScreenshots, googleReviewsUrl } from "@/lib/site";
+import { PaymentGatewayModal, type PayableItem } from "@/components/PaymentGatewayModal";
 
 export function ServiceCards() { return <div className="service-grid">{services.map((s) => <Link className="service-card" to={s.slug} key={s.slug}><div className="service-image"><img src={s.image} alt={`${s.title} session`} className="object-top" loading="lazy" width={1024} height={682}/></div><div className="service-card-body"><span className="eyebrow">{s.eyebrow}</span><div className="service-card-title"><h3>{s.title}</h3><ArrowRight size={19}/></div><p>{s.summary}</p></div></Link>)}</div>; }
 
@@ -935,6 +936,7 @@ export function AuraPage() {
 }
 export function AuraPackagesPage() {
   const location = useLocation();
+  const [selectedPackage, setSelectedPackage] = useState<PayableItem | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -1065,15 +1067,14 @@ export function AuraPackagesPage() {
                   {/* Booking CTA Button */}
                   <div className="mt-6 pt-4 border-t border-border/50">
                     <Button
-                      asChild
-                      className={`w-full ${
+                      type="button"
+                      onClick={() => setSelectedPackage(pkg)}
+                      className={`w-full cursor-pointer ${
                         isPro ? "bg-primary text-primary-foreground hover:bg-primary/90" : "action-link"
                       }`}
                     >
-                      <a href={bookingUrl} target="_blank" rel="noopener noreferrer">
-                        <span>{isIntro ? "Book Introductory Session" : "Book This Package"}</span>
-                        <ArrowRight size={15} />
-                      </a>
+                      <span>{isIntro ? "Book Introductory Session" : "Book This Package"}</span>
+                      <ArrowRight size={15} />
                     </Button>
                   </div>
                 </div>
@@ -1097,6 +1098,12 @@ export function AuraPackagesPage() {
           </div>
         </div>
       </section>
+
+      <PaymentGatewayModal
+        isOpen={!!selectedPackage}
+        onClose={() => setSelectedPackage(null)}
+        item={selectedPackage}
+      />
 
       <BottomCTA />
     </>
@@ -1361,6 +1368,16 @@ export function ContactPage() {
   );
 }
 export function BookingPage() { 
+  const [paymentModalOpen, setPaymentModalOpen] = useState(false);
+  const consultationItem: PayableItem = {
+    id: "consultation",
+    name: "1-on-1 Consultation Session",
+    price: "₹999",
+    priceNumber: 999,
+    duration: "45 Minutes",
+    badge: "Direct Guidance",
+  };
+
   return (
     <>
       <PageHeader 
@@ -1402,9 +1419,20 @@ export function BookingPage() {
               </div>
 
               <div>
-                <ExternalButton href={bookingUrl}>Open booking calendar</ExternalButton>
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                  <ExternalButton href={bookingUrl}>Open booking calendar</ExternalButton>
+                  <Button 
+                    type="button"
+                    onClick={() => setPaymentModalOpen(true)}
+                    variant="outline"
+                    className="border-primary/50 text-foreground hover:bg-primary/10 gap-2 font-semibold h-11 px-5 cursor-pointer"
+                  >
+                    <ShieldCheck size={16} className="text-primary" />
+                    <span>Pay Consultation Fee (UPI / QR)</span>
+                  </Button>
+                </div>
                 <p className="booking-note mt-3 text-xs text-muted-foreground">
-                  Booking opens in a new tab on the appointment platform.
+                  Pay instantly via Razorpay / UPI QR code or reserve your slot on the appointment platform.
                 </p>
               </div>
             </div>
@@ -1428,6 +1456,12 @@ export function BookingPage() {
           </div>
         </div>
       </section>
+
+      <PaymentGatewayModal
+        isOpen={paymentModalOpen}
+        onClose={() => setPaymentModalOpen(false)}
+        item={consultationItem}
+      />
     </>
   ); 
 }
