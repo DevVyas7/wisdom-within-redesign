@@ -4,10 +4,14 @@ import { ArrowRight, ChevronDown, Instagram, Mail, Menu, Phone, X, Youtube } fro
 import { Button } from "@/components/ui/button";
 import { address, assets, bookingUrl, email, phoneHref, phoneNumber, services, socialLinks, whatsappNumber, whatsappSecondaryNumber, whatsappSecondaryUrl, whatsappUrl } from "@/lib/site";
 
-const links = [
+const navLinksBeforeServices = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
+] as const;
+
+const navLinksAfterServices = [
   { label: "Programs", to: "/programs" },
+  { label: "Packages", to: "/aura-packages" },
   { label: "The Book", to: "/the-book" },
   { label: "Contact", to: "/contact" },
 ] as const;
@@ -21,25 +25,25 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       <div className="container-wide header-inner">
         <Link to="/" aria-label="The Wisdom Bharat home" onClick={() => setOpen(false)} className="brand"><img src={assets.logo} alt="The Wisdom Bharat logo" /><span>THE WISDOM<br/><b>BHARAT</b></span></Link>
         <nav className="desktop-nav" aria-label="Main navigation">
-          {links.slice(0,2).map(l => <Link key={l.to} to={l.to} activeProps={{ className: "active" }}>{l.label}</Link>)}
+          {navLinksBeforeServices.map(l => <Link key={l.to} to={l.to} activeProps={{ className: "active" }}>{l.label}</Link>)}
           <div className="nav-dropdown"><Link to="/services" activeProps={{ className: "active" }}>Services <ChevronDown size={13}/></Link><div className="dropdown-panel">{services.map(s => <Link key={s.slug} to={s.slug}>{s.title}</Link>)}</div></div>
-          {links.slice(2).map(l => <Link key={l.to} to={l.to} activeProps={{ className: "active" }}>{l.label}</Link>)}
+          {navLinksAfterServices.map(l => <Link key={l.to} to={l.to} activeProps={{ className: "active" }}>{l.label}</Link>)}
         </nav>
         <Button asChild className="header-cta hidden xl:inline-flex"><a href={bookingUrl} target="_blank" rel="noopener noreferrer">Book a Consultation <ArrowRight size={15}/></a></Button>
         <Button variant="ghost" size="icon" className="mobile-menu-button" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen(!open)}>{open ? <X/> : <Menu/>}</Button>
       </div>
       {open && <nav className="mobile-nav" aria-label="Mobile navigation">
-        {links.slice(0,2).map(l => <Link key={l.to} to={l.to} onClick={() => setOpen(false)}>{l.label}</Link>)}
+        {navLinksBeforeServices.map(l => <Link key={l.to} to={l.to} onClick={() => setOpen(false)}>{l.label}</Link>)}
         <div className="mobile-service-row"><Link to="/services" onClick={() => setOpen(false)}>Services</Link><Button variant="ghost" size="icon" aria-label="Toggle services" aria-expanded={servicesOpen} onClick={() => setServicesOpen(!servicesOpen)}><ChevronDown size={18}/></Button></div>
         {servicesOpen && <div className="mobile-subnav">{services.map(s => <Link key={s.slug} to={s.slug} onClick={() => setOpen(false)}>{s.title}</Link>)}</div>}
-        {links.slice(2).map(l => <Link key={l.to} to={l.to} onClick={() => setOpen(false)}>{l.label}</Link>)}
+        {navLinksAfterServices.map(l => <Link key={l.to} to={l.to} onClick={() => setOpen(false)}>{l.label}</Link>)}
         <a className="mobile-book" href={bookingUrl} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>Book a Consultation <ArrowRight size={17}/></a>
       </nav>}
     </header>
     <main>{children}</main>
     <footer className="footer"><div className="container-wide footer-grid">
       <div><Link to="/" className="footer-brand"><img src={assets.logo} alt=""/><span>THE WISDOM<br/><b>BHARAT</b></span></Link><p>Awaken the wisdom within.</p><p>Mind. Energy. Conscious living.</p></div>
-      <div><h3>Explore</h3><Link to="/about">About</Link><Link to="/services">Services</Link><Link to="/programs">Programs</Link><Link to="/the-book">The Book</Link><Link to="/" hash="experiences">Testimonials</Link></div>
+      <div><h3>Explore</h3><Link to="/about">About</Link><Link to="/services">Services</Link><Link to="/programs">Programs</Link><Link to="/aura-packages">Packages</Link><Link to="/the-book">The Book</Link><Link to="/" hash="experiences">Testimonials</Link></div>
       <div><h3>Support</h3><Link to="/" hash="faq">FAQ</Link><Link to="/contact">Contact</Link><a href={bookingUrl} target="_blank" rel="noopener noreferrer">Book a Consultation</a><Link to="/privacy-policy">Privacy Policy</Link><Link to="/terms-and-conditions">Terms & Conditions</Link></div>
       <div><h3>Get in touch</h3><p className="whitespace-pre-line">{address}</p><a href={phoneHref}><Phone size={15}/> {phoneNumber}</a><a href={`mailto:${email}`}><Mail size={15}/> {email}</a><a href={whatsappUrl} target="_blank" rel="noopener noreferrer">WhatsApp: {whatsappNumber} <ArrowRight size={14}/></a><a href={whatsappSecondaryUrl} target="_blank" rel="noopener noreferrer">Alt. WhatsApp: {whatsappSecondaryNumber} <ArrowRight size={14}/></a><a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer"><Instagram size={15}/> Instagram</a><a href={socialLinks.youtube} target="_blank" rel="noopener noreferrer"><Youtube size={15}/> YouTube</a></div>
     </div><div className="container-wide footer-bottom"><span>© {new Date().getFullYear()} The Wisdom Bharat. All rights reserved.</span><span>Awaken The Wisdom Within</span></div></footer>

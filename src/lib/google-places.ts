@@ -4,11 +4,11 @@
  * Confirmed Place ID for The Wisdom Bharat:
  * Hex CID: 0x3a1e2f9d85d7b5bf:0x51c5874ea3d0dd3e
  * Place ID: ChIJv7XXhZ0vHjoP3t3Qo06HxVE
- * Google Maps URL: https://maps.app.goo.gl/EWznU1UXJmdHHJtPA
+ * Google Maps URL: https://www.google.com/maps/place/THE+WISDOM+BHARAT/@21.6344042,85.6065279,17z/data=!4m8!3m7!1s0x3a1f0502f6393a7f:0x5465b1128cfdd27e!8m2!3d21.6344042!4d85.6065279!9m1!1b1!16s%2Fg%2F11h12rzzkk
  */
 
 import { createServerFn } from "@tanstack/react-start";
-import { type GoogleReview, testimonials } from "./site";
+import { type GoogleReview, testimonials, googleReviewsUrl } from "./site";
 
 export const WISDOM_BHARAT_PLACE_ID = "ChIJv7XXhZ0vHjoP3t3Qo06HxVE";
 
@@ -136,7 +136,7 @@ export async function fetchLiveGoogleReviews(
         initials,
         ...(photoURI ? { avatarUrl: photoURI } : {}),
         googleMapsUri:
-          raw.googleMapsUri || profileUri || "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA",
+          raw.googleMapsUri || profileUri || googleReviewsUrl,
         authorAttribution: {
           displayName,
           ...(profileUri ? { uri: profileUri } : {}),

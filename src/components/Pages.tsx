@@ -1,13 +1,88 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
 import { ArrowRight, Check, Mail, MapPin, Phone, Award, ZoomIn, Star, ChevronLeft, ChevronRight, ShieldCheck, X, Play, Pause, Volume2, VolumeX, Maximize, Minimize, RotateCcw, ExternalLink } from "lucide-react";
 import { useState, useEffect, useRef, useCallback, type FormEvent } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { ActionLink, BottomCTA, ExternalButton, SectionHeading } from "@/components/SiteShell";
-import { address, assets, auraContent, auraFaqs, bookingUrl, bookUrl, email, faqs, founderAchievements, founderAwards, founderCertificates, garbhaSanskarContent, garbhaSanskarFaqs, phoneHref, phoneNumber, programs, services, whatsappNumber, whatsappSecondaryNumber, whatsappSecondaryUrl, whatsappUrl, testimonials, videoTestimonials, type GoogleReview, type GoogleReviewScreenshot, googleReviewScreenshots } from "@/lib/site";
+import { address, assets, auraContent, auraFaqs, auraPackages, bookingUrl, bookUrl, email, faqs, founderAchievements, founderAwards, founderCertificates, garbhaSanskarCertificate, garbhaSanskarContent, garbhaSanskarFaqs, phoneHref, phoneNumber, programs, services, whatsappNumber, whatsappSecondaryNumber, whatsappSecondaryUrl, whatsappUrl, testimonials, videoTestimonials, type GoogleReview, type GoogleReviewScreenshot, googleReviewScreenshots, googleReviewsUrl } from "@/lib/site";
 
 export function ServiceCards() { return <div className="service-grid">{services.map((s) => <Link className="service-card" to={s.slug} key={s.slug}><div className="service-image"><img src={s.image} alt={`${s.title} session`} className="object-top" loading="lazy" width={1024} height={682}/></div><div className="service-card-body"><span className="eyebrow">{s.eyebrow}</span><div className="service-card-title"><h3>{s.title}</h3><ArrowRight size={19}/></div><p>{s.summary}</p></div></Link>)}</div>; }
+
+export function ServicePackagesSection() {
+  return (
+    <section id="packages-preview" className="py-12 md:py-14 bg-card/60 border-y border-border/70">
+      <div className="container-wide">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+          <div className="max-w-2xl">
+            <span className="eyebrow">PACKAGES &amp; TRANSFORMATION JOURNEYS</span>
+            <h2 className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-display text-foreground leading-tight">
+              AURA Healing &amp; Transformation Packages
+            </h2>
+            <p className="mt-2 text-sm sm:text-base text-muted-foreground">
+              Structured wellness and healing pathways combining AURA scanning, Reiki, NLP meditation, and personalised mentoring with Dr. Priya Ranjan Sahu.
+            </p>
+          </div>
+          <Button asChild className="action-link self-start md:self-auto shrink-0">
+            <Link to="/aura-packages">
+              Explore All Packages <ArrowRight size={16} />
+            </Link>
+          </Button>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {auraPackages.map((pkg) => (
+            <Link
+              key={pkg.id}
+              to="/aura-packages"
+              hash={pkg.id}
+              className={`group p-4 sm:p-5 rounded-[2px] border bg-background flex flex-col justify-between transition-all duration-300 hover:border-primary/50 hover:shadow-xs hover:bg-card/40 ${
+                pkg.featured
+                  ? "border-primary/60 border-t-4 border-t-primary shadow-xs"
+                  : "border-border/80 border-t-2 border-t-primary/70"
+              }`}
+            >
+              <div>
+                {pkg.badge ? (
+                  <span className="inline-block text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 bg-primary/10 text-primary border border-primary/20 rounded-[2px] mb-2.5">
+                    {pkg.badge}
+                  </span>
+                ) : pkg.featured ? (
+                  <span className="inline-block text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 bg-primary/10 text-primary border border-primary/20 rounded-[2px] mb-2.5">
+                    Comprehensive Plan
+                  </span>
+                ) : (
+                  <span className="inline-block text-[10px] font-mono tracking-wider uppercase text-muted-foreground/80 mb-2.5">
+                    Guided Journey
+                  </span>
+                )}
+
+                <h3 className="font-display text-lg font-semibold text-foreground leading-snug mb-1 group-hover:text-primary transition-colors">
+                  {pkg.name}
+                </h3>
+
+                {pkg.duration && (
+                  <p className="text-xs font-semibold text-primary mb-2.5">
+                    Duration: {pkg.duration}
+                  </p>
+                )}
+
+                <p className="text-xs text-muted-foreground leading-relaxed mb-4">
+                  {pkg.previewSummary}
+                </p>
+              </div>
+
+              <div className="pt-3 border-t border-border/40 mt-auto flex items-center justify-between text-xs font-semibold text-primary group-hover:text-primary/90">
+                <span>Explore Package</span>
+                <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 type FaqEntry = { readonly q: string; readonly a: string };
 
@@ -101,7 +176,15 @@ export function HomePage() {
         </div>
       </div>
     </section>
-  <section id="intro" className="intro-section"><div className="container-wide intro-layout"><span className="eyebrow">A MORE INTENTIONAL WAY FORWARD</span><div><h2>Transformation begins when you make space to listen to yourself.</h2><p>At The Wisdom Bharat, ancient wisdom meets a personal approach to growth. Explore practices that support reflection, connection and purposeful change at your own pace.</p></div></div></section>
+  <section id="intro" className="intro-section">
+    <div className="container-wide">
+      <div className="intro-centered">
+        <span className="eyebrow">A MORE INTENTIONAL WAY FORWARD</span>
+        <h2>Transformation begins when you make space to listen to yourself.</h2>
+        <p>At The Wisdom Bharat, ancient wisdom meets a personal approach to growth. Explore practices that support reflection, connection and purposeful change at your own pace.</p>
+      </div>
+    </div>
+  </section>
   <section className="section-pad services-section"><div className="container-wide"><div className="section-top"><SectionHeading eyebrow="OUR OFFERINGS" title="Five paths. One intention." description="Find the support that speaks to where you are right now."/><Link to="/services" className="text-link">View all services <ArrowRight size={17}/></Link></div><ServiceCards/></div></section>
   <section className="founder-band"><div className="container-wide founder-layout"><div className="founder-image-wrap"><img src={assets.founder} alt="Dr. Priya Ranjan Sahu, founder of The Wisdom Bharat" loading="lazy"/><span className="image-caption">DR. PRIYA RANJAN SAHU · FOUNDER</span></div><div className="founder-copy"><span className="eyebrow">THE PERSON BEHIND THE PRACTICE</span><h2>Meet Dr. Priya Ranjan Sahu.</h2><p className="lead">“I believe every human has the power to heal, grow, and awaken their ultimate potential, physically, mentally, and spiritually.”</p><p>Dr. Priya Ranjan Sahu (popularly known as Life Coach PR) brings together NLP, Reiki, Garbhsanskar and life coaching in a practice centred on personal growth and conscious living.</p><ActionLink to="/about">More about Dr. Priya Ranjan Sahu</ActionLink></div></div></section>
   <section className="section-pad garbh-highlight"><div className="container-wide highlight-layout"><div><span className="eyebrow">CONSCIOUS BEGINNINGS</span><h2>A thoughtful beginning for the journey ahead.</h2><p>Garbhsanskar offers parents a way to connect with themselves and each other from pre conception through pregnancy, drawing on reflection, affirmations, sound and ancient Indian wisdom.</p><Button asChild variant="outline" className="outline-link"><Link to="/services/garbhsanskar">Explore Garbhsanskar <ArrowRight size={16}/></Link></Button></div><img src={assets.garbhsanskar} alt="Pregnant couple meditating together representing Garbha Sanskar" loading="lazy" width={1024} height={682} className="object-cover object-center"/></div></section>
@@ -120,10 +203,22 @@ export function ServicePage({ index }: { index: number }) {
   const isReiki = index === 1;
   return <><section className="service-hero"><div className="container-wide service-hero-grid"><div><span className="eyebrow">{s.eyebrow} &bull; THE WISDOM BHARAT</span><h1>{s.title}</h1><p>{s.summary}</p><ActionLink>Book a Consultation</ActionLink></div><img src={s.image} alt={s.title + " practice"} width={isReiki ? 1024 : 1024} height={isReiki ? 682 : 768} className={isReiki ? "max-w-[480px] lg:ml-auto !h-auto aspect-[3/2] object-cover object-center" : ""}/></div></section>
   <section className="section-pad"><div className="container-wide detail-layout"><div><span className="eyebrow">THE PRACTICE</span><h3 className="text-2xl md:text-3xl lg:text-4xl leading-snug font-display text-foreground mt-4">{s.introQuote || "A space to begin."}</h3>{s.closingQuote && <p className="text-[var(--gold)] font-display text-2xl md:text-3xl mt-8 italic">"{s.closingQuote}"</p>}{isReiki && <figure className="mt-8 max-w-[380px] overflow-hidden border-b-4 border-primary bg-card"><img src={assets.reikiChakra} alt="Woman receiving chakra healing with colourful energy points during a Reiki session" width={800} height={600} loading="lazy" className="w-full aspect-[4/3] object-cover object-center block"/></figure>}</div><div><div className="prose prose-lg text-muted-foreground mb-12">{s.fullDescription ? s.fullDescription.map((p: string, i: number) => <p key={i} className="mb-6 leading-[1.8] text-[17px]">{p}</p>) : <p className="lead">{s.detail}</p>}</div><div className="point-list">{s.points.map((p: string) => <div key={p}><Check size={18}/><span>{p}</span></div>)}</div><p className="medical-note mt-12">These services are not a substitute for medical treatment.</p></div></div></section>
+  <ServicePackagesSection />
   <section className="section-pad alternate"><div className="container-wide"><div className="section-top"><SectionHeading eyebrow="EXPLORE MORE" title="Other ways to grow."/></div><div className="related-links">{services.filter((_,i) => i!==index).map(other => <Link key={other.slug} to={other.slug}>{other.title}<ArrowRight size={18}/></Link>)}</div></div></section><BottomCTA/></>; 
 }
 export function GarbhaSanskarPage() {
   const { hero, whatIs, approach, whoCanJoin, experience, whyChooseUs } = garbhaSanskarContent;
+  const [isCertModalOpen, setIsCertModalOpen] = useState(false);
+
+  useEffect(() => {
+    if (!isCertModalOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsCertModalOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [isCertModalOpen]);
+
   return (
     <>
       <section className="service-hero py-12 md:py-16">
@@ -248,27 +343,140 @@ export function GarbhaSanskarPage() {
       </section>
 
       <section className="section-pad alternate">
-        <div className="container-wide editorial-split">
-          <div className="editorial-photo relative">
-            <img
-              src={assets.founder}
-              alt="Dr. Priya Ranjan Sahu, founder of The Wisdom Bharat"
-              loading="lazy"
-            />
-            <span className="image-caption mt-3 block">DR. PRIYA RANJAN SAHU · FOUNDER</span>
+        <div className="container-wide">
+          <div className="editorial-split mb-12">
+            <div className="editorial-photo relative">
+              <img
+                src={assets.founder}
+                alt="Dr. Priya Ranjan Sahu, founder of The Wisdom Bharat"
+                loading="lazy"
+              />
+              <span className="image-caption mt-3 block">DR. PRIYA RANJAN SAHU · FOUNDER</span>
+            </div>
+            <div className="editorial-copy">
+              <span className="eyebrow">THE GUIDANCE</span>
+              <h2>{whyChooseUs.heading}</h2>
+              {whyChooseUs.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+              <div className="mt-8">
+                <ActionLink>Book a Consultation</ActionLink>
+              </div>
+            </div>
           </div>
-          <div className="editorial-copy">
-            <span className="eyebrow">THE GUIDANCE</span>
-            <h2>{whyChooseUs.heading}</h2>
-            {whyChooseUs.paragraphs.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-            <div className="mt-8">
-              <ActionLink>Book a Consultation</ActionLink>
+
+          {/* Garbha Sanskar Verified Credentials Showcase */}
+          <div className="pt-10 border-t border-[#E5DDD2]">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-6">
+              <div>
+                <span className="eyebrow text-primary">CREDENTIALS &amp; QUALIFICATION</span>
+                <h3 className="text-2xl sm:text-3xl font-display text-foreground font-bold mt-1">
+                  Professional Garbhsanskar Certification
+                </h3>
+              </div>
+              <p className="text-xs sm:text-sm text-muted-foreground font-mono">
+                Verified Practitioner Credentials &bull; Dr. Priya Ranjan Sahu
+              </p>
+            </div>
+
+            <div
+              onClick={() => setIsCertModalOpen(true)}
+              className="group bg-[#FAF7F2] border border-[#E7DFD5] hover:border-primary/50 transition-all duration-300 p-5 md:p-6 rounded-[2px] flex flex-col md:flex-row items-start md:items-center gap-6 cursor-pointer shadow-[0_2px_12px_rgba(58,42,32,0.04)] hover:shadow-[0_8px_24px_-4px_rgba(58,42,32,0.08)]"
+            >
+              {/* Landscape Archival Document Frame */}
+              <div className="w-full md:w-64 lg:w-72 h-[195px] sm:h-[215px] shrink-0 bg-[#FDFBF7] p-3 border border-[#E0D6C8] rounded-[2px] relative overflow-hidden flex items-center justify-center shadow-[inset_0_1px_3px_rgba(0,0,0,0.02)]">
+                <img
+                  src={garbhaSanskarCertificate.image}
+                  alt={garbhaSanskarCertificate.alt}
+                  loading="lazy"
+                  width={garbhaSanskarCertificate.width}
+                  height={garbhaSanskarCertificate.height}
+                  className="max-h-full max-w-full w-auto h-auto object-contain drop-shadow-[0_2px_6px_rgba(58,42,32,0.12)] transition-transform duration-300 group-hover:scale-[1.015]"
+                />
+                <span className="absolute inset-0 bg-[#3A2A20]/15 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[1px]">
+                  <span className="bg-[#FAF7F2] text-foreground text-[10px] font-mono font-semibold tracking-widest uppercase px-3 py-1 rounded-[2px] shadow-sm flex items-center gap-1.5 border border-[#E0D6C8]">
+                    <ZoomIn size={12} className="text-primary" /> Inspect Document
+                  </span>
+                </span>
+              </div>
+
+              {/* Editorial Content */}
+              <div className="flex-1 min-w-0">
+                <div className="flex flex-wrap items-center gap-2.5 mb-2">
+                  <span className="text-[10px] font-mono font-bold tracking-widest uppercase px-2 py-0.5 rounded-[2px] bg-primary/10 text-primary border border-primary/20">
+                    Verified Certification
+                  </span>
+                  <span className="text-xs font-mono text-muted-foreground">
+                    Online Workshop Training
+                  </span>
+                </div>
+                <h4 className="font-display text-2xl sm:text-3xl text-foreground font-bold mb-1.5 group-hover:text-primary transition-colors">
+                  {garbhaSanskarCertificate.title}
+                </h4>
+                <p className="text-xs sm:text-sm font-semibold text-primary/90 mb-2">
+                  {garbhaSanskarCertificate.institution}
+                </p>
+                <p className="text-xs sm:text-[13px] text-muted-foreground leading-relaxed max-w-3xl mb-3.5">
+                  {garbhaSanskarCertificate.description}
+                </p>
+                <div className="flex items-center gap-2 text-xs">
+                  <span className="text-primary font-semibold uppercase tracking-wider text-[11px] group-hover:underline flex items-center gap-1.5">
+                    <ZoomIn size={13} /> View Full Resolution Certificate
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Document Viewer Lightbox Modal */}
+      {isCertModalOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 md:p-8 bg-black/85 backdrop-blur-sm"
+          onClick={() => setIsCertModalOpen(false)}
+        >
+          <div
+            className="relative max-w-4xl w-full max-h-full flex flex-col items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="w-full flex items-center justify-between gap-4 pb-3 text-white mb-2">
+              <div className="min-w-0 pr-2">
+                <span className="text-[11px] font-bold tracking-[0.2em] text-primary uppercase block truncate">
+                  {garbhaSanskarCertificate.institution}
+                </span>
+                <h4 className="font-display text-base sm:text-xl text-white truncate">
+                  {garbhaSanskarCertificate.title}
+                </h4>
+              </div>
+              <button
+                type="button"
+                className="inline-flex items-center gap-1.5 text-white/80 hover:text-white transition-colors text-xs font-bold tracking-widest uppercase bg-white/10 hover:bg-white/20 px-3 py-2 rounded-[2px] cursor-pointer"
+                onClick={() => setIsCertModalOpen(false)}
+              >
+                <X size={16} /> Close
+              </button>
+            </div>
+
+            {/* Preserved Aspect Ratio Document View */}
+            <div className="bg-black/40 border border-white/15 p-2 md:p-3 rounded-[2px] max-h-[78vh] flex items-center justify-center overflow-hidden">
+              <img
+                src={garbhaSanskarCertificate.image}
+                alt={garbhaSanskarCertificate.alt}
+                className="max-w-full max-h-[74vh] w-auto h-auto object-contain drop-shadow-2xl"
+              />
+            </div>
+
+            <p className="text-white/80 text-xs text-center max-w-2xl mt-2 line-clamp-2 px-4">
+              {garbhaSanskarCertificate.description}
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* COMPACT AURA PACKAGES PREVIEW SECTION */}
+      <ServicePackagesSection />
 
       <section className="section-pad">
         <div className="container-wide">
@@ -549,6 +757,9 @@ export function AuraPage() {
         </div>
       </section>
 
+      {/* SECTION: AURA PACKAGES PREVIEW (CONSISTENT WITH ALL SERVICE PAGES) */}
+      <ServicePackagesSection />
+
       {/* SECTION 6: WHY CHOOSE AURA AT THE WISDOM BHARAT? */}
       <section className="py-12 md:py-14">
         <div className="container-wide grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
@@ -722,6 +933,175 @@ export function AuraPage() {
     </>
   );
 }
+export function AuraPackagesPage() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const hash = window.location.hash || location.hash;
+      if (hash) {
+        const id = hash.replace("#", "");
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+          return;
+        }
+      }
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+    const timer = setTimeout(handleScroll, 120);
+    window.addEventListener("hashchange", handleScroll);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("hashchange", handleScroll);
+    };
+  }, [location.hash, location.pathname]);
+
+  return (
+    <>
+      <PageHeader
+        eyebrow="PACKAGES &amp; TRANSFORMATION JOURNEYS"
+        title="AURA – Healing &amp; Transformation Packages"
+        intro="Structured, personalised healing pathways bringing together AURA scanning, Reiki, NLP mind programming, and lifestyle guidance with Dr. Priya Ranjan Sahu."
+      />
+
+      {/* PACKAGES SECTION */}
+      <section className="section-pad">
+        <div className="container-wide">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+            <span className="eyebrow">CHOOSE YOUR PATHWAY</span>
+            <h2 className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-display text-foreground leading-tight">
+              Four Levels of Guided Healing
+            </h2>
+            <p className="mt-2 text-sm sm:text-base text-muted-foreground">
+              Select the program that suits your personal wellness journey. Every package includes direct guidance, assessment, and authentic energy practices.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+            {auraPackages.map((pkg) => {
+              const isPro = pkg.featured;
+              const isIntro = pkg.id === "introductory-session";
+
+              return (
+                <div
+                  key={pkg.id}
+                  id={pkg.id}
+                  className={`package-card-target relative flex flex-col justify-between p-5 sm:p-6 rounded-[2px] transition-all duration-300 ${
+                    isPro
+                      ? "bg-card border-2 border-primary shadow-[0_12px_28px_-8px_rgba(198,83,60,0.18)] ring-1 ring-primary/20"
+                      : isIntro
+                      ? "bg-card/90 border border-gold/60 border-t-4 border-t-gold shadow-xs hover:border-gold"
+                      : "bg-card border border-border/80 border-t-4 border-t-primary/70 shadow-xs hover:border-primary/40 hover:shadow-sm"
+                  }`}
+                >
+                  <div>
+                    {/* Badge / Pill */}
+                    {pkg.badge ? (
+                      <div className="mb-3">
+                        <span className="inline-block text-[11px] font-bold tracking-wider uppercase px-2.5 py-1 bg-primary text-primary-foreground rounded-[2px]">
+                          {pkg.badge}
+                        </span>
+                      </div>
+                    ) : isPro ? (
+                      <div className="mb-3">
+                        <span className="inline-block text-[11px] font-bold tracking-wider uppercase px-2.5 py-1 bg-primary/10 text-primary border border-primary/20 rounded-[2px]">
+                          Comprehensive Transformation
+                        </span>
+                      </div>
+                    ) : (
+                      <div className="mb-3">
+                        <span className="inline-block text-[11px] font-mono tracking-wider uppercase text-muted-foreground">
+                          Structured Journey
+                        </span>
+                      </div>
+                    )}
+
+                    {/* Title */}
+                    <h3 className="font-display text-xl sm:text-[22px] font-semibold text-foreground leading-tight mb-2">
+                      {pkg.name}
+                    </h3>
+
+                    {/* Duration (if provided) */}
+                    {pkg.duration && (
+                      <div className="flex items-center gap-1.5 text-xs font-semibold text-primary uppercase tracking-wide mb-3">
+                        <span>Duration:</span>
+                        <span className="text-foreground">{pkg.duration}</span>
+                      </div>
+                    )}
+
+                    {/* Price */}
+                    <div className="my-3 py-3 border-y border-border/60">
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-3xl sm:text-4xl font-display font-bold text-foreground">
+                          {pkg.price}
+                        </span>
+                      </div>
+                      <span className="text-[11px] text-muted-foreground block mt-0.5">
+                        Inclusive of all sessions &amp; guidance
+                      </span>
+                    </div>
+
+                    {/* Inclusions */}
+                    <div className="mt-4">
+                      <p className="text-xs font-bold uppercase tracking-wider text-foreground mb-3">
+                        What&apos;s Included:
+                      </p>
+                      <ul className="space-y-2.5">
+                        {pkg.inclusions.map((item) => (
+                          <li
+                            key={item}
+                            className="flex items-start gap-2 text-xs sm:text-[13px] text-foreground/90 leading-snug"
+                          >
+                            <Check size={15} className="text-primary shrink-0 mt-0.5" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Booking CTA Button */}
+                  <div className="mt-6 pt-4 border-t border-border/50">
+                    <Button
+                      asChild
+                      className={`w-full ${
+                        isPro ? "bg-primary text-primary-foreground hover:bg-primary/90" : "action-link"
+                      }`}
+                    >
+                      <a href={bookingUrl} target="_blank" rel="noopener noreferrer">
+                        <span>{isIntro ? "Book Introductory Session" : "Book This Package"}</span>
+                        <ArrowRight size={15} />
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* DISCLAIMER */}
+      <section className="py-6 bg-muted/20 border-b border-border/50">
+        <div className="container-wide">
+          <div className="max-w-4xl mx-auto p-3.5 sm:p-4 bg-background border border-primary/25 border-l-4 border-l-primary rounded-[2px] flex items-start gap-3 shadow-xs">
+            <ShieldCheck size={20} className="text-primary shrink-0 mt-0.5" />
+            <div className="text-xs text-muted-foreground leading-relaxed">
+              <span className="font-bold text-foreground block mb-0.5 uppercase tracking-wider text-[11px]">
+                Important Holistic Wellness Disclaimer
+              </span>
+              <p>{auraContent.disclaimer}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <BottomCTA />
+    </>
+  );
+}
 export function ProgramsPage() {
   return (
     <>
@@ -754,11 +1134,21 @@ export function ProgramsPage() {
 }
 export function BookPage() { return <><PageHeader eyebrow="THE BOOK" title="Ideas for a more intentional life."/><section className="section-pad"><div className="container-wide editorial-split book-page-layout"><div className="book-page-photo"><img src={assets.book} alt="Awaken Your Ultimate High Performance System by Dr. Priya Ranjan Sahu book cover"/></div><div className="editorial-copy"><span className="eyebrow">BY DR. PRIYA RANJAN SAHU</span><h2>Awaken Your Ultimate High Performance System</h2><p>A guide to exploring mindset, habits and energy alignment. In the book, Dr. Priya Ranjan Sahu (Life Coach PR) draws from NLP and ancient wisdom to consider high performance alongside balance and purpose.</p><ExternalButton href={bookUrl}>View on Amazon</ExternalButton></div></div></section><BottomCTA/></>; }
 
+function WhatsAppIcon({ size = 16, className = "" }: { size?: number; className?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+  );
+}
+
 export function ContactPage() {
-  const [opened, setOpened] = useState(false);
   const [name, setName] = useState("");
   const [from, setFrom] = useState("");
+  const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
+  const [statusNote, setStatusNote] = useState("");
 
   useEffect(() => {
     if (typeof window !== "undefined" && window.location.hash === "#enquiry") {
@@ -773,23 +1163,90 @@ export function ContactPage() {
     }
   }, []);
 
-  function submit(e: FormEvent) {
-    e.preventDefault();
+  function validate(): {
+    cleanName: string;
+    cleanEmail: string;
+    cleanPhone: string;
+    cleanMessage: string;
+  } | null {
     const cleanName = name.trim().slice(0, 100);
     const cleanEmail = from.trim().slice(0, 120);
+    const cleanPhone = phone.trim().slice(0, 30);
     const cleanMessage = message.trim().slice(0, 2000);
 
-    // Validate required fields
-    if (!cleanName || !cleanEmail || !cleanMessage) return;
+    if (!cleanName) {
+      setError("Please enter your name.");
+      document.getElementById("name")?.focus();
+      return null;
+    }
 
+    if (!cleanEmail && !cleanPhone) {
+      setError("Please provide either an email address or a contact number.");
+      document.getElementById("email")?.focus();
+      return null;
+    }
+
+    if (cleanEmail) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(cleanEmail)) {
+        setError("Please enter a valid email address.");
+        document.getElementById("email")?.focus();
+        return null;
+      }
+    }
+
+    if (cleanPhone) {
+      const digits = cleanPhone.replace(/\D/g, "");
+      if (digits.length < 7) {
+        setError("Please enter a valid contact number (at least 7 digits).");
+        document.getElementById("phone")?.focus();
+        return null;
+      }
+    }
+
+    if (!cleanMessage) {
+      setError("Please enter your message.");
+      document.getElementById("message")?.focus();
+      return null;
+    }
+
+    setError("");
+    return { cleanName, cleanEmail, cleanPhone, cleanMessage };
+  }
+
+  function handleSendGmail() {
+    const data = validate();
+    if (!data) return;
+
+    const { cleanName, cleanEmail, cleanPhone, cleanMessage } = data;
     const subject = `Website Enquiry – ${cleanName}`;
-    const body = `Name: ${cleanName}\nEmail: ${cleanEmail}\n\nEnquiry Message:\n${cleanMessage}`;
+    let emailBody = `Name: ${cleanName}`;
+    if (cleanEmail) emailBody += `\nEmail: ${cleanEmail}`;
+    if (cleanPhone) emailBody += `\nContact Number: ${cleanPhone}`;
+    emailBody += `\n\nEnquiry Message:\n${cleanMessage}`;
+
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
       email
-    )}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    )}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
 
     window.open(gmailUrl, "_blank", "noopener,noreferrer");
-    setOpened(true);
+    setStatusNote("Gmail compose has opened in a new tab. Please review and click Send.");
+  }
+
+  function handleSendWhatsApp() {
+    const data = validate();
+    if (!data) return;
+
+    const { cleanName, cleanEmail, cleanPhone, cleanMessage } = data;
+    let waText = `Website Enquiry – ${cleanName}\n\nName: ${cleanName}`;
+    if (cleanEmail) waText += `\nEmail: ${cleanEmail}`;
+    if (cleanPhone) waText += `\nContact Number: ${cleanPhone}`;
+    waText += `\n\nEnquiry Message:\n${cleanMessage}`;
+
+    const fullWhatsappUrl = `${whatsappUrl}?text=${encodeURIComponent(waText)}`;
+
+    window.open(fullWhatsappUrl, "_blank", "noopener,noreferrer");
+    setStatusNote("WhatsApp chat has opened in a new tab with your pre-filled enquiry. Please review and click Send.");
   }
 
   return (
@@ -804,7 +1261,7 @@ export function ContactPage() {
           <div className="contact-info">
             <span className="eyebrow">REACH OUT</span>
             <h2>We’re here to listen.</h2>
-            <p>Use the form to compose an email in Gmail, or contact us directly through the channels below.</p>
+            <p>Use the form to send an enquiry via Gmail or WhatsApp, or contact us directly through the channels below.</p>
             <a href={`mailto:${email}`}><Mail size={19}/>{email}</a>
             <a href={phoneHref}><Phone size={19}/>{phoneNumber}</a>
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"><ArrowRight size={19}/>WhatsApp: {whatsappNumber}</a>
@@ -812,18 +1269,89 @@ export function ContactPage() {
             <div className="contact-address"><MapPin size={19}/><span className="whitespace-pre-line">{address}</span></div>
             <div className="pt-4 mt-2 border-t border-border/60"><ActionLink>Book a Consultation</ActionLink></div>
           </div>
-          <form id="enquiry" className="contact-form scroll-mt-16" onSubmit={submit}>
+          <form id="enquiry" className="contact-form scroll-mt-16" onSubmit={(e) => e.preventDefault()}>
             <h3>Send an enquiry</h3>
             <label htmlFor="name">Your name</label>
-            <input required maxLength={100} id="name" value={name} onChange={e=>setName(e.target.value)} placeholder="Your full name"/>
+            <input
+              required
+              maxLength={100}
+              id="name"
+              value={name}
+              onChange={(e) => {
+                setName(e.target.value);
+                setError("");
+              }}
+              placeholder="Your full name"
+            />
+
             <label htmlFor="email">Email address</label>
-            <input required maxLength={120} id="email" type="email" value={from} onChange={e=>setFrom(e.target.value)} placeholder="you@example.com"/>
+            <input
+              maxLength={120}
+              id="email"
+              type="email"
+              value={from}
+              onChange={(e) => {
+                setFrom(e.target.value);
+                setError("");
+              }}
+              placeholder="you@example.com"
+            />
+
+            <label htmlFor="phone">Contact number</label>
+            <input
+              maxLength={30}
+              id="phone"
+              type="tel"
+              value={phone}
+              onChange={(e) => {
+                setPhone(e.target.value);
+                setError("");
+              }}
+              placeholder="+91 91781 12471"
+            />
+
             <label htmlFor="message">Your message</label>
-            <textarea required maxLength={2000} id="message" rows={6} value={message} onChange={e=>setMessage(e.target.value)} placeholder="Tell us a little about what you’re looking for"/>
-            <Button type="submit" className="action-link">Compose Email <ArrowRight size={17}/></Button>
-            {opened && (
-              <p role="status" className="form-note">
-                Gmail has opened in a new tab with your enquiry pre-filled. Please review and click &ldquo;Send&rdquo; in Gmail to deliver your message.
+            <textarea
+              required
+              maxLength={2000}
+              id="message"
+              rows={6}
+              value={message}
+              onChange={(e) => {
+                setMessage(e.target.value);
+                setError("");
+              }}
+              placeholder="Tell us a little about what you’re looking for"
+            />
+
+            <div className="flex flex-col sm:flex-row gap-3 pt-2">
+              <button
+                type="button"
+                onClick={handleSendGmail}
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 text-xs font-bold tracking-wider uppercase rounded bg-primary text-primary-foreground hover:bg-primary/90 transition-all shadow-sm cursor-pointer"
+              >
+                <Mail size={16} aria-hidden="true" />
+                <span>Send via Gmail</span>
+              </button>
+              <button
+                type="button"
+                onClick={handleSendWhatsApp}
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 text-xs font-bold tracking-wider uppercase rounded bg-[#1e7e48] text-white hover:bg-[#18663a] transition-all shadow-sm cursor-pointer"
+              >
+                <WhatsAppIcon size={16} />
+                <span>Send via WhatsApp</span>
+              </button>
+            </div>
+
+            {error && (
+              <p role="alert" className="text-xs text-red-700 dark:text-red-400 font-semibold mt-3">
+                {error}
+              </p>
+            )}
+
+            {statusNote && !error && (
+              <p role="status" className="form-note mt-3 text-xs text-foreground/85 leading-relaxed">
+                {statusNote}
               </p>
             )}
           </form>
@@ -2344,7 +2872,7 @@ function GoogleReviewsCarousel() {
 
         <div className="flex items-center gap-2.5 w-full sm:w-auto justify-between sm:justify-end">
           <a
-            href="https://maps.app.goo.gl/EWznU1UXJmdHHJtPA"
+            href={googleReviewsUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-[11px] font-semibold tracking-wider text-primary hover:text-primary/80 transition-colors uppercase py-1.5 px-3 rounded border border-primary/30 hover:border-primary"
@@ -2462,7 +2990,7 @@ function GoogleReviewsCarousel() {
                     </div>
 
                     <a
-                      href={item.googleMapsUri || "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA"}
+                      href={item.googleMapsUri || googleReviewsUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-muted-foreground hover:text-primary transition-colors p-1 rounded hover:bg-secondary shrink-0"
@@ -2562,7 +3090,7 @@ function GoogleReviewsCarousel() {
                 Verified Google Business Review
               </span>
               <a
-                href={selectedReview.googleMapsUri || "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA"}
+                href={selectedReview.googleMapsUri || googleReviewsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"

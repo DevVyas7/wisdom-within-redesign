@@ -26,6 +26,7 @@ const certVedicReikiL1 = "/images/certificates/L1-Priya Ranjan Sahu.png";
 const certVedicReikiL2 = "/images/certificates/L2-Certificate_Priya Ranjan Sahu.jpg";
 const certVedicReikiL3 = "/images/certificates/L3-Priya Ranjan Sahu.png";
 const certReikiMasterRishikesh = "/images/certificates/Master Certificate.jpg";
+const certGarbhsanskar = "/images/certificates/certificate-garbhsanskar.jpg";
 
 const founder = { url: "/images/client-updates/founder-phd-convocation.jpg" };
 const book = { url: "https://img1.wsimg.com/isteam/ip/f781fbeb-6590-4b29-9a04-a94f51cadf95/BookCover.jpg" };
@@ -56,6 +57,7 @@ export const assets = {
   certVedicReikiL2,
   certVedicReikiL3,
   certReikiMasterRishikesh,
+  certGarbhsanskar,
   coaching,
   nlpCert,
   reikiCert,
@@ -172,6 +174,21 @@ export const founderCertificates = [
   },
 ] as const;
 
+export const garbhaSanskarCertificate = {
+  id: "garbhsanskar-cert",
+  title: "Certificate of Garbhsanskar",
+  category: "Garbhsanskar Workshop",
+  discipline: "Garbhsanskar",
+  recipient: "Priya Ranjan Sahu",
+  institution: "VedicVibe LLP (Dr. Shruti Singhal, Founder & CEO)",
+  description:
+    "Presented to Priya Ranjan Sahu for active participation in 10 Days Highly Effective Online Workshops of Garbhsanskar organised by VedicVibe LLP.",
+  image: certGarbhsanskar,
+  alt: "Certificate of Garbhsanskar presented to Priya Ranjan Sahu for active participation in 10 Days Highly Effective Online Workshops of Garbhsanskar organised by VedicVibe LLP",
+  width: 1024,
+  height: 723,
+} as const;
+
 export const archivalCertificates = [
   {
     id: "archival-nlp",
@@ -283,6 +300,9 @@ export interface GoogleReviewScreenshot {
   height?: number;
 }
 
+export const googleReviewsUrl =
+  "https://www.google.com/maps/place/THE+WISDOM+BHARAT/@21.6344042,85.6065279,17z/data=!4m8!3m7!1s0x3a1f0502f6393a7f:0x5465b1128cfdd27e!8m2!3d21.6344042!4d85.6065279!9m1!1b1!16s%2Fg%2F11h12rzzkk";
+
 export const googleReviewScreenshots: GoogleReviewScreenshot[] = [
   {
     id: "sasmita-pattnaik",
@@ -296,7 +316,7 @@ export const googleReviewScreenshots: GoogleReviewScreenshot[] = [
     dateText: "5 months ago",
     badgeText: "6 reviews",
     reviewText: "A complete transformation which I can see in myself today is only because of Priyaranjan, a very good friend of mine since so many years helped me to get myself back today when it was next to impossible for me to recover.The healing journey where he supported me with one sentence everytime he said to me \" Don't worry everything will be fine\" has changed my entire life today where I got myself back from the traumatic phase.Thank you so much Universe and reiki energies I am grateful to have a friend,guide,mentor and healer like priyaranjan in my life.",
-    googleMapsUri: "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA",
+    googleMapsUri: googleReviewsUrl,
   },
   {
     id: "saswat-nayak",
@@ -310,7 +330,7 @@ export const googleReviewScreenshots: GoogleReviewScreenshot[] = [
     dateText: "a month ago",
     badgeText: "3 reviews",
     reviewText: "Priyaranjan has an incredible ability to inspire and bring clarity during difficult times. His guidance helped me stay motivated, calm, and relaxed when I needed it the most.Thank you 🙏 ...",
-    googleMapsUri: "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA",
+    googleMapsUri: googleReviewsUrl,
   },
   {
     id: "subhashree-sahu",
@@ -324,7 +344,7 @@ export const googleReviewScreenshots: GoogleReviewScreenshot[] = [
     dateText: "Edited a month ago",
     badgeText: "Local Guide · 41 reviews",
     reviewText: "I highly recommend Wisdom bharat to anyone looking for meaningful learning and a holistic approach to healing and self development.",
-    googleMapsUri: "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA",
+    googleMapsUri: googleReviewsUrl,
   },
   {
     id: "saswat-kumar-sahoo",
@@ -338,7 +358,7 @@ export const googleReviewScreenshots: GoogleReviewScreenshot[] = [
     dateText: "a month ago",
     badgeText: "1 review",
     reviewText: "A Very Good Initiative my Brother. Wishing You All The Very Best....😊 ...",
-    googleMapsUri: "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA",
+    googleMapsUri: googleReviewsUrl,
   },
   {
     id: "shraddhashree-sahu",
@@ -352,7 +372,7 @@ export const googleReviewScreenshots: GoogleReviewScreenshot[] = [
     dateText: "a month ago",
     badgeText: "3 reviews",
     reviewText: "It is a supportive platform for personal growth, emotional healing, and self-understanding. The sessions offer a safe space to reflect, combining life coaching, NLP, and healing practices in a meaningful way.✨ I appreciate the positive environment and focus on inner strength and self-awareness. It's a journey of confidence and transformation.✨ I highly recommend The Wisdom Bharat to anyone feeling stuck or seeking a more peaceful, purposeful life.Thank you, The Wisdom Bharat, for creating a space for healing and growth.🌿✨",
-    googleMapsUri: "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA",
+    googleMapsUri: googleReviewsUrl,
   },
   {
     id: "kanchan-witore",
@@ -366,7 +386,7 @@ export const googleReviewScreenshots: GoogleReviewScreenshot[] = [
     dateText: "a month ago",
     badgeText: "3 reviews",
     reviewText: "Great experience.Sir helped me to heal in my life at very crucial time.always thankful",
-    googleMapsUri: "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA",
+    googleMapsUri: googleReviewsUrl,
   },
   {
     id: "pankaj-modi",
@@ -380,7 +400,7 @@ export const googleReviewScreenshots: GoogleReviewScreenshot[] = [
     dateText: "a week ago",
     badgeText: "Local Guide · 5 reviews",
     reviewText: "I did a meditation session and from the second day itself I saw a change. I used to feel tired after waking up in the morning but after attending one session of Sir, there was a change in my body energy and I felt fresh after waking up in the morning. Thank you Sir, Thank you Sir",
-    googleMapsUri: "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA",
+    googleMapsUri: googleReviewsUrl,
   },
   {
     id: "dibyajyoti-sahoo",
@@ -395,7 +415,7 @@ export const googleReviewScreenshots: GoogleReviewScreenshot[] = [
     badgeText: "3 reviews",
     reviewText: "Thank you, DibyaJyoti Sahoo, for the 5-star rating! We're thrilled you had a great experience and appreciate your support. We look forward to serving you again soon.",
     isOwnerResponse: true,
-    googleMapsUri: "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA",
+    googleMapsUri: googleReviewsUrl,
   },
 ];
 
@@ -421,7 +441,7 @@ export const testimonials: GoogleReview[] = [
     initials: "SP",
     authorAttribution: {
       displayName: "Sasmita Pattnaik",
-      uri: "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA",
+      uri: googleReviewsUrl,
     }
   },
   {
@@ -433,7 +453,7 @@ export const testimonials: GoogleReview[] = [
     initials: "SS",
     authorAttribution: {
       displayName: "Subhashree Sahu",
-      uri: "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA",
+      uri: googleReviewsUrl,
     }
   },
   {
@@ -445,7 +465,7 @@ export const testimonials: GoogleReview[] = [
     initials: "SS",
     authorAttribution: {
       displayName: "Shraddhashree Sahu",
-      uri: "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA",
+      uri: googleReviewsUrl,
     }
   },
   {
@@ -457,7 +477,7 @@ export const testimonials: GoogleReview[] = [
     initials: "SN",
     authorAttribution: {
       displayName: "Saswat Nayak",
-      uri: "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA",
+      uri: googleReviewsUrl,
     }
   },
   {
@@ -469,7 +489,7 @@ export const testimonials: GoogleReview[] = [
     initials: "KW",
     authorAttribution: {
       displayName: "Kanchan Witore",
-      uri: "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA",
+      uri: googleReviewsUrl,
     }
   },
   {
@@ -481,7 +501,7 @@ export const testimonials: GoogleReview[] = [
     initials: "PM",
     authorAttribution: {
       displayName: "Pankaj Modi",
-      uri: "https://maps.app.goo.gl/EWznU1UXJmdHHJtPA",
+      uri: googleReviewsUrl,
     }
   }
 ];
@@ -549,6 +569,82 @@ const serviceReikiImage = reikiHealing;
 const serviceGarbhsanskarImage = garbhasanskarHero;
 const serviceCoachingImage = encodeURI("/service images/LIFE & HIGH PERFORMANCE IMG.jpg");
 const serviceAuraImage = reikiChakra;
+
+export interface ServicePackage {
+  id: string;
+  name: string;
+  duration?: string;
+  price: string;
+  priceNumber: number;
+  badge?: string;
+  featured?: boolean;
+  previewSummary: string;
+  inclusions: readonly string[];
+}
+
+export const auraPackages: readonly ServicePackage[] = [
+  {
+    id: "introductory-session",
+    name: "Introductory AURA Session",
+    price: "₹1,304",
+    priceNumber: 1304,
+    badge: "Special Webinar Offer",
+    previewSummary: "Personalised counselling, AURA scanning, diagnostic report and a complimentary healing session.",
+    inclusions: [
+      "AURA Scanning",
+      "45-minute personalised counselling",
+      "AURA report",
+      "One complimentary healing session",
+    ],
+  },
+  {
+    id: "basic-healing",
+    name: "Basic Healing Package",
+    duration: "1 Month",
+    price: "₹9,998",
+    priceNumber: 9998,
+    previewSummary: "AURA scanning & review, Reiki sessions, NLP guided meditation, lifestyle guidance and support.",
+    inclusions: [
+      "AURA scanning and review",
+      "Reiki healing sessions",
+      "NLP guided meditation",
+      "Lifestyle guidance",
+      "Personalised support",
+    ],
+  },
+  {
+    id: "deep-healing",
+    name: "Deep Healing Package",
+    duration: "2 Months",
+    price: "₹19,997",
+    priceNumber: 19997,
+    previewSummary: "Scanning & progress reviews, Reiki sessions, NLP meditation, chakra guidance and lifestyle support.",
+    inclusions: [
+      "AURA scanning and progress review",
+      "Reiki healing sessions",
+      "NLP guided meditation",
+      "Chakra awareness and guidance",
+      "Lifestyle guidance and personalised support",
+    ],
+  },
+  {
+    id: "pro-healing",
+    name: "Pro Healing Package",
+    duration: "3 Months",
+    price: "₹27,998",
+    priceNumber: 27998,
+    featured: true,
+    previewSummary: "Regular reviews, Reiki healing, NLP meditation, chakra guidance and ongoing personalised support.",
+    inclusions: [
+      "AURA scanning and regular reviews",
+      "Reiki healing sessions",
+      "NLP guided meditation",
+      "Chakra awareness and guidance",
+      "Lifestyle guidance",
+      "Ongoing personalised support",
+    ],
+  },
+] as const;
 
 export const services = [
   { 
@@ -633,7 +729,8 @@ export const services = [
       "Universal Energy – Reiki Healing",
       "Chakra Healing & Awareness",
       "Guided Meditation"
-    ]
+    ],
+    packages: auraPackages
   },
 ] as const;
 export const programs = [
@@ -854,6 +951,7 @@ export const garbhaSanskarContent = {
       "Our intention is to help parents approach pregnancy with greater awareness, positivity, emotional preparedness and conscious connection.",
     ],
   },
+  certificate: garbhaSanskarCertificate,
 } as const;
 
 export const auraFaqs = [
