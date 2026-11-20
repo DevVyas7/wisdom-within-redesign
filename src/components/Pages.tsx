@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowDown, ArrowRight, Check, Mail, MapPin, Phone, Award, ZoomIn, Star, ChevronLeft, ChevronRight, ShieldCheck, X, Play, Pause, Volume2, VolumeX, Maximize, Minimize, RotateCcw, ExternalLink } from "lucide-react";
+import { ArrowRight, Check, Mail, MapPin, Phone, Award, ZoomIn, Star, ChevronLeft, ChevronRight, ShieldCheck, X, Play, Pause, Volume2, VolumeX, Maximize, Minimize, RotateCcw, ExternalLink } from "lucide-react";
 import { useState, useEffect, useRef, useCallback, type FormEvent } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -100,11 +100,6 @@ export function HomePage() {
           </div>
         </div>
       </div>
-
-      <a href="#intro" className="hero-video-scroll" aria-label="Scroll to introduction">
-        <ArrowDown size={18} />
-        <span>DISCOVER MORE</span>
-      </a>
     </section>
   <section id="intro" className="intro-section"><div className="container-wide intro-layout"><span className="eyebrow">A MORE INTENTIONAL WAY FORWARD</span><div><h2>Transformation begins when you make space to listen to yourself.</h2><p>At The Wisdom Bharat, ancient wisdom meets a personal approach to growth. Explore practices that support reflection, connection and purposeful change at your own pace.</p></div></div></section>
   <section className="section-pad services-section"><div className="container-wide"><div className="section-top"><SectionHeading eyebrow="OUR OFFERINGS" title="Five paths. One intention." description="Find the support that speaks to where you are right now."/><Link to="/services" className="text-link">View all services <ArrowRight size={17}/></Link></div><ServiceCards/></div></section>
@@ -727,10 +722,116 @@ export function AuraPage() {
     </>
   );
 }
-export function ProgramsPage() { return <><PageHeader eyebrow="PROGRAMS" title="Make room for lasting change." intro="Explore the programs and sessions listed by The Wisdom Bharat."/><section className="section-pad"><div className="container-wide program-list">{programs.map((p,i) => <div className="program-row" key={p.title}><span className="eyebrow">0{i+1}</span><div><h2>{p.title}</h2><p>{p.detail}</p></div><Button asChild variant="outline" className="outline-link"><a href={bookingUrl} target="_blank" rel="noopener noreferrer">Enquire <ArrowRight size={16}/></a></Button></div>)}</div></section><BottomCTA/></>; }
+export function ProgramsPage() {
+  return (
+    <>
+      <PageHeader
+        eyebrow="PROGRAMS"
+        title="Make room for lasting change."
+        intro="Explore the programs and sessions listed by The Wisdom Bharat."
+      />
+      <section className="section-pad">
+        <div className="container-wide program-list">
+          {programs.map((p, i) => (
+            <div className="program-row" key={p.title}>
+              <span className="eyebrow">0{i + 1}</span>
+              <div>
+                <h2>{p.title}</h2>
+                <p>{p.detail}</p>
+              </div>
+              <Button asChild variant="outline" className="outline-link">
+                <Link to="/contact" hash="enquiry">
+                  Enquire <ArrowRight size={16} />
+                </Link>
+              </Button>
+            </div>
+          ))}
+        </div>
+      </section>
+      <BottomCTA />
+    </>
+  );
+}
 export function BookPage() { return <><PageHeader eyebrow="THE BOOK" title="Ideas for a more intentional life."/><section className="section-pad"><div className="container-wide editorial-split book-page-layout"><div className="book-page-photo"><img src={assets.book} alt="Awaken Your Ultimate High Performance System by Dr. Priya Ranjan Sahu book cover"/></div><div className="editorial-copy"><span className="eyebrow">BY DR. PRIYA RANJAN SAHU</span><h2>Awaken Your Ultimate High Performance System</h2><p>A guide to exploring mindset, habits and energy alignment. In the book, Dr. Priya Ranjan Sahu (Life Coach PR) draws from NLP and ancient wisdom to consider high performance alongside balance and purpose.</p><ExternalButton href={bookUrl}>View on Amazon</ExternalButton></div></div></section><BottomCTA/></>; }
 
-export function ContactPage() { const [sent,setSent]=useState(false); const [name,setName]=useState(""); const [from,setFrom]=useState(""); const [message,setMessage]=useState(""); function submit(e: FormEvent) { e.preventDefault(); const cleanName = name.trim().slice(0, 100); const cleanEmail = from.trim().slice(0, 120); const cleanMessage = message.trim().slice(0, 2000); if (!cleanName || !cleanEmail || !cleanMessage) return; const subject=encodeURIComponent(`Enquiry from ${cleanName}`); const body=encodeURIComponent(`Name: ${cleanName}\nEmail: ${cleanEmail}\n\n${cleanMessage}`); window.location.href=`mailto:${email}?subject=${subject}&body=${body}`; setSent(true); } return <><PageHeader eyebrow="CONTACT" title="Let’s start a conversation." intro="Have a question or want to explore what’s right for you? We’d love to hear from you."/><section className="section-pad"><div className="container-wide contact-layout"><div className="contact-info"><span className="eyebrow">REACH OUT</span><h2>We’re here to listen.</h2><p>Use the form to compose an email, or contact us directly through the channels below.</p><a href={`mailto:${email}`}><Mail size={19}/>{email}</a><a href={phoneHref}><Phone size={19}/>{phoneNumber}</a><a href={whatsappUrl} target="_blank" rel="noopener noreferrer"><ArrowRight size={19}/>WhatsApp: {whatsappNumber}</a><a href={whatsappSecondaryUrl} target="_blank" rel="noopener noreferrer"><ArrowRight size={19}/>Alternative WhatsApp: {whatsappSecondaryNumber}</a><div className="contact-address"><MapPin size={19}/><span className="whitespace-pre-line">{address}</span></div><div className="pt-4 mt-2 border-t border-border/60"><ActionLink>Book a Consultation</ActionLink></div></div><form className="contact-form" onSubmit={submit}><h3>Send an enquiry</h3><label htmlFor="name">Your name</label><input required maxLength={100} id="name" value={name} onChange={e=>setName(e.target.value)} placeholder="Your full name"/><label htmlFor="email">Email address</label><input required maxLength={120} id="email" type="email" value={from} onChange={e=>setFrom(e.target.value)} placeholder="you@example.com"/><label htmlFor="message">Your message</label><textarea required maxLength={2000} id="message" rows={6} value={message} onChange={e=>setMessage(e.target.value)} placeholder="Tell us a little about what you’re looking for"/><Button type="submit" className="action-link">Compose email <ArrowRight size={17}/></Button>{sent && <p role="status" className="form-note">Your email app should open with your message ready to send. Please send it there to complete your enquiry.</p>}</form></div></section></>; }
+export function ContactPage() {
+  const [opened, setOpened] = useState(false);
+  const [name, setName] = useState("");
+  const [from, setFrom] = useState("");
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash === "#enquiry") {
+      const el = document.getElementById("enquiry");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+      const nameInput = document.getElementById("name");
+      if (nameInput) {
+        nameInput.focus();
+      }
+    }
+  }, []);
+
+  function submit(e: FormEvent) {
+    e.preventDefault();
+    const cleanName = name.trim().slice(0, 100);
+    const cleanEmail = from.trim().slice(0, 120);
+    const cleanMessage = message.trim().slice(0, 2000);
+
+    // Validate required fields
+    if (!cleanName || !cleanEmail || !cleanMessage) return;
+
+    const subject = `Website Enquiry – ${cleanName}`;
+    const body = `Name: ${cleanName}\nEmail: ${cleanEmail}\n\nEnquiry Message:\n${cleanMessage}`;
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+      email
+    )}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.open(gmailUrl, "_blank", "noopener,noreferrer");
+    setOpened(true);
+  }
+
+  return (
+    <>
+      <PageHeader
+        eyebrow="CONTACT"
+        title="Let’s start a conversation."
+        intro="Have a question or want to explore what’s right for you? We’d love to hear from you."
+      />
+      <section className="section-pad">
+        <div className="container-wide contact-layout">
+          <div className="contact-info">
+            <span className="eyebrow">REACH OUT</span>
+            <h2>We’re here to listen.</h2>
+            <p>Use the form to compose an email in Gmail, or contact us directly through the channels below.</p>
+            <a href={`mailto:${email}`}><Mail size={19}/>{email}</a>
+            <a href={phoneHref}><Phone size={19}/>{phoneNumber}</a>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"><ArrowRight size={19}/>WhatsApp: {whatsappNumber}</a>
+            <a href={whatsappSecondaryUrl} target="_blank" rel="noopener noreferrer"><ArrowRight size={19}/>Alternative WhatsApp: {whatsappSecondaryNumber}</a>
+            <div className="contact-address"><MapPin size={19}/><span className="whitespace-pre-line">{address}</span></div>
+            <div className="pt-4 mt-2 border-t border-border/60"><ActionLink>Book a Consultation</ActionLink></div>
+          </div>
+          <form id="enquiry" className="contact-form scroll-mt-16" onSubmit={submit}>
+            <h3>Send an enquiry</h3>
+            <label htmlFor="name">Your name</label>
+            <input required maxLength={100} id="name" value={name} onChange={e=>setName(e.target.value)} placeholder="Your full name"/>
+            <label htmlFor="email">Email address</label>
+            <input required maxLength={120} id="email" type="email" value={from} onChange={e=>setFrom(e.target.value)} placeholder="you@example.com"/>
+            <label htmlFor="message">Your message</label>
+            <textarea required maxLength={2000} id="message" rows={6} value={message} onChange={e=>setMessage(e.target.value)} placeholder="Tell us a little about what you’re looking for"/>
+            <Button type="submit" className="action-link">Compose Email <ArrowRight size={17}/></Button>
+            {opened && (
+              <p role="status" className="form-note">
+                Gmail has opened in a new tab with your enquiry pre-filled. Please review and click &ldquo;Send&rdquo; in Gmail to deliver your message.
+              </p>
+            )}
+          </form>
+        </div>
+      </section>
+    </>
+  );
+}
 export function BookingPage() { 
   return (
     <>
