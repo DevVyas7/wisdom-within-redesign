@@ -179,12 +179,12 @@ export const garbhaSanskarCertificate = {
   title: "Certificate of Garbhsanskar",
   category: "Garbhsanskar Workshop",
   discipline: "Garbhsanskar",
-  recipient: "Priya Ranjan Sahu",
+  recipient: "Dr. Priya Ranjan Sahu",
   institution: "VedicVibe LLP (Dr. Shruti Singhal, Founder & CEO)",
   description:
-    "Presented to Priya Ranjan Sahu for active participation in 10 Days Highly Effective Online Workshops of Garbhsanskar organised by VedicVibe LLP.",
+    "Presented to Dr. Priya Ranjan Sahu for active participation in 10 Days Highly Effective Online Workshops of Garbhsanskar organised by VedicVibe LLP.",
   image: certGarbhsanskar,
-  alt: "Certificate of Garbhsanskar presented to Priya Ranjan Sahu for active participation in 10 Days Highly Effective Online Workshops of Garbhsanskar organised by VedicVibe LLP",
+  alt: "Certificate of Garbhsanskar presented to Dr. Priya Ranjan Sahu for active participation in 10 Days Highly Effective Online Workshops of Garbhsanskar organised by VedicVibe LLP",
   width: 1024,
   height: 723,
 } as const;
@@ -666,8 +666,8 @@ export const auraPackages: readonly ServicePackage[] = [
   {
     id: "introductory-session",
     name: "Introductory AURA Session",
-    price: "₹1,304",
-    priceNumber: 1304,
+    price: "₹2,006/-",
+    priceNumber: 2006,
     badge: "Special Webinar Offer",
     previewSummary: "Personalised counselling, AURA scanning, diagnostic report and a complimentary healing session.",
     inclusions: [
@@ -681,8 +681,8 @@ export const auraPackages: readonly ServicePackage[] = [
     id: "basic-healing",
     name: "Basic Healing Package",
     duration: "1 Month",
-    price: "₹9,998",
-    priceNumber: 9998,
+    price: "₹14,993/-",
+    priceNumber: 14993,
     previewSummary: "AURA scanning & review, Reiki sessions, NLP guided meditation, lifestyle guidance and support.",
     inclusions: [
       "AURA scanning and review",
@@ -696,8 +696,8 @@ export const auraPackages: readonly ServicePackage[] = [
     id: "deep-healing",
     name: "Deep Healing Package",
     duration: "2 Months",
-    price: "₹19,997",
-    priceNumber: 19997,
+    price: "₹25,991/-",
+    priceNumber: 25991,
     previewSummary: "Scanning & progress reviews, Reiki sessions, NLP meditation, chakra guidance and lifestyle support.",
     inclusions: [
       "AURA scanning and progress review",
@@ -711,8 +711,8 @@ export const auraPackages: readonly ServicePackage[] = [
     id: "pro-healing",
     name: "Pro Healing Package",
     duration: "3 Months",
-    price: "₹27,998",
-    priceNumber: 27998,
+    price: "₹35,990/-",
+    priceNumber: 35990,
     featured: true,
     previewSummary: "Regular reviews, Reiki healing, NLP meditation, chakra guidance and ongoing personalised support.",
     inclusions: [
